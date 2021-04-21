@@ -1,7 +1,7 @@
 ﻿
 namespace Sistema_de_Cruces_JEFF
 {
-    partial class PantallaInicioFrame
+    partial class PantallaInicioConexionFrame
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -126,7 +126,7 @@ namespace Sistema_de_Cruces_JEFF
             // btnConectar
             // 
             this.btnConectar.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConectar.Location = new System.Drawing.Point(283, 281);
+            this.btnConectar.Location = new System.Drawing.Point(59, 235);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(97, 35);
             this.btnConectar.TabIndex = 10;
@@ -134,12 +134,12 @@ namespace Sistema_de_Cruces_JEFF
             this.btnConectar.UseVisualStyleBackColor = true;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
-            // PantallaInicioFrame
+            // PantallaInicioConexionFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
-            this.ClientSize = new System.Drawing.Size(784, 441);
+            this.ClientSize = new System.Drawing.Size(714, 441);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.txtBasedeDatos);
             this.Controls.Add(this.txtPassword);
@@ -154,7 +154,7 @@ namespace Sistema_de_Cruces_JEFF
             this.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(730, 480);
-            this.Name = "PantallaInicioFrame";
+            this.Name = "PantallaInicioConexionFrame";
             this.Padding = new System.Windows.Forms.Padding(1, 2, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Cruces Jeff";

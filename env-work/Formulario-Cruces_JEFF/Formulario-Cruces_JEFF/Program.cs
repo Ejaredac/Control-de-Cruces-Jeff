@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema_de_Cruces_JEFF
+namespace Formulario_Cruces_JEFF
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Sistema_de_Cruces_JEFF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PantallaInicioConexionFrame());
+            Application.Run(new frmPantallaPrincipal());
         }
     }
 }

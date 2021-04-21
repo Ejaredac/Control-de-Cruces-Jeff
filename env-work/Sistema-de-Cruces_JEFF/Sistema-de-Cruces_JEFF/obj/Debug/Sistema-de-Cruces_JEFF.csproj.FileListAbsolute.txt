@@ -2,7 +2,6 @@ C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-d
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\bin\Debug\Sistema-de-Cruces_JEFF.exe
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\bin\Debug\Sistema-de-Cruces_JEFF.pdb
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema-de-Cruces_JEFF.csprojAssemblyReference.cache
-C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema_de_Cruces_JEFF.PantallaInicioFrame.resources
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema_de_Cruces_JEFF.Properties.Resources.resources
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema-de-Cruces_JEFF.csproj.GenerateResource.cache
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema-de-Cruces_JEFF.csproj.CoreCompileInputs.cache
@@ -24,3 +23,4 @@ C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-d
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\bin\Debug\MySql.Data.xml
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema-de-Cruces_JEFF.exe.config
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema-de-Cruces_JEFF.csproj.CopyComplete
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Sistema-de-Cruces_JEFF\Sistema-de-Cruces_JEFF\obj\Debug\Sistema_de_Cruces_JEFF.PantallaInicioConexionFrame.resources

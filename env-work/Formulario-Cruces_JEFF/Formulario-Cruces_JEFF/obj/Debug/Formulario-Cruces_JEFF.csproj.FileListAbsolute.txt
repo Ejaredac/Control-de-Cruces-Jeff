@@ -1,0 +1,10 @@
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\Formulario-Cruces_JEFF.exe.config
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\Formulario-Cruces_JEFF.exe
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\Formulario-Cruces_JEFF.pdb
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario-Cruces_JEFF.csprojAssemblyReference.cache
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario_Cruces_JEFF.Properties.Resources.resources
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario-Cruces_JEFF.csproj.GenerateResource.cache
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario-Cruces_JEFF.csproj.CoreCompileInputs.cache
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario-Cruces_JEFF.exe
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario-Cruces_JEFF.pdb
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario_Cruces_JEFF.frmPantallaPrincipal.resources

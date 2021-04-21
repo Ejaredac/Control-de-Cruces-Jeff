@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Cruces_JEFF
 {
-    public partial class PantallaInicioFrame : Form
+    public partial class PantallaInicioConexionFrame : Form
     {
-        public PantallaInicioFrame()
+        public PantallaInicioConexionFrame()
         {
             InitializeComponent();
         }
