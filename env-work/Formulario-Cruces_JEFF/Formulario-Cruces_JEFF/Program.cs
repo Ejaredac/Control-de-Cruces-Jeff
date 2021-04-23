@@ -16,7 +16,7 @@ namespace Formulario_Cruces_JEFF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPantallaPrincipal());
+            Application.Run(new PantallaPrincipal());
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Formulario_Cruces_JEFF
 {
-    partial class frmPantallaPrincipal
+    partial class PantallaPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -33,7 +33,6 @@ namespace Formulario_Cruces_JEFF
             this.txtAsignada = new System.Windows.Forms.TextBox();
             this.txtConductor = new System.Windows.Forms.TextBox();
             this.txtUnidad = new System.Windows.Forms.TextBox();
-            this.txtBono = new System.Windows.Forms.TextBox();
             this.lblAsignada = new System.Windows.Forms.Label();
             this.dtpFechaVencimientoPedimento = new System.Windows.Forms.DateTimePicker();
             this.lblFechaPagoVencimiento = new System.Windows.Forms.Label();
@@ -41,11 +40,10 @@ namespace Formulario_Cruces_JEFF
             this.dtpFechaPagoPedimento = new System.Windows.Forms.DateTimePicker();
             this.lblConductor = new System.Windows.Forms.Label();
             this.lblUnidad = new System.Windows.Forms.Label();
-            this.lblBono = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.lblCliente = new System.Windows.Forms.Label();
             this.txtIntermediario = new System.Windows.Forms.TextBox();
             this.lblIntermediario = new System.Windows.Forms.Label();
-            this.txtDocumentoVenta = new System.Windows.Forms.TextBox();
-            this.lblDocumentoVenta = new System.Windows.Forms.Label();
             this.txtPrecioDolares = new System.Windows.Forms.TextBox();
             this.lblPrecioDolares = new System.Windows.Forms.Label();
             this.txtPrecioPesos = new System.Windows.Forms.TextBox();
@@ -54,9 +52,9 @@ namespace Formulario_Cruces_JEFF
             this.lblLugarDescarga = new System.Windows.Forms.Label();
             this.txtLugarCarga = new System.Windows.Forms.TextBox();
             this.lblLugarCarga = new System.Windows.Forms.Label();
-            this.dtpFechaViaje = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.lblFechaCarga = new System.Windows.Forms.Label();
-            this.lblFechaViaje = new System.Windows.Forms.Label();
+            this.lblFechaEntrega = new System.Windows.Forms.Label();
             this.txtEstatusCobro = new System.Windows.Forms.TextBox();
             this.dtpFechaCarga = new System.Windows.Forms.DateTimePicker();
             this.txtTipoServicio = new System.Windows.Forms.TextBox();
@@ -74,32 +72,31 @@ namespace Formulario_Cruces_JEFF
             this.conectarABaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpTablaDeDatos = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id_ControlCruces = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoCruce = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Caja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstatusCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaViaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LugarCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LugarDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioPesos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioDolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocumentoVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Intermediario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Conductor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaPagoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Asignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgTablaDatos = new System.Windows.Forms.DataGridView();
+            this.colId_ControlCruces = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigoCruce = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRemision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstatusCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLugarCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLugarDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioPesos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioDolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIntermediario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colConductor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaPagoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRecargar = new System.Windows.Forms.Button();
             this.grpCampoDatos.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTablaDeDatos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // grpCampoDatos
@@ -107,7 +104,6 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.Controls.Add(this.txtAsignada);
             this.grpCampoDatos.Controls.Add(this.txtConductor);
             this.grpCampoDatos.Controls.Add(this.txtUnidad);
-            this.grpCampoDatos.Controls.Add(this.txtBono);
             this.grpCampoDatos.Controls.Add(this.lblAsignada);
             this.grpCampoDatos.Controls.Add(this.dtpFechaVencimientoPedimento);
             this.grpCampoDatos.Controls.Add(this.lblFechaPagoVencimiento);
@@ -115,11 +111,10 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.Controls.Add(this.dtpFechaPagoPedimento);
             this.grpCampoDatos.Controls.Add(this.lblConductor);
             this.grpCampoDatos.Controls.Add(this.lblUnidad);
-            this.grpCampoDatos.Controls.Add(this.lblBono);
+            this.grpCampoDatos.Controls.Add(this.txtCliente);
+            this.grpCampoDatos.Controls.Add(this.lblCliente);
             this.grpCampoDatos.Controls.Add(this.txtIntermediario);
             this.grpCampoDatos.Controls.Add(this.lblIntermediario);
-            this.grpCampoDatos.Controls.Add(this.txtDocumentoVenta);
-            this.grpCampoDatos.Controls.Add(this.lblDocumentoVenta);
             this.grpCampoDatos.Controls.Add(this.txtPrecioDolares);
             this.grpCampoDatos.Controls.Add(this.lblPrecioDolares);
             this.grpCampoDatos.Controls.Add(this.txtPrecioPesos);
@@ -128,9 +123,9 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.Controls.Add(this.lblLugarDescarga);
             this.grpCampoDatos.Controls.Add(this.txtLugarCarga);
             this.grpCampoDatos.Controls.Add(this.lblLugarCarga);
-            this.grpCampoDatos.Controls.Add(this.dtpFechaViaje);
+            this.grpCampoDatos.Controls.Add(this.dtpFechaEntrega);
             this.grpCampoDatos.Controls.Add(this.lblFechaCarga);
-            this.grpCampoDatos.Controls.Add(this.lblFechaViaje);
+            this.grpCampoDatos.Controls.Add(this.lblFechaEntrega);
             this.grpCampoDatos.Controls.Add(this.txtEstatusCobro);
             this.grpCampoDatos.Controls.Add(this.dtpFechaCarga);
             this.grpCampoDatos.Controls.Add(this.txtTipoServicio);
@@ -151,7 +146,7 @@ namespace Formulario_Cruces_JEFF
             // 
             // txtAsignada
             // 
-            this.txtAsignada.Location = new System.Drawing.Point(775, 272);
+            this.txtAsignada.Location = new System.Drawing.Point(796, 37);
             this.txtAsignada.Name = "txtAsignada";
             this.txtAsignada.Size = new System.Drawing.Size(100, 22);
             this.txtAsignada.TabIndex = 38;
@@ -170,17 +165,10 @@ namespace Formulario_Cruces_JEFF
             this.txtUnidad.Size = new System.Drawing.Size(100, 22);
             this.txtUnidad.TabIndex = 36;
             // 
-            // txtBono
-            // 
-            this.txtBono.Location = new System.Drawing.Point(796, 45);
-            this.txtBono.Name = "txtBono";
-            this.txtBono.Size = new System.Drawing.Size(100, 22);
-            this.txtBono.TabIndex = 35;
-            // 
             // lblAsignada
             // 
             this.lblAsignada.AutoSize = true;
-            this.lblAsignada.Location = new System.Drawing.Point(700, 270);
+            this.lblAsignada.Location = new System.Drawing.Point(691, 38);
             this.lblAsignada.Name = "lblAsignada";
             this.lblAsignada.Size = new System.Drawing.Size(54, 13);
             this.lblAsignada.TabIndex = 34;
@@ -189,10 +177,11 @@ namespace Formulario_Cruces_JEFF
             // dtpFechaVencimientoPedimento
             // 
             this.dtpFechaVencimientoPedimento.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaVencimientoPedimento.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaVencimientoPedimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaVencimientoPedimento.Location = new System.Drawing.Point(895, 217);
             this.dtpFechaVencimientoPedimento.Name = "dtpFechaVencimientoPedimento";
-            this.dtpFechaVencimientoPedimento.Size = new System.Drawing.Size(222, 22);
+            this.dtpFechaVencimientoPedimento.Size = new System.Drawing.Size(222, 21);
             this.dtpFechaVencimientoPedimento.TabIndex = 32;
             // 
             // lblFechaPagoVencimiento
@@ -218,10 +207,11 @@ namespace Formulario_Cruces_JEFF
             // dtpFechaPagoPedimento
             // 
             this.dtpFechaPagoPedimento.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaPagoPedimento.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaPagoPedimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaPagoPedimento.Location = new System.Drawing.Point(895, 182);
             this.dtpFechaPagoPedimento.Name = "dtpFechaPagoPedimento";
-            this.dtpFechaPagoPedimento.Size = new System.Drawing.Size(222, 22);
+            this.dtpFechaPagoPedimento.Size = new System.Drawing.Size(222, 21);
             this.dtpFechaPagoPedimento.TabIndex = 30;
             // 
             // lblConductor
@@ -244,19 +234,27 @@ namespace Formulario_Cruces_JEFF
             this.lblUnidad.TabIndex = 28;
             this.lblUnidad.Text = "Unidad";
             // 
-            // lblBono
+            // txtCliente
             // 
-            this.lblBono.AutoSize = true;
-            this.lblBono.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBono.Location = new System.Drawing.Point(694, 45);
-            this.lblBono.Name = "lblBono";
-            this.lblBono.Size = new System.Drawing.Size(34, 13);
-            this.lblBono.TabIndex = 27;
-            this.lblBono.Text = "Bono";
+            this.txtCliente.Location = new System.Drawing.Point(508, 263);
+            this.txtCliente.MaxLength = 40;
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(149, 22);
+            this.txtCliente.TabIndex = 26;
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(459, 265);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(42, 13);
+            this.lblCliente.TabIndex = 25;
+            this.lblCliente.Text = "Cliente";
             // 
             // txtIntermediario
             // 
-            this.txtIntermediario.Location = new System.Drawing.Point(508, 262);
+            this.txtIntermediario.Location = new System.Drawing.Point(508, 217);
             this.txtIntermediario.MaxLength = 45;
             this.txtIntermediario.Name = "txtIntermediario";
             this.txtIntermediario.Size = new System.Drawing.Size(149, 22);
@@ -266,29 +264,11 @@ namespace Formulario_Cruces_JEFF
             // 
             this.lblIntermediario.AutoSize = true;
             this.lblIntermediario.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIntermediario.Location = new System.Drawing.Point(426, 265);
+            this.lblIntermediario.Location = new System.Drawing.Point(426, 220);
             this.lblIntermediario.Name = "lblIntermediario";
             this.lblIntermediario.Size = new System.Drawing.Size(76, 13);
             this.lblIntermediario.TabIndex = 25;
             this.lblIntermediario.Text = "Intermediario";
-            // 
-            // txtDocumentoVenta
-            // 
-            this.txtDocumentoVenta.Location = new System.Drawing.Point(508, 217);
-            this.txtDocumentoVenta.MaxLength = 35;
-            this.txtDocumentoVenta.Name = "txtDocumentoVenta";
-            this.txtDocumentoVenta.Size = new System.Drawing.Size(149, 22);
-            this.txtDocumentoVenta.TabIndex = 24;
-            // 
-            // lblDocumentoVenta
-            // 
-            this.lblDocumentoVenta.AutoSize = true;
-            this.lblDocumentoVenta.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDocumentoVenta.Location = new System.Drawing.Point(387, 220);
-            this.lblDocumentoVenta.Name = "lblDocumentoVenta";
-            this.lblDocumentoVenta.Size = new System.Drawing.Size(113, 13);
-            this.lblDocumentoVenta.TabIndex = 23;
-            this.lblDocumentoVenta.Text = "Documento de Venta";
             // 
             // txtPrecioDolares
             // 
@@ -360,14 +340,16 @@ namespace Formulario_Cruces_JEFF
             this.lblLugarCarga.TabIndex = 15;
             this.lblLugarCarga.Text = "Lugar de Carga";
             // 
-            // dtpFechaViaje
+            // dtpFechaEntrega
             // 
-            this.dtpFechaViaje.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
-            this.dtpFechaViaje.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaViaje.Location = new System.Drawing.Point(132, 265);
-            this.dtpFechaViaje.Name = "dtpFechaViaje";
-            this.dtpFechaViaje.Size = new System.Drawing.Size(218, 22);
-            this.dtpFechaViaje.TabIndex = 13;
+            this.dtpFechaEntrega.CalendarFont = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaEntrega.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaEntrega.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(132, 265);
+            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(218, 21);
+            this.dtpFechaEntrega.TabIndex = 13;
             // 
             // lblFechaCarga
             // 
@@ -379,15 +361,15 @@ namespace Formulario_Cruces_JEFF
             this.lblFechaCarga.TabIndex = 12;
             this.lblFechaCarga.Text = "Fecha de Carga";
             // 
-            // lblFechaViaje
+            // lblFechaEntrega
             // 
-            this.lblFechaViaje.AutoSize = true;
-            this.lblFechaViaje.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaViaje.Location = new System.Drawing.Point(45, 272);
-            this.lblFechaViaje.Name = "lblFechaViaje";
-            this.lblFechaViaje.Size = new System.Drawing.Size(80, 13);
-            this.lblFechaViaje.TabIndex = 14;
-            this.lblFechaViaje.Text = "Fecha de Viaje";
+            this.lblFechaEntrega.AutoSize = true;
+            this.lblFechaEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaEntrega.Location = new System.Drawing.Point(33, 272);
+            this.lblFechaEntrega.Name = "lblFechaEntrega";
+            this.lblFechaEntrega.Size = new System.Drawing.Size(94, 13);
+            this.lblFechaEntrega.TabIndex = 14;
+            this.lblFechaEntrega.Text = "Fecha de Entrega";
             // 
             // txtEstatusCobro
             // 
@@ -400,10 +382,11 @@ namespace Formulario_Cruces_JEFF
             // dtpFechaCarga
             // 
             this.dtpFechaCarga.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaCarga.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaCarga.Location = new System.Drawing.Point(132, 227);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
-            this.dtpFechaCarga.Size = new System.Drawing.Size(218, 22);
+            this.dtpFechaCarga.Size = new System.Drawing.Size(218, 21);
             this.dtpFechaCarga.TabIndex = 11;
             // 
             // txtTipoServicio
@@ -510,24 +493,27 @@ namespace Formulario_Cruces_JEFF
             // crearBaseDeDatosToolStripMenuItem
             // 
             this.crearBaseDeDatosToolStripMenuItem.Name = "crearBaseDeDatosToolStripMenuItem";
-            this.crearBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.crearBaseDeDatosToolStripMenuItem.Text = "Crear Base de Datos";
+            this.crearBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.crearBaseDeDatosToolStripMenuItem.Text = "Crear Base de Datos Local";
+            this.crearBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.crearBaseDeDatosToolStripMenuItem_Click);
             // 
             // conectarABaseDeDatosToolStripMenuItem
             // 
             this.conectarABaseDeDatosToolStripMenuItem.Name = "conectarABaseDeDatosToolStripMenuItem";
-            this.conectarABaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.conectarABaseDeDatosToolStripMenuItem.Text = "Conectar a Base de Datos";
+            this.conectarABaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.conectarABaseDeDatosToolStripMenuItem.Text = "Conectar a Base de Datos Remota";
+            this.conectarABaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.conectarABaseDeDatosToolStripMenuItem_Click);
             // 
             // eliminarBaseDeDatosToolStripMenuItem
             // 
             this.eliminarBaseDeDatosToolStripMenuItem.Name = "eliminarBaseDeDatosToolStripMenuItem";
-            this.eliminarBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.eliminarBaseDeDatosToolStripMenuItem.Text = "Eliminar Base de Datos";
+            this.eliminarBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.eliminarBaseDeDatosToolStripMenuItem.Text = "Eliminar Base de Datos Local";
             // 
             // grpTablaDeDatos
             // 
-            this.grpTablaDeDatos.Controls.Add(this.dataGridView1);
+            this.grpTablaDeDatos.Controls.Add(this.btnRecargar);
+            this.grpTablaDeDatos.Controls.Add(this.dtgTablaDatos);
             this.grpTablaDeDatos.Location = new System.Drawing.Point(13, 383);
             this.grpTablaDeDatos.Name = "grpTablaDeDatos";
             this.grpTablaDeDatos.Size = new System.Drawing.Size(2352, 325);
@@ -535,184 +521,178 @@ namespace Formulario_Cruces_JEFF
             this.grpTablaDeDatos.TabStop = false;
             this.grpTablaDeDatos.Text = "Tabla de Información de Cruces";
             // 
-            // dataGridView1
+            // dtgTablaDatos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_ControlCruces,
-            this.CodigoCruce,
-            this.TipoServicio,
-            this.Cliente,
-            this.Caja,
-            this.Remision,
-            this.EstatusCobro,
-            this.FechaCarga,
-            this.FechaViaje,
-            this.LugarCarga,
-            this.LugarDescarga,
-            this.PrecioPesos,
-            this.PrecioDolares,
-            this.DocumentoVenta,
-            this.Intermediario,
-            this.Bono,
-            this.Unidad,
-            this.Conductor,
-            this.FechaPagoPedimento,
-            this.FechaVencimientoPedimento,
-            this.Asignada});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 105);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(2140, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgTablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTablaDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId_ControlCruces,
+            this.colCodigoCruce,
+            this.colTipoServicio,
+            this.colCliente,
+            this.colCaja,
+            this.colRemision,
+            this.colEstatusCobro,
+            this.colFechaCarga,
+            this.colFechaEntrega,
+            this.colLugarCarga,
+            this.colLugarDescarga,
+            this.colPrecioPesos,
+            this.colPrecioDolares,
+            this.colIntermediario,
+            this.colUnidad,
+            this.colConductor,
+            this.colFechaPagoPedimento,
+            this.colFechaVencimientoPedimento,
+            this.colAsignada});
+            this.dtgTablaDatos.Location = new System.Drawing.Point(6, 105);
+            this.dtgTablaDatos.Name = "dtgTablaDatos";
+            this.dtgTablaDatos.Size = new System.Drawing.Size(2140, 150);
+            this.dtgTablaDatos.TabIndex = 0;
             // 
-            // Id_ControlCruces
+            // colId_ControlCruces
             // 
-            this.Id_ControlCruces.Frozen = true;
-            this.Id_ControlCruces.HeaderText = "ID - Control de Cruces";
-            this.Id_ControlCruces.Name = "Id_ControlCruces";
-            this.Id_ControlCruces.ReadOnly = true;
+            this.colId_ControlCruces.Frozen = true;
+            this.colId_ControlCruces.HeaderText = "ID - Control de Cruces";
+            this.colId_ControlCruces.Name = "colId_ControlCruces";
+            this.colId_ControlCruces.ReadOnly = true;
             // 
-            // CodigoCruce
+            // colCodigoCruce
             // 
-            this.CodigoCruce.Frozen = true;
-            this.CodigoCruce.HeaderText = "Codigo de Cruce";
-            this.CodigoCruce.Name = "CodigoCruce";
-            this.CodigoCruce.ReadOnly = true;
+            this.colCodigoCruce.Frozen = true;
+            this.colCodigoCruce.HeaderText = "Codigo de Cruce";
+            this.colCodigoCruce.Name = "colCodigoCruce";
+            this.colCodigoCruce.ReadOnly = true;
             // 
-            // TipoServicio
+            // colTipoServicio
             // 
-            this.TipoServicio.Frozen = true;
-            this.TipoServicio.HeaderText = "Tipo de Servicio";
-            this.TipoServicio.Name = "TipoServicio";
-            this.TipoServicio.ReadOnly = true;
+            this.colTipoServicio.Frozen = true;
+            this.colTipoServicio.HeaderText = "Tipo de Servicio";
+            this.colTipoServicio.Name = "colTipoServicio";
+            this.colTipoServicio.ReadOnly = true;
             // 
-            // Cliente
+            // colCliente
             // 
-            this.Cliente.Frozen = true;
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            this.Cliente.ReadOnly = true;
+            this.colCliente.Frozen = true;
+            this.colCliente.HeaderText = "Cliente";
+            this.colCliente.Name = "colCliente";
+            this.colCliente.ReadOnly = true;
             // 
-            // Caja
+            // colCaja
             // 
-            this.Caja.Frozen = true;
-            this.Caja.HeaderText = "Caja";
-            this.Caja.Name = "Caja";
-            this.Caja.ReadOnly = true;
+            this.colCaja.Frozen = true;
+            this.colCaja.HeaderText = "Caja";
+            this.colCaja.Name = "colCaja";
+            this.colCaja.ReadOnly = true;
             // 
-            // Remision
+            // colRemision
             // 
-            this.Remision.Frozen = true;
-            this.Remision.HeaderText = "Remision";
-            this.Remision.Name = "Remision";
-            this.Remision.ReadOnly = true;
+            this.colRemision.Frozen = true;
+            this.colRemision.HeaderText = "Remision/Factura";
+            this.colRemision.Name = "colRemision";
+            this.colRemision.ReadOnly = true;
             // 
-            // EstatusCobro
+            // colEstatusCobro
             // 
-            this.EstatusCobro.Frozen = true;
-            this.EstatusCobro.HeaderText = "Estatus de Cobro";
-            this.EstatusCobro.Name = "EstatusCobro";
-            this.EstatusCobro.ReadOnly = true;
+            this.colEstatusCobro.Frozen = true;
+            this.colEstatusCobro.HeaderText = "Estatus de Cobro";
+            this.colEstatusCobro.Name = "colEstatusCobro";
+            this.colEstatusCobro.ReadOnly = true;
             // 
-            // FechaCarga
+            // colFechaCarga
             // 
-            this.FechaCarga.Frozen = true;
-            this.FechaCarga.HeaderText = "Fecha de Carga";
-            this.FechaCarga.Name = "FechaCarga";
-            this.FechaCarga.ReadOnly = true;
+            this.colFechaCarga.Frozen = true;
+            this.colFechaCarga.HeaderText = "Fecha de Carga";
+            this.colFechaCarga.Name = "colFechaCarga";
+            this.colFechaCarga.ReadOnly = true;
             // 
-            // FechaViaje
+            // colFechaEntrega
             // 
-            this.FechaViaje.Frozen = true;
-            this.FechaViaje.HeaderText = "Fecha de Viaje";
-            this.FechaViaje.Name = "FechaViaje";
-            this.FechaViaje.ReadOnly = true;
+            this.colFechaEntrega.Frozen = true;
+            this.colFechaEntrega.HeaderText = "Fecha de Entrega";
+            this.colFechaEntrega.Name = "colFechaEntrega";
+            this.colFechaEntrega.ReadOnly = true;
             // 
-            // LugarCarga
+            // colLugarCarga
             // 
-            this.LugarCarga.Frozen = true;
-            this.LugarCarga.HeaderText = "Lugar de Carga";
-            this.LugarCarga.Name = "LugarCarga";
-            this.LugarCarga.ReadOnly = true;
+            this.colLugarCarga.Frozen = true;
+            this.colLugarCarga.HeaderText = "Lugar de Carga";
+            this.colLugarCarga.Name = "colLugarCarga";
+            this.colLugarCarga.ReadOnly = true;
             // 
-            // LugarDescarga
+            // colLugarDescarga
             // 
-            this.LugarDescarga.Frozen = true;
-            this.LugarDescarga.HeaderText = "Lugar de Descarga";
-            this.LugarDescarga.Name = "LugarDescarga";
-            this.LugarDescarga.ReadOnly = true;
+            this.colLugarDescarga.Frozen = true;
+            this.colLugarDescarga.HeaderText = "Lugar de Descarga";
+            this.colLugarDescarga.Name = "colLugarDescarga";
+            this.colLugarDescarga.ReadOnly = true;
             // 
-            // PrecioPesos
+            // colPrecioPesos
             // 
-            this.PrecioPesos.Frozen = true;
-            this.PrecioPesos.HeaderText = "Precio Pesos";
-            this.PrecioPesos.Name = "PrecioPesos";
-            this.PrecioPesos.ReadOnly = true;
+            this.colPrecioPesos.Frozen = true;
+            this.colPrecioPesos.HeaderText = "Precio Pesos";
+            this.colPrecioPesos.Name = "colPrecioPesos";
+            this.colPrecioPesos.ReadOnly = true;
             // 
-            // PrecioDolares
+            // colPrecioDolares
             // 
-            this.PrecioDolares.Frozen = true;
-            this.PrecioDolares.HeaderText = "Precio (Dolares)";
-            this.PrecioDolares.Name = "PrecioDolares";
-            this.PrecioDolares.ReadOnly = true;
+            this.colPrecioDolares.Frozen = true;
+            this.colPrecioDolares.HeaderText = "Precio (Dolares)";
+            this.colPrecioDolares.Name = "colPrecioDolares";
+            this.colPrecioDolares.ReadOnly = true;
             // 
-            // DocumentoVenta
+            // colIntermediario
             // 
-            this.DocumentoVenta.Frozen = true;
-            this.DocumentoVenta.HeaderText = "Documento de Venta";
-            this.DocumentoVenta.Name = "DocumentoVenta";
-            this.DocumentoVenta.ReadOnly = true;
+            this.colIntermediario.Frozen = true;
+            this.colIntermediario.HeaderText = "Intermediario";
+            this.colIntermediario.Name = "colIntermediario";
+            this.colIntermediario.ReadOnly = true;
             // 
-            // Intermediario
+            // colUnidad
             // 
-            this.Intermediario.Frozen = true;
-            this.Intermediario.HeaderText = "Intermediario";
-            this.Intermediario.Name = "Intermediario";
-            this.Intermediario.ReadOnly = true;
+            this.colUnidad.Frozen = true;
+            this.colUnidad.HeaderText = "Unidad";
+            this.colUnidad.Name = "colUnidad";
+            this.colUnidad.ReadOnly = true;
             // 
-            // Bono
+            // colConductor
             // 
-            this.Bono.Frozen = true;
-            this.Bono.HeaderText = "Bono";
-            this.Bono.Name = "Bono";
-            this.Bono.ReadOnly = true;
+            this.colConductor.Frozen = true;
+            this.colConductor.HeaderText = "Conductor";
+            this.colConductor.Name = "colConductor";
+            this.colConductor.ReadOnly = true;
             // 
-            // Unidad
+            // colFechaPagoPedimento
             // 
-            this.Unidad.Frozen = true;
-            this.Unidad.HeaderText = "Unidad";
-            this.Unidad.Name = "Unidad";
-            this.Unidad.ReadOnly = true;
+            this.colFechaPagoPedimento.Frozen = true;
+            this.colFechaPagoPedimento.HeaderText = "Fecha de Pago de Pedimento";
+            this.colFechaPagoPedimento.Name = "colFechaPagoPedimento";
+            this.colFechaPagoPedimento.ReadOnly = true;
             // 
-            // Conductor
+            // colFechaVencimientoPedimento
             // 
-            this.Conductor.Frozen = true;
-            this.Conductor.HeaderText = "Conductor";
-            this.Conductor.Name = "Conductor";
-            this.Conductor.ReadOnly = true;
+            this.colFechaVencimientoPedimento.Frozen = true;
+            this.colFechaVencimientoPedimento.HeaderText = "Fecha de Vencimiento de Pedimento";
+            this.colFechaVencimientoPedimento.Name = "colFechaVencimientoPedimento";
+            this.colFechaVencimientoPedimento.ReadOnly = true;
             // 
-            // FechaPagoPedimento
+            // colAsignada
             // 
-            this.FechaPagoPedimento.Frozen = true;
-            this.FechaPagoPedimento.HeaderText = "Fecha de Pago de Pedimento";
-            this.FechaPagoPedimento.Name = "FechaPagoPedimento";
-            this.FechaPagoPedimento.ReadOnly = true;
+            this.colAsignada.Frozen = true;
+            this.colAsignada.HeaderText = "Asignada";
+            this.colAsignada.Name = "colAsignada";
+            this.colAsignada.ReadOnly = true;
             // 
-            // FechaVencimientoPedimento
+            // btnRecargar
             // 
-            this.FechaVencimientoPedimento.Frozen = true;
-            this.FechaVencimientoPedimento.HeaderText = "Fecha de Vencimiento de Pedimento";
-            this.FechaVencimientoPedimento.Name = "FechaVencimientoPedimento";
-            this.FechaVencimientoPedimento.ReadOnly = true;
+            this.btnRecargar.Location = new System.Drawing.Point(1342, 46);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(75, 23);
+            this.btnRecargar.TabIndex = 1;
+            this.btnRecargar.Text = "Recargar";
+            this.btnRecargar.UseVisualStyleBackColor = true;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
-            // Asignada
-            // 
-            this.Asignada.Frozen = true;
-            this.Asignada.HeaderText = "Asignada";
-            this.Asignada.Name = "Asignada";
-            this.Asignada.ReadOnly = true;
-            // 
-            // frmPantallaPrincipal
+            // PantallaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -723,7 +703,7 @@ namespace Formulario_Cruces_JEFF
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.Name = "frmPantallaPrincipal";
+            this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal | Control de Cruces - - Transporte de Carga Jeff | Tabla de Cr" +
     "uces";
@@ -733,7 +713,7 @@ namespace Formulario_Cruces_JEFF
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpTablaDeDatos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -742,8 +722,8 @@ namespace Formulario_Cruces_JEFF
         #endregion
 
         private System.Windows.Forms.GroupBox grpCampoDatos;
-        private System.Windows.Forms.DateTimePicker dtpFechaViaje;
-        private System.Windows.Forms.Label lblFechaViaje;
+        private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
+        private System.Windows.Forms.Label lblFechaEntrega;
         private System.Windows.Forms.TextBox txtEstatusCobro;
         private System.Windows.Forms.TextBox txtTipoServicio;
         private System.Windows.Forms.DateTimePicker dtpFechaCarga;
@@ -764,8 +744,6 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.Label lblLugarCarga;
         private System.Windows.Forms.TextBox txtIntermediario;
         private System.Windows.Forms.Label lblIntermediario;
-        private System.Windows.Forms.TextBox txtDocumentoVenta;
-        private System.Windows.Forms.Label lblDocumentoVenta;
         private System.Windows.Forms.TextBox txtPrecioDolares;
         private System.Windows.Forms.Label lblPrecioDolares;
         private System.Windows.Forms.Label lblAsignada;
@@ -775,7 +753,6 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.DateTimePicker dtpFechaPagoPedimento;
         private System.Windows.Forms.Label lblConductor;
         private System.Windows.Forms.Label lblUnidad;
-        private System.Windows.Forms.Label lblBono;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoYConexionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearBaseDeDatosToolStripMenuItem;
@@ -783,31 +760,31 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.ToolStripMenuItem eliminarBaseDeDatosToolStripMenuItem;
         private System.Windows.Forms.TextBox txtConductor;
         private System.Windows.Forms.TextBox txtUnidad;
-        private System.Windows.Forms.TextBox txtBono;
         private System.Windows.Forms.TextBox txtAsignada;
         private System.Windows.Forms.GroupBox grpTablaDeDatos;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_ControlCruces;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoCruce;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Caja;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Remision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstatusCobro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCarga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaViaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LugarCarga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LugarDescarga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioPesos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioDolares;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocumentoVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Intermediario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Conductor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPagoPedimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimientoPedimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Asignada;
+        private System.Windows.Forms.DataGridView dtgTablaDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId_ControlCruces;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoCruce;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoServicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCaja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRemision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstatusCobro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaCarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLugarCarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLugarDescarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioPesos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioDolares;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIntermediario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colConductor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaPagoPedimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaVencimientoPedimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAsignada;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Button btnRecargar;
     }
 }
 
