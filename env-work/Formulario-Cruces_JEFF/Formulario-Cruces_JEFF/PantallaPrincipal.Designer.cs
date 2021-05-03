@@ -72,6 +72,7 @@ namespace Formulario_Cruces_JEFF
             this.conectarABaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpTablaDeDatos = new System.Windows.Forms.GroupBox();
+            this.btnRecargar = new System.Windows.Forms.Button();
             this.dtgTablaDatos = new System.Windows.Forms.DataGridView();
             this.colId_ControlCruces = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodigoCruce = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,7 +93,7 @@ namespace Formulario_Cruces_JEFF
             this.colFechaPagoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRecargar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.grpCampoDatos.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTablaDeDatos.SuspendLayout();
@@ -101,6 +102,7 @@ namespace Formulario_Cruces_JEFF
             // 
             // grpCampoDatos
             // 
+            this.grpCampoDatos.Controls.Add(this.btnAgregar);
             this.grpCampoDatos.Controls.Add(this.txtAsignada);
             this.grpCampoDatos.Controls.Add(this.txtConductor);
             this.grpCampoDatos.Controls.Add(this.txtUnidad);
@@ -439,6 +441,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.txtCodigoCruce.Location = new System.Drawing.Point(132, 37);
             this.txtCodigoCruce.Name = "txtCodigoCruce";
+            this.txtCodigoCruce.ReadOnly = true;
             this.txtCodigoCruce.Size = new System.Drawing.Size(218, 22);
             this.txtCodigoCruce.TabIndex = 1;
             // 
@@ -520,6 +523,16 @@ namespace Formulario_Cruces_JEFF
             this.grpTablaDeDatos.TabIndex = 2;
             this.grpTablaDeDatos.TabStop = false;
             this.grpTablaDeDatos.Text = "Tabla de Información de Cruces";
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.Location = new System.Drawing.Point(1342, 46);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(75, 23);
+            this.btnRecargar.TabIndex = 1;
+            this.btnRecargar.Text = "Recargar";
+            this.btnRecargar.UseVisualStyleBackColor = true;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // dtgTablaDatos
             // 
@@ -682,15 +695,15 @@ namespace Formulario_Cruces_JEFF
             this.colAsignada.Name = "colAsignada";
             this.colAsignada.ReadOnly = true;
             // 
-            // btnRecargar
+            // btnAgregar
             // 
-            this.btnRecargar.Location = new System.Drawing.Point(1342, 46);
-            this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(75, 23);
-            this.btnRecargar.TabIndex = 1;
-            this.btnRecargar.Text = "Recargar";
-            this.btnRecargar.UseVisualStyleBackColor = true;
-            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            this.btnAgregar.Location = new System.Drawing.Point(713, 287);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 39;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // PantallaPrincipal
             // 
@@ -785,6 +798,7 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button btnRecargar;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 

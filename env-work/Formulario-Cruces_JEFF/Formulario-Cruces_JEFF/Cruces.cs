@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Formulario_Cruces_JEFF
 {
-    public class Cruces
+    public class Cruce
     {
         private int _intCodigoCruce;
 

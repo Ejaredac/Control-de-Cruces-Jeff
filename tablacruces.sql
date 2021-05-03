@@ -1,5 +1,5 @@
 use crucesjeffbd;
-CREATE TABLE TablaCruces (
+CREATE TABLE if not exists TablaCruces (
     id_CodigoCruces INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     TipoServicio VARCHAR(50),
     Cliente VARCHAR(40),
@@ -18,4 +18,4 @@ CREATE TABLE TablaCruces (
     FechaPagoPedimento DATETIME,
     FechaVencimientoPedimento DATETIME,
     Asignada VARCHAR(2)
-);
+)

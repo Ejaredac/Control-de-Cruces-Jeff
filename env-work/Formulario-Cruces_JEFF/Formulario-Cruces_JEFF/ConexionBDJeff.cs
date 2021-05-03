@@ -65,11 +65,37 @@ namespace Formulario_Cruces_JEFF
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd;
             string s0;
+            string s1;
             try
             {
                 conn.Open();
                 s0 = "CREATE SCHEMA IF NOT EXISTS crucesjeffbd";
+                s1 = @"use crucesjeffbd;
+CREATE TABLE if not exists TablaCruces (
+    id_CodigoCruces INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    TipoServicio VARCHAR(50),
+    Cliente VARCHAR(40),
+    Caja VARCHAR(30),
+    Remision VARCHAR(45),
+    EstatusCobro VARCHAR(25),
+    FechaCarga DATETIME,
+    FechaEntrega DATETIME,
+    LugarCarga VARCHAR(60),
+    LugarDescarga VARCHAR(60),
+    PrecioPesos DOUBLE,
+    PrecioDolares DOUBLE,
+    Intermediario VARCHAR(45),
+    Unidad INT,
+    Conductor VARCHAR(45),
+    FechaPagoPedimento DATETIME,
+    FechaVencimientoPedimento DATETIME,
+    Asignada VARCHAR(2)
+)";
                 cmd = new MySqlCommand(s0, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                conn.Open();
+                cmd = new MySqlCommand(s1, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 dele("Base de Datos Creada exitosamente");
@@ -113,9 +139,9 @@ namespace Formulario_Cruces_JEFF
             }
 
         }
-        public List<Cruces> ObtenerListaCruces(delegMensajeExcepcionador dele)
+        public List<Cruce> ObtenerListaCruces(delegMensajeExcepcionador dele)
         {
-            List<Cruces> listaCruces = new List<Cruces>();
+            List<Cruce> listaCruces = new List<Cruce>();
             MySqlDataReader msdrLector = null;
             string strDatos = "";
             try
@@ -127,7 +153,7 @@ namespace Formulario_Cruces_JEFF
                 msdrLector = mcmComando.ExecuteReader();
                 while (msdrLector.Read())
                 {
-                    Cruces cruceNuevo = new Cruces();
+                    Cruce cruceNuevo = new Cruce();
                     cruceNuevo.CodigoCruce = msdrLector.GetInt32(0);
                     cruceNuevo.TipoServicio = msdrLector.GetString(1);
                     cruceNuevo.Cliente = msdrLector.GetString(2);
@@ -161,6 +187,30 @@ namespace Formulario_Cruces_JEFF
 
             }
             return listaCruces;
+        }
+
+        public Cruce AgregarCruce(Cruce agCruce, delegMensajeExcepcionador dele)
+        {
+
+            try
+            {
+                string strAdicion = $"INSERT INTO crucesjeffbd.tablacruces(id_CodigoCruces,TipoServicio,Cliente,Caja,Remision,EstatusCobro,FechaCarga,FechaEntrega,LugarCarga,LugarDescarga,PrecioPesos,PrecioDolares,Intermediario,Unidad,Conductor,FechaPagoPedimento,FechaVencimientoPedimento,Asignada)" +
+                $"values(null,'{agCruce.TipoServicio}','{agCruce.Cliente}','{agCruce.Caja}','{agCruce.Remision}','{agCruce.EstatusCobro}','{agCruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.LugarCarga}','{agCruce.LugarDescarga}','{agCruce.PrecioPesos}','{agCruce.PrecioDolares}','{agCruce.Intermediario}','{agCruce.Unidad}','{agCruce.Conductor}','{agCruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.Asignada}')";
+                MySqlCommand mcmComando = new MySqlCommand(strAdicion);
+                mcmComando.Connection = ConexionRemota;
+                ConexionRemota.Open();
+                mcmComando.ExecuteNonQuery();
+            }
+            catch (MySqlException mex)
+            {
+                dele(mex.Message);
+
+            }
+            finally
+            {
+                ConexionRemota.Close();
+            }
+            return agCruce;
         }
     }
 }
