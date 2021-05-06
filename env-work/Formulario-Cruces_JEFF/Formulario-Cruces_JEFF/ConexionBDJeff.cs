@@ -85,7 +85,7 @@ CREATE TABLE if not exists TablaCruces (
     PrecioPesos DOUBLE,
     PrecioDolares DOUBLE,
     Intermediario VARCHAR(45),
-    Unidad INT,
+    Unidad VARCHAR(4),
     Conductor VARCHAR(45),
     FechaPagoPedimento DATETIME,
     FechaVencimientoPedimento DATETIME,
@@ -167,7 +167,7 @@ CREATE TABLE if not exists TablaCruces (
                     cruceNuevo.PrecioPesos = msdrLector.GetDouble(10);
                     cruceNuevo.PrecioDolares = msdrLector.GetDouble(11);
                     cruceNuevo.Intermediario = msdrLector.GetString(12);
-                    cruceNuevo.Unidad = msdrLector.GetInt32(13);
+                    cruceNuevo.Unidad = msdrLector.GetString(13);
                     cruceNuevo.Conductor = msdrLector.GetString(14);
                     cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
                     cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
@@ -216,7 +216,7 @@ CREATE TABLE if not exists TablaCruces (
                     cruceNuevo.PrecioPesos = msdrLector.GetDouble(10);
                     cruceNuevo.PrecioDolares = msdrLector.GetDouble(11);
                     cruceNuevo.Intermediario = msdrLector.GetString(12);
-                    cruceNuevo.Unidad = msdrLector.GetInt32(13);
+                    cruceNuevo.Unidad = msdrLector.GetString(13);
                     cruceNuevo.Conductor = msdrLector.GetString(14);
                     cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
                     cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
@@ -302,6 +302,33 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
                 ConexionRemota.Close();
             }
 
+        }
+        public void EliminarBaseDeDatos(delegMensajeExcepcionador dele)
+        {
+            //server=localhost;user=root;port=3306;password=******
+            string connStr = "server=localhost;user=root;port=3306;password=112601";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlCommand cmd;
+            string s0;
+            string s1;
+            try
+            {
+
+                //cmd = new MySqlCommand(s0, conn);
+                //cmd.ExecuteNonQuery();
+                //conn.Close();
+                s1 = "drop schema if exists crucesjeffbd";
+                conn.Open();
+                cmd = new MySqlCommand(s1, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                dele("Base de Datos Creada exitosamente");
+            }
+            catch (System.Exception ex)
+            {
+
+                
+            }
         }
     }
 }

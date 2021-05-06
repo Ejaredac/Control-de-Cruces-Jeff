@@ -97,9 +97,9 @@ namespace Formulario_Cruces_JEFF
             get { return _strIntermediario; }
             set { _strIntermediario = value; }
         }
-        private int _intUnidad;
+        private string _intUnidad;
 
-        public int Unidad
+        public string Unidad
         {
             get { return _intUnidad; }
             set { _intUnidad = value; }

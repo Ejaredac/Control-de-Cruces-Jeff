@@ -44,7 +44,7 @@ namespace Formulario_Cruces_JEFF
             dtgTablaDatos.Rows.Clear();
             foreach (Cruce cruz in lista)
             {
-                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, cruz.CodigoCruce, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("f"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos, cruz.PrecioDolares, cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada);
+                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, cruz.CodigoCruce, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("f"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada);
             }
         }
 
@@ -65,7 +65,7 @@ namespace Formulario_Cruces_JEFF
                 nuevoCruce.PrecioPesos = double.Parse(txtPrecioPesos.Text);
                 nuevoCruce.PrecioDolares = double.Parse(txtPrecioDolares.Text);
                 nuevoCruce.Intermediario = txtIntermediario.Text;
-                nuevoCruce.Unidad = int.Parse(txtUnidad.Text);
+                nuevoCruce.Unidad = cboUnidades.Text;
                 nuevoCruce.Conductor = txtConductor.Text;
                 nuevoCruce.FechaPagoPedimento = dtpFechaPagoPedimento.Value;
                 nuevoCruce.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
@@ -83,7 +83,7 @@ namespace Formulario_Cruces_JEFF
             {
                 MessageBox.Show(ex.Message);
             }
-
+            VaciarCampos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -98,6 +98,7 @@ namespace Formulario_Cruces_JEFF
             {
                 MessageBox.Show("No se elimino ningun registro");
             }
+            VaciarCampos();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -139,7 +140,7 @@ where id_CodigoCruces = " + num;
                     cruceNuevo.PrecioPesos = msdrLector.GetDouble(10);
                     cruceNuevo.PrecioDolares = msdrLector.GetDouble(11);
                     cruceNuevo.Intermediario = msdrLector.GetString(12);
-                    cruceNuevo.Unidad = msdrLector.GetInt32(13);
+                    cruceNuevo.Unidad = msdrLector.GetString(13);
                     cruceNuevo.Conductor = msdrLector.GetString(14);
                     cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
                     cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
@@ -179,7 +180,7 @@ where id_CodigoCruces = " + num;
                 txtPrecioPesos.Text = scru.PrecioPesos.ToString();
                 txtRemision.Text = scru.Remision;
                 txtTipoServicio.Text = scru.TipoServicio;
-                txtUnidad.Text = scru.Unidad.ToString();
+                cboUnidades.Text = scru.Unidad.ToString();
             }
             catch (Exception ex)
             {
@@ -206,7 +207,7 @@ where id_CodigoCruces = " + num;
                 edCruce.PrecioPesos = double.Parse(txtPrecioPesos.Text);
                 edCruce.PrecioDolares = double.Parse(txtPrecioDolares.Text);
                 edCruce.Intermediario = txtIntermediario.Text;
-                edCruce.Unidad = int.Parse(txtUnidad.Text);
+                edCruce.Unidad = cboUnidades.Text;
                 edCruce.Conductor = txtConductor.Text;
                 edCruce.FechaPagoPedimento = dtpFechaPagoPedimento.Value;
                 edCruce.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
@@ -219,6 +220,47 @@ where id_CodigoCruces = " + num;
             {
                 MessageBox.Show("No se edito ningun registro");
             }
+            VaciarCampos();
+        }
+
+        private void eliminarBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ne.EliminarBaseDeDatos((s)=>MessageBox.Show(s));
+                MessageBox.Show("Base de datos eliminada correctamente");
+            }
+            catch (MySqlException mex)
+            {
+
+                MessageBox.Show(mex.Message);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void VaciarCampos()
+        {
+            foreach (Control t in grpCampoDatos.Controls)
+            {
+
+                if (t is TextBox)
+                {
+                    t.Text = "";
+
+                }
+                if (t is DateTimePicker)
+                {
+
+                }
+            }
+            dtpFechaCarga.Value = DateTime.Now;
+            dtpFechaEntrega.Value = DateTime.Now;
+            dtpFechaPagoPedimento.Value = DateTime.Now;
+            dtpFechaVencimientoPedimento.Value = DateTime.Now;
+
+            cboUnidades.SelectedIndex = 0;
         }
     }
 }
