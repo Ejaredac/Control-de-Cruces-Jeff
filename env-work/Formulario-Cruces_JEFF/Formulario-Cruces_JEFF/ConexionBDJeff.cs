@@ -188,6 +188,55 @@ CREATE TABLE if not exists TablaCruces (
             }
             return listaCruces;
         }
+        public List<Cruce> ObtenerListaCrucesBuscados(delegMensajeExcepcionador dele, string b)
+        {
+            List<Cruce> listaCruces = new List<Cruce>();
+            MySqlDataReader msdrLector = null;
+            string strDatos = "";
+            try
+            {
+                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"id_CodigoCruces like '{b}%' or TipoServicio like '{b}%' or " + $"Cliente like '{b}%' or " + $"Caja like '{b}%' or " + $"Remision like '{b}%' or " + $"EstatusCobro like '{b}%' or " + $"FechaCarga like '{b}%' or " + $"FechaEntrega like '{b}%' or  " + $"LugarCarga like '{b}%' or " + $"LugarDescarga like '{b}%' or " + $"PrecioPesos like '{b}%' or  " + $"PrecioDolares like '{b}%' or " + $"Intermediario like '{b}%' or " + $"Unidad like '{b}%' or " + $"Conductor like '{b}%' or " + $"FechaPagoPedimento like '{b}%' or " + $"FechaVencimientoPedimento like '{b}%' or " + $"Asignada like '{b}%'"; ;
+                MySqlCommand mcmComando = new MySqlCommand(strConsulta);
+                mcmComando.Connection = ConexionRemota;
+                ConexionRemota.Open();
+                msdrLector = mcmComando.ExecuteReader();
+                while (msdrLector.Read())
+                {
+                    Cruce cruceNuevo = new Cruce();
+                    cruceNuevo.CodigoCruce = msdrLector.GetInt32(0);
+                    cruceNuevo.TipoServicio = msdrLector.GetString(1);
+                    cruceNuevo.Cliente = msdrLector.GetString(2);
+                    cruceNuevo.Caja = msdrLector.GetString(3);
+                    cruceNuevo.Remision = msdrLector.GetString(4);
+                    cruceNuevo.EstatusCobro = msdrLector.GetString(5);
+                    cruceNuevo.FechaCarga = msdrLector.GetDateTime(6);
+                    cruceNuevo.FechaEntrega = msdrLector.GetDateTime(7);
+                    cruceNuevo.LugarCarga = msdrLector.GetString(8);
+                    cruceNuevo.LugarDescarga = msdrLector.GetString(9);
+                    cruceNuevo.PrecioPesos = msdrLector.GetDouble(10);
+                    cruceNuevo.PrecioDolares = msdrLector.GetDouble(11);
+                    cruceNuevo.Intermediario = msdrLector.GetString(12);
+                    cruceNuevo.Unidad = msdrLector.GetInt32(13);
+                    cruceNuevo.Conductor = msdrLector.GetString(14);
+                    cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
+                    cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
+                    cruceNuevo.Asignada = msdrLector.GetString(17);
+                    listaCruces.Add(cruceNuevo);
+                }
+                return listaCruces;
+            }
+            catch (MySqlException mex)
+            {
+
+                dele(mex.Message);
+            }
+            finally
+            {
+                ConexionRemota.Close();
+
+            }
+            return listaCruces;
+        }
 
         public Cruce AgregarCruce(Cruce agCruce, delegMensajeExcepcionador dele)
         {
@@ -211,6 +260,48 @@ CREATE TABLE if not exists TablaCruces (
                 ConexionRemota.Close();
             }
             return agCruce;
+        }
+        public void Eliminar(Cruce elicruce, delegMensajeExcepcionador dele)
+        {
+            string strEliminar = @"delete from crucesjeffbd.tablacruces
+where id_CodigoCruces = " + elicruce.CodigoCruce;
+            try
+            {
+                MySqlCommand mcmComando = new MySqlCommand(strEliminar);
+                mcmComando.Connection = ConexionRemota;
+                ConexionRemota.Open();
+                mcmComando.ExecuteNonQuery();
+            }
+            catch (MySqlException mex)
+            {
+                dele(mex.Message);
+
+            }
+            finally
+            {
+                ConexionRemota.Close();
+            }
+        }
+        public void Editar(Cruce edcruce, delegMensajeExcepcionador dele)
+        {
+            string strEditar = $"UPDATE crucesjeffbd.tablacruces set TipoServicio = '{edcruce.TipoServicio}', Cliente = '{edcruce.Cliente}', Caja = '{edcruce.Caja}', Remision = '{edcruce.Remision}', EstatusCobro = '{edcruce.EstatusCobro}', FechaCarga = '{edcruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}', FechaEntrega = '{edcruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}',LugarCarga = '{edcruce.LugarCarga}',LugarDescarga = '{edcruce.LugarDescarga}', PrecioPesos = '{edcruce.PrecioPesos}', PrecioDolares = '{edcruce.PrecioDolares}', Intermediario = '{edcruce.Intermediario}', Unidad = '{edcruce.Unidad}' where id_CodigoCruces = '{edcruce.CodigoCruce}'";
+            try
+            {
+                MySqlCommand mcmComando = new MySqlCommand(strEditar);
+                mcmComando.Connection = ConexionRemota;
+                ConexionRemota.Open();
+                mcmComando.ExecuteNonQuery();
+            }
+            catch (MySqlException mex)
+            {
+                dele(mex.Message);
+
+            }
+            finally
+            {
+                ConexionRemota.Close();
+            }
+
         }
     }
 }

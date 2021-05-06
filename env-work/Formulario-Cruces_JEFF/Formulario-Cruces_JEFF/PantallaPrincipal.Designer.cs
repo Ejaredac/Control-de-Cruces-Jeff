@@ -30,6 +30,7 @@ namespace Formulario_Cruces_JEFF
         private void InitializeComponent()
         {
             this.grpCampoDatos = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.txtAsignada = new System.Windows.Forms.TextBox();
             this.txtConductor = new System.Windows.Forms.TextBox();
             this.txtUnidad = new System.Windows.Forms.TextBox();
@@ -93,7 +94,10 @@ namespace Formulario_Cruces_JEFF
             this.colFechaPagoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.grpCampoDatos.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTablaDeDatos.SuspendLayout();
@@ -102,6 +106,8 @@ namespace Formulario_Cruces_JEFF
             // 
             // grpCampoDatos
             // 
+            this.grpCampoDatos.Controls.Add(this.btnEditar);
+            this.grpCampoDatos.Controls.Add(this.btnEliminar);
             this.grpCampoDatos.Controls.Add(this.btnAgregar);
             this.grpCampoDatos.Controls.Add(this.txtAsignada);
             this.grpCampoDatos.Controls.Add(this.txtConductor);
@@ -145,6 +151,16 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.TabIndex = 0;
             this.grpCampoDatos.TabStop = false;
             this.grpCampoDatos.Text = "Campo de Datos";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(713, 287);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 39;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtAsignada
             // 
@@ -439,6 +455,7 @@ namespace Formulario_Cruces_JEFF
             // 
             // txtCodigoCruce
             // 
+            this.txtCodigoCruce.Enabled = false;
             this.txtCodigoCruce.Location = new System.Drawing.Point(132, 37);
             this.txtCodigoCruce.Name = "txtCodigoCruce";
             this.txtCodigoCruce.ReadOnly = true;
@@ -515,6 +532,8 @@ namespace Formulario_Cruces_JEFF
             // 
             // grpTablaDeDatos
             // 
+            this.grpTablaDeDatos.Controls.Add(this.btnBuscar);
+            this.grpTablaDeDatos.Controls.Add(this.txtBuscar);
             this.grpTablaDeDatos.Controls.Add(this.btnRecargar);
             this.grpTablaDeDatos.Controls.Add(this.dtgTablaDatos);
             this.grpTablaDeDatos.Location = new System.Drawing.Point(13, 383);
@@ -561,6 +580,7 @@ namespace Formulario_Cruces_JEFF
             this.dtgTablaDatos.Name = "dtgTablaDatos";
             this.dtgTablaDatos.Size = new System.Drawing.Size(2140, 150);
             this.dtgTablaDatos.TabIndex = 0;
+            this.dtgTablaDatos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgTablaDatos_CellMouseClick);
             // 
             // colId_ControlCruces
             // 
@@ -695,15 +715,42 @@ namespace Formulario_Cruces_JEFF
             this.colAsignada.Name = "colAsignada";
             this.colAsignada.ReadOnly = true;
             // 
-            // btnAgregar
+            // btnEliminar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(713, 287);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 39;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnEliminar.Location = new System.Drawing.Point(796, 286);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 40;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(895, 285);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 41;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(42, 46);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(514, 22);
+            this.txtBuscar.TabIndex = 2;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(574, 45);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // PantallaPrincipal
             // 
@@ -726,6 +773,7 @@ namespace Formulario_Cruces_JEFF
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpTablaDeDatos.ResumeLayout(false);
+            this.grpTablaDeDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -799,6 +847,10 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button btnRecargar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
 
