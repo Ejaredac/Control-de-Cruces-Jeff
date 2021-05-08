@@ -29,6 +29,7 @@ namespace Formulario_Cruces_JEFF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConexionRemotaFormulario));
             this.lblBDA = new System.Windows.Forms.Label();
             this.lblPuerto = new System.Windows.Forms.Label();
             this.lblContrasena = new System.Windows.Forms.Label();
@@ -108,6 +109,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.txtContraseña.Location = new System.Drawing.Point(125, 91);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(124, 20);
             this.txtContraseña.TabIndex = 1;
             this.txtContraseña.Text = "INseCt0z26";
@@ -116,6 +118,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.txtUsuario.Location = new System.Drawing.Point(115, 124);
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PasswordChar = '*';
             this.txtUsuario.Size = new System.Drawing.Size(124, 20);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.Text = "Nano_Excalibur";
@@ -165,6 +168,7 @@ namespace Formulario_Cruces_JEFF
             this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.lblPuerto);
             this.Controls.Add(this.lblBDA);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConexionRemotaFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conexion remota";

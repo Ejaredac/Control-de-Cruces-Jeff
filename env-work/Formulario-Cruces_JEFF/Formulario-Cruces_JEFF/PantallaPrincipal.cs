@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Windows.Forms;
 namespace Formulario_Cruces_JEFF
 {
@@ -50,6 +51,7 @@ namespace Formulario_Cruces_JEFF
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 Cruce nuevoCruce = new Cruce();
@@ -69,7 +71,7 @@ namespace Formulario_Cruces_JEFF
                 nuevoCruce.Conductor = txtConductor.Text;
                 nuevoCruce.FechaPagoPedimento = dtpFechaPagoPedimento.Value;
                 nuevoCruce.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
-                nuevoCruce.Asignada = txtAsignada.Text;
+                nuevoCruce.Asignada = cboAsignada.Text;
                 ne.AgregarCruce(nuevoCruce, (s) => MessageBox.Show(s));
                 Recargar();
                 MessageBox.Show("Se ha agregado un nuevo cruce");
@@ -90,9 +92,19 @@ namespace Formulario_Cruces_JEFF
         {
             if (MessageBox.Show("¿Desea elminar el registro?", "ELIMINACION", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                ne.Eliminar(scru, (a) => MessageBox.Show(a));
-                Recargar();
-                MessageBox.Show("Se elimino el registro seleccionado");
+                Cont log = new Cont();
+                ContrasenaPag con = new ContrasenaPag(ref log);
+                con.ShowDialog();
+                if (log.Logrado)
+                {
+                    ne.Eliminar(scru, (a) => MessageBox.Show(a));
+                    Recargar();
+                    MessageBox.Show("Se elimino el registro seleccionado");
+                }
+                else
+                {
+                    MessageBox.Show("No se accedio correctamente con la contraseña");
+                }
             }
             else
             {
@@ -121,7 +133,7 @@ namespace Formulario_Cruces_JEFF
                 int num = int.Parse(dtgTablaDatos.Rows[ind].Cells[0].Value.ToString());
                 string strSelec = @"SELECT * FROM crucesjeffbd.tablacruces
 where id_CodigoCruces = " + num;
-                MySqlCommand mcmComando = new MySqlCommand(strSelec,ne.ConexionRemota);
+                MySqlCommand mcmComando = new MySqlCommand(strSelec, ne.ConexionRemota);
                 ne.ConexionRemota.Open();
                 msdrLector = mcmComando.ExecuteReader();
                 if (msdrLector.Read())
@@ -155,7 +167,7 @@ where id_CodigoCruces = " + num;
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
+
             }
             finally
             {
@@ -167,7 +179,7 @@ where id_CodigoCruces = " + num;
                 dtpFechaEntrega.Value = scru.FechaEntrega;
                 dtpFechaPagoPedimento.Value = scru.FechaPagoPedimento;
                 dtpFechaVencimientoPedimento.Value = scru.FechaVencimientoPedimento;
-                txtAsignada.Text = scru.Asignada;
+                cboAsignada.Text = scru.Asignada;
                 txtCaja.Text = scru.Caja;
                 txtCliente.Text = scru.Cliente;
                 txtCodigoCruce.Text = scru.CodigoCruce.ToString();
@@ -211,7 +223,7 @@ where id_CodigoCruces = " + num;
                 edCruce.Conductor = txtConductor.Text;
                 edCruce.FechaPagoPedimento = dtpFechaPagoPedimento.Value;
                 edCruce.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
-                edCruce.Asignada = txtAsignada.Text;
+                edCruce.Asignada = cboAsignada.Text;
                 ne.Editar(edCruce, (a) => MessageBox.Show(a));
                 Recargar();
                 MessageBox.Show("Se edito el registro seleccionado");
@@ -225,20 +237,35 @@ where id_CodigoCruces = " + num;
 
         private void eliminarBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("¿Estas seguro de que deceas eliminar la base de datos?", "ATENCION", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                ne.EliminarBaseDeDatos((s)=>MessageBox.Show(s));
-                MessageBox.Show("Base de datos eliminada correctamente");
-            }
-            catch (MySqlException mex)
-            {
+                Cont log = new Cont();
+                ContrasenaPag con = new ContrasenaPag(ref log);
+                con.ShowDialog();
+                if (log.Logrado)
+                {
+                    try
+                    {
+                        ne.EliminarBaseDeDatos((s) => MessageBox.Show(s));
+                        MessageBox.Show("Base de datos eliminada correctamente");
+                    }
+                    catch (MySqlException mex)
+                    {
 
-                MessageBox.Show(mex.Message);
+                        MessageBox.Show(mex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se accedio correctamente con la contraseña");
+                }
+
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
         }
         void VaciarCampos()
         {
@@ -261,6 +288,39 @@ where id_CodigoCruces = " + num;
             dtpFechaVencimientoPedimento.Value = DateTime.Now;
 
             cboUnidades.SelectedIndex = 0;
+        }
+
+        private void txtPrecioPesos_TextChanged(object sender, EventArgs e)
+        {
+            txtPrecioDolares.Text = "0";
+
+        }
+
+        private void txtPrecioDolares_TextChanged(object sender, EventArgs e)
+        {
+            txtPrecioPesos.Text = "0";
+        }
+
+        private void obtenerDireccionDeEsteEquipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("La direccion de esta maquina es: " + ObtenerIP());
+        }
+
+        string ObtenerIP()
+        {
+            string hostName = Dns.GetHostName();
+            string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
+            return myIP;
+        }
+
+        private void PantallaPrincipal_Load(object sender, EventArgs e)
+        {
+
+            ConexionRemotaFormulario entradaCon = new ConexionRemotaFormulario(ref ne);
+
+            entradaCon.ShowDialog();
+
+            ne.EstablecerConexionServidorRemoto(ne.Usuario, ne.Port, ne.Contrasena, ne.Servidor, (s) => MessageBox.Show(s), ne.Database);
         }
     }
 }

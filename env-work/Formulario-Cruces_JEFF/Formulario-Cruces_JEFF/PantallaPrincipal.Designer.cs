@@ -29,11 +29,13 @@ namespace Formulario_Cruces_JEFF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
             this.grpCampoDatos = new System.Windows.Forms.GroupBox();
+            this.cboAsignada = new System.Windows.Forms.ComboBox();
+            this.cboUnidades = new System.Windows.Forms.ComboBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtAsignada = new System.Windows.Forms.TextBox();
             this.txtConductor = new System.Windows.Forms.TextBox();
             this.lblAsignada = new System.Windows.Forms.Label();
             this.dtpFechaVencimientoPedimento = new System.Windows.Forms.DateTimePicker();
@@ -73,6 +75,8 @@ namespace Formulario_Cruces_JEFF
             this.crearBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conectarABaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.direccionYVistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.obtenerDireccionDeEsteEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpTablaDeDatos = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -97,20 +101,21 @@ namespace Formulario_Cruces_JEFF
             this.colFechaPagoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboUnidades = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpCampoDatos.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTablaDeDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpCampoDatos
             // 
+            this.grpCampoDatos.Controls.Add(this.cboAsignada);
             this.grpCampoDatos.Controls.Add(this.cboUnidades);
             this.grpCampoDatos.Controls.Add(this.btnEditar);
             this.grpCampoDatos.Controls.Add(this.btnEliminar);
             this.grpCampoDatos.Controls.Add(this.btnAgregar);
-            this.grpCampoDatos.Controls.Add(this.txtAsignada);
             this.grpCampoDatos.Controls.Add(this.txtConductor);
             this.grpCampoDatos.Controls.Add(this.lblAsignada);
             this.grpCampoDatos.Controls.Add(this.dtpFechaVencimientoPedimento);
@@ -152,6 +157,40 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.TabStop = false;
             this.grpCampoDatos.Text = "Campo de Datos";
             // 
+            // cboAsignada
+            // 
+            this.cboAsignada.FormattingEnabled = true;
+            this.cboAsignada.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
+            this.cboAsignada.Location = new System.Drawing.Point(796, 35);
+            this.cboAsignada.Name = "cboAsignada";
+            this.cboAsignada.Size = new System.Drawing.Size(121, 21);
+            this.cboAsignada.TabIndex = 43;
+            // 
+            // cboUnidades
+            // 
+            this.cboUnidades.FormattingEnabled = true;
+            this.cboUnidades.Items.AddRange(new object[] {
+            "001",
+            "002",
+            "003",
+            "004",
+            "005",
+            "006",
+            "007",
+            "008",
+            "009",
+            "010",
+            "011",
+            "012",
+            "013",
+            "014"});
+            this.cboUnidades.Location = new System.Drawing.Point(796, 83);
+            this.cboUnidades.Name = "cboUnidades";
+            this.cboUnidades.Size = new System.Drawing.Size(121, 21);
+            this.cboUnidades.TabIndex = 42;
+            // 
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(895, 285);
@@ -181,13 +220,6 @@ namespace Formulario_Cruces_JEFF
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // txtAsignada
-            // 
-            this.txtAsignada.Location = new System.Drawing.Point(796, 37);
-            this.txtAsignada.Name = "txtAsignada";
-            this.txtAsignada.Size = new System.Drawing.Size(100, 22);
-            this.txtAsignada.TabIndex = 38;
             // 
             // txtConductor
             // 
@@ -307,6 +339,7 @@ namespace Formulario_Cruces_JEFF
             this.txtPrecioDolares.Name = "txtPrecioDolares";
             this.txtPrecioDolares.Size = new System.Drawing.Size(149, 22);
             this.txtPrecioDolares.TabIndex = 22;
+            this.txtPrecioDolares.TextChanged += new System.EventHandler(this.txtPrecioDolares_TextChanged);
             // 
             // lblPrecioDolares
             // 
@@ -324,6 +357,7 @@ namespace Formulario_Cruces_JEFF
             this.txtPrecioPesos.Name = "txtPrecioPesos";
             this.txtPrecioPesos.Size = new System.Drawing.Size(149, 22);
             this.txtPrecioPesos.TabIndex = 20;
+            this.txtPrecioPesos.TextChanged += new System.EventHandler(this.txtPrecioPesos_TextChanged);
             // 
             // lblPrecioPesos
             // 
@@ -506,7 +540,8 @@ namespace Formulario_Cruces_JEFF
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoYConexionToolStripMenuItem});
+            this.archivoYConexionToolStripMenuItem,
+            this.direccionYVistaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(2526, 24);
@@ -543,6 +578,21 @@ namespace Formulario_Cruces_JEFF
             this.eliminarBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.eliminarBaseDeDatosToolStripMenuItem.Text = "Eliminar Base de Datos Local";
             this.eliminarBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.eliminarBaseDeDatosToolStripMenuItem_Click);
+            // 
+            // direccionYVistaToolStripMenuItem
+            // 
+            this.direccionYVistaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.obtenerDireccionDeEsteEquipoToolStripMenuItem});
+            this.direccionYVistaToolStripMenuItem.Name = "direccionYVistaToolStripMenuItem";
+            this.direccionYVistaToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.direccionYVistaToolStripMenuItem.Text = "Direccion y Vista";
+            // 
+            // obtenerDireccionDeEsteEquipoToolStripMenuItem
+            // 
+            this.obtenerDireccionDeEsteEquipoToolStripMenuItem.Name = "obtenerDireccionDeEsteEquipoToolStripMenuItem";
+            this.obtenerDireccionDeEsteEquipoToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.obtenerDireccionDeEsteEquipoToolStripMenuItem.Text = "Obtener direccion de este equipo";
+            this.obtenerDireccionDeEsteEquipoToolStripMenuItem.Click += new System.EventHandler(this.obtenerDireccionDeEsteEquipoToolStripMenuItem_Click);
             // 
             // grpTablaDeDatos
             // 
@@ -746,28 +796,15 @@ namespace Formulario_Cruces_JEFF
             this.colAsignada.Name = "colAsignada";
             this.colAsignada.ReadOnly = true;
             // 
-            // cboUnidades
+            // pictureBox1
             // 
-            this.cboUnidades.FormattingEnabled = true;
-            this.cboUnidades.Items.AddRange(new object[] {
-            "001",
-            "002",
-            "003",
-            "004",
-            "005",
-            "006",
-            "007",
-            "008",
-            "009",
-            "010",
-            "011",
-            "012",
-            "013",
-            "014"});
-            this.cboUnidades.Location = new System.Drawing.Point(796, 83);
-            this.cboUnidades.Name = "cboUnidades";
-            this.cboUnidades.Size = new System.Drawing.Size(121, 21);
-            this.cboUnidades.TabIndex = 42;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1254, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // PantallaPrincipal
             // 
@@ -775,16 +812,19 @@ namespace Formulario_Cruces_JEFF
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(2526, 720);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpTablaDeDatos);
             this.Controls.Add(this.grpCampoDatos);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal | Control de Cruces - - Transporte de Carga Jeff | Tabla de Cr" +
     "uces";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.PantallaPrincipal_Load);
             this.grpCampoDatos.ResumeLayout(false);
             this.grpCampoDatos.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -792,6 +832,7 @@ namespace Formulario_Cruces_JEFF
             this.grpTablaDeDatos.ResumeLayout(false);
             this.grpTablaDeDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -837,7 +878,6 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.ToolStripMenuItem conectarABaseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarBaseDeDatosToolStripMenuItem;
         private System.Windows.Forms.TextBox txtConductor;
-        private System.Windows.Forms.TextBox txtAsignada;
         private System.Windows.Forms.GroupBox grpTablaDeDatos;
         private System.Windows.Forms.DataGridView dtgTablaDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId_ControlCruces;
@@ -868,6 +908,10 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cboUnidades;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cboAsignada;
+        private System.Windows.Forms.ToolStripMenuItem direccionYVistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obtenerDireccionDeEsteEquipoToolStripMenuItem;
     }
 }
 

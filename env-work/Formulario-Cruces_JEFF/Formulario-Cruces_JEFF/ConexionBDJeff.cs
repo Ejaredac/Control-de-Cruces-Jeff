@@ -326,7 +326,7 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
             }
             catch (System.Exception ex)
             {
-
+                dele(ex.Message);
                 
             }
         }
