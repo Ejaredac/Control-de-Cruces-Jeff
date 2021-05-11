@@ -43,9 +43,11 @@ namespace Formulario_Cruces_JEFF
         {
             List<Cruce> lista = ne.ObtenerListaCruces((s) => MessageBox.Show(s));
             dtgTablaDatos.Rows.Clear();
+            int i = 1;
             foreach (Cruce cruz in lista)
             {
-                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, cruz.CodigoCruce, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("f"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada);
+                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaEntrega.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaVencimientoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.Asignada);
+                i++;
             }
         }
 
@@ -59,7 +61,7 @@ namespace Formulario_Cruces_JEFF
                 nuevoCruce.Cliente = txtCliente.Text;
                 nuevoCruce.Caja = txtCaja.Text;
                 nuevoCruce.Remision = txtRemision.Text;
-                nuevoCruce.EstatusCobro = txtEstatusCobro.Text;
+                nuevoCruce.EstatusCobro = cboEstatusCobro.Text;
                 nuevoCruce.FechaCarga = dtpFechaCarga.Value;
                 nuevoCruce.FechaEntrega = dtpFechaEntrega.Value;
                 nuevoCruce.LugarCarga = txtLugarCarga.Text;
@@ -118,9 +120,11 @@ namespace Formulario_Cruces_JEFF
             string busqueda = txtBuscar.Text;
             List<Cruce> lista = ne.ObtenerListaCrucesBuscados((s) => MessageBox.Show(s), busqueda);
             dtgTablaDatos.Rows.Clear();
+            int i = 1;
             foreach (Cruce cruz in lista)
             {
-                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, cruz.CodigoCruce, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("f"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos, cruz.PrecioDolares, cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada);
+                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("f"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos, cruz.PrecioDolares, cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada);
+                i++;
             }
         }
 
@@ -184,7 +188,7 @@ where id_CodigoCruces = " + num;
                 txtCliente.Text = scru.Cliente;
                 txtCodigoCruce.Text = scru.CodigoCruce.ToString();
                 txtConductor.Text = scru.Conductor;
-                txtEstatusCobro.Text = scru.EstatusCobro;
+                cboEstatusCobro.Text = scru.EstatusCobro;
                 txtIntermediario.Text = scru.Intermediario;
                 txtLugarCarga.Text = scru.LugarCarga;
                 txtLugarDescarga.Text = scru.LugarDescarga;
@@ -211,7 +215,7 @@ where id_CodigoCruces = " + num;
                 edCruce.Cliente = txtCliente.Text;
                 edCruce.Caja = txtCaja.Text;
                 edCruce.Remision = txtRemision.Text;
-                edCruce.EstatusCobro = txtEstatusCobro.Text;
+                edCruce.EstatusCobro = cboEstatusCobro.Text;
                 edCruce.FechaCarga = dtpFechaCarga.Value;
                 edCruce.FechaEntrega = dtpFechaEntrega.Value;
                 edCruce.LugarCarga = txtLugarCarga.Text;
@@ -321,6 +325,31 @@ where id_CodigoCruces = " + num;
             entradaCon.ShowDialog();
 
             ne.EstablecerConexionServidorRemoto(ne.Usuario, ne.Port, ne.Contrasena, ne.Servidor, (s) => MessageBox.Show(s), ne.Database);
+        }
+
+        private void btnBuscarFechaCarga_Click(object sender, EventArgs e)
+        {
+            string busqueda = txtBuscarFechaCarga.Text;
+            List<Cruce> lista = ne.BuscarPorFecha((s) => MessageBox.Show(s), busqueda);
+            dtgTablaDatos.Rows.Clear();
+            int i = 1;
+            foreach (Cruce cruz in lista)
+            {
+                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("f"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos, cruz.PrecioDolares, cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada);
+                i++;
+            }
+        }
+
+        private void btnOrdenarFechaCarga_Click(object sender, EventArgs e)
+        {
+            List<Cruce> lista = ne.OrdenarPorFechaCarga((s) => MessageBox.Show(s));
+            dtgTablaDatos.Rows.Clear();
+            int i = 1;
+            foreach (Cruce cruz in lista)
+            {
+                dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaEntrega.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaVencimientoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.Asignada);
+                i++;
+            }
         }
     }
 }

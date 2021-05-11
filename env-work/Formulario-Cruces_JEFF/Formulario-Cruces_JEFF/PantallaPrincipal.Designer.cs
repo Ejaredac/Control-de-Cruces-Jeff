@@ -59,7 +59,6 @@ namespace Formulario_Cruces_JEFF
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.lblFechaCarga = new System.Windows.Forms.Label();
             this.lblFechaEntrega = new System.Windows.Forms.Label();
-            this.txtEstatusCobro = new System.Windows.Forms.TextBox();
             this.dtpFechaCarga = new System.Windows.Forms.DateTimePicker();
             this.txtTipoServicio = new System.Windows.Forms.TextBox();
             this.lblTipoServicio = new System.Windows.Forms.Label();
@@ -82,8 +81,10 @@ namespace Formulario_Cruces_JEFF
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.dtgTablaDatos = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cboEstatusCobro = new System.Windows.Forms.ComboBox();
             this.colId_ControlCruces = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCodigoCruce = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCruce = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,7 +102,9 @@ namespace Formulario_Cruces_JEFF
             this.colFechaPagoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtBuscarFechaCarga = new System.Windows.Forms.TextBox();
+            this.btnBuscarFechaCarga = new System.Windows.Forms.Button();
+            this.btnOrdenarFechaCarga = new System.Windows.Forms.Button();
             this.grpCampoDatos.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.grpTablaDeDatos.SuspendLayout();
@@ -111,6 +114,7 @@ namespace Formulario_Cruces_JEFF
             // 
             // grpCampoDatos
             // 
+            this.grpCampoDatos.Controls.Add(this.cboEstatusCobro);
             this.grpCampoDatos.Controls.Add(this.cboAsignada);
             this.grpCampoDatos.Controls.Add(this.cboUnidades);
             this.grpCampoDatos.Controls.Add(this.btnEditar);
@@ -139,7 +143,6 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.Controls.Add(this.dtpFechaEntrega);
             this.grpCampoDatos.Controls.Add(this.lblFechaCarga);
             this.grpCampoDatos.Controls.Add(this.lblFechaEntrega);
-            this.grpCampoDatos.Controls.Add(this.txtEstatusCobro);
             this.grpCampoDatos.Controls.Add(this.dtpFechaCarga);
             this.grpCampoDatos.Controls.Add(this.txtTipoServicio);
             this.grpCampoDatos.Controls.Add(this.lblTipoServicio);
@@ -150,26 +153,29 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.Controls.Add(this.lblCodigoCruce);
             this.grpCampoDatos.Controls.Add(this.lblCaja);
             this.grpCampoDatos.Controls.Add(this.txtRemision);
+            this.grpCampoDatos.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCampoDatos.Location = new System.Drawing.Point(12, 27);
             this.grpCampoDatos.Name = "grpCampoDatos";
-            this.grpCampoDatos.Size = new System.Drawing.Size(1236, 337);
+            this.grpCampoDatos.Size = new System.Drawing.Size(1456, 337);
             this.grpCampoDatos.TabIndex = 0;
             this.grpCampoDatos.TabStop = false;
             this.grpCampoDatos.Text = "Campo de Datos";
             // 
             // cboAsignada
             // 
+            this.cboAsignada.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAsignada.FormattingEnabled = true;
             this.cboAsignada.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.cboAsignada.Location = new System.Drawing.Point(796, 35);
+            this.cboAsignada.Location = new System.Drawing.Point(909, 22);
             this.cboAsignada.Name = "cboAsignada";
-            this.cboAsignada.Size = new System.Drawing.Size(121, 21);
+            this.cboAsignada.Size = new System.Drawing.Size(121, 31);
             this.cboAsignada.TabIndex = 43;
             // 
             // cboUnidades
             // 
+            this.cboUnidades.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUnidades.FormattingEnabled = true;
             this.cboUnidades.Items.AddRange(new object[] {
             "001",
@@ -186,16 +192,17 @@ namespace Formulario_Cruces_JEFF
             "012",
             "013",
             "014"});
-            this.cboUnidades.Location = new System.Drawing.Point(796, 83);
+            this.cboUnidades.Location = new System.Drawing.Point(909, 70);
             this.cboUnidades.Name = "cboUnidades";
-            this.cboUnidades.Size = new System.Drawing.Size(121, 21);
+            this.cboUnidades.Size = new System.Drawing.Size(121, 31);
             this.cboUnidades.TabIndex = 42;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(895, 285);
+            this.btnEditar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(1052, 265);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(86, 39);
             this.btnEditar.TabIndex = 41;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -203,9 +210,10 @@ namespace Formulario_Cruces_JEFF
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(796, 286);
+            this.btnEliminar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(949, 269);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(81, 32);
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -213,9 +221,10 @@ namespace Formulario_Cruces_JEFF
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(713, 287);
+            this.btnAgregar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(851, 266);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(82, 39);
             this.btnAgregar.TabIndex = 39;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -223,185 +232,194 @@ namespace Formulario_Cruces_JEFF
             // 
             // txtConductor
             // 
-            this.txtConductor.Location = new System.Drawing.Point(796, 127);
+            this.txtConductor.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConductor.Location = new System.Drawing.Point(909, 114);
+            this.txtConductor.MaxLength = 45;
             this.txtConductor.Name = "txtConductor";
-            this.txtConductor.Size = new System.Drawing.Size(100, 22);
+            this.txtConductor.Size = new System.Drawing.Size(174, 29);
             this.txtConductor.TabIndex = 37;
             // 
             // lblAsignada
             // 
             this.lblAsignada.AutoSize = true;
-            this.lblAsignada.Location = new System.Drawing.Point(691, 38);
+            this.lblAsignada.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsignada.Location = new System.Drawing.Point(804, 25);
             this.lblAsignada.Name = "lblAsignada";
-            this.lblAsignada.Size = new System.Drawing.Size(54, 13);
+            this.lblAsignada.Size = new System.Drawing.Size(76, 23);
             this.lblAsignada.TabIndex = 34;
             this.lblAsignada.Text = "Asignada";
             // 
             // dtpFechaVencimientoPedimento
             // 
             this.dtpFechaVencimientoPedimento.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
-            this.dtpFechaVencimientoPedimento.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaVencimientoPedimento.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaVencimientoPedimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaVencimientoPedimento.Location = new System.Drawing.Point(895, 217);
+            this.dtpFechaVencimientoPedimento.Location = new System.Drawing.Point(1084, 204);
             this.dtpFechaVencimientoPedimento.Name = "dtpFechaVencimientoPedimento";
-            this.dtpFechaVencimientoPedimento.Size = new System.Drawing.Size(222, 21);
+            this.dtpFechaVencimientoPedimento.Size = new System.Drawing.Size(277, 29);
             this.dtpFechaVencimientoPedimento.TabIndex = 32;
             // 
             // lblFechaPagoVencimiento
             // 
             this.lblFechaPagoVencimiento.AutoSize = true;
-            this.lblFechaPagoVencimiento.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaPagoVencimiento.Location = new System.Drawing.Point(693, 182);
+            this.lblFechaPagoVencimiento.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaPagoVencimiento.Location = new System.Drawing.Point(806, 169);
             this.lblFechaPagoVencimiento.Name = "lblFechaPagoVencimiento";
-            this.lblFechaPagoVencimiento.Size = new System.Drawing.Size(155, 13);
+            this.lblFechaPagoVencimiento.Size = new System.Drawing.Size(218, 23);
             this.lblFechaPagoVencimiento.TabIndex = 31;
             this.lblFechaPagoVencimiento.Text = "Fecha de Pago de Pedimento";
             // 
             // lblFechaVencimientoPedimento
             // 
             this.lblFechaVencimientoPedimento.AutoSize = true;
-            this.lblFechaVencimientoPedimento.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaVencimientoPedimento.Location = new System.Drawing.Point(698, 220);
+            this.lblFechaVencimientoPedimento.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaVencimientoPedimento.Location = new System.Drawing.Point(811, 207);
             this.lblFechaVencimientoPedimento.Name = "lblFechaVencimientoPedimento";
-            this.lblFechaVencimientoPedimento.Size = new System.Drawing.Size(191, 13);
+            this.lblFechaVencimientoPedimento.Size = new System.Drawing.Size(267, 23);
             this.lblFechaVencimientoPedimento.TabIndex = 33;
             this.lblFechaVencimientoPedimento.Text = "Fecha de Vencimiento de Pedimento";
             // 
             // dtpFechaPagoPedimento
             // 
             this.dtpFechaPagoPedimento.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
-            this.dtpFechaPagoPedimento.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaPagoPedimento.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaPagoPedimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaPagoPedimento.Location = new System.Drawing.Point(895, 182);
+            this.dtpFechaPagoPedimento.Location = new System.Drawing.Point(1052, 169);
             this.dtpFechaPagoPedimento.Name = "dtpFechaPagoPedimento";
-            this.dtpFechaPagoPedimento.Size = new System.Drawing.Size(222, 21);
+            this.dtpFechaPagoPedimento.Size = new System.Drawing.Size(281, 29);
             this.dtpFechaPagoPedimento.TabIndex = 30;
             // 
             // lblConductor
             // 
             this.lblConductor.AutoSize = true;
-            this.lblConductor.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConductor.Location = new System.Drawing.Point(697, 129);
+            this.lblConductor.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConductor.Location = new System.Drawing.Point(810, 116);
             this.lblConductor.Name = "lblConductor";
-            this.lblConductor.Size = new System.Drawing.Size(60, 13);
+            this.lblConductor.Size = new System.Drawing.Size(82, 23);
             this.lblConductor.TabIndex = 29;
             this.lblConductor.Text = "Conductor";
             // 
             // lblUnidad
             // 
             this.lblUnidad.AutoSize = true;
-            this.lblUnidad.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidad.Location = new System.Drawing.Point(697, 82);
+            this.lblUnidad.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnidad.Location = new System.Drawing.Point(810, 69);
             this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(44, 13);
+            this.lblUnidad.Size = new System.Drawing.Size(60, 23);
             this.lblUnidad.TabIndex = 28;
             this.lblUnidad.Text = "Unidad";
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(508, 263);
+            this.txtCliente.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCliente.Location = new System.Drawing.Point(604, 266);
             this.txtCliente.MaxLength = 40;
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(149, 22);
+            this.txtCliente.Size = new System.Drawing.Size(149, 29);
             this.txtCliente.TabIndex = 26;
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(459, 265);
+            this.lblCliente.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(520, 265);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(42, 13);
+            this.lblCliente.Size = new System.Drawing.Size(57, 23);
             this.lblCliente.TabIndex = 25;
             this.lblCliente.Text = "Cliente";
             // 
             // txtIntermediario
             // 
-            this.txtIntermediario.Location = new System.Drawing.Point(508, 217);
+            this.txtIntermediario.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIntermediario.Location = new System.Drawing.Point(604, 220);
             this.txtIntermediario.MaxLength = 45;
             this.txtIntermediario.Name = "txtIntermediario";
-            this.txtIntermediario.Size = new System.Drawing.Size(149, 22);
+            this.txtIntermediario.Size = new System.Drawing.Size(149, 29);
             this.txtIntermediario.TabIndex = 26;
             // 
             // lblIntermediario
             // 
             this.lblIntermediario.AutoSize = true;
-            this.lblIntermediario.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIntermediario.Location = new System.Drawing.Point(426, 220);
+            this.lblIntermediario.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIntermediario.Location = new System.Drawing.Point(487, 220);
             this.lblIntermediario.Name = "lblIntermediario";
-            this.lblIntermediario.Size = new System.Drawing.Size(76, 13);
+            this.lblIntermediario.Size = new System.Drawing.Size(99, 23);
             this.lblIntermediario.TabIndex = 25;
             this.lblIntermediario.Text = "Intermediario";
             // 
             // txtPrecioDolares
             // 
-            this.txtPrecioDolares.Location = new System.Drawing.Point(508, 172);
+            this.txtPrecioDolares.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioDolares.Location = new System.Drawing.Point(604, 175);
             this.txtPrecioDolares.Name = "txtPrecioDolares";
-            this.txtPrecioDolares.Size = new System.Drawing.Size(149, 22);
+            this.txtPrecioDolares.Size = new System.Drawing.Size(149, 29);
             this.txtPrecioDolares.TabIndex = 22;
             this.txtPrecioDolares.TextChanged += new System.EventHandler(this.txtPrecioDolares_TextChanged);
             // 
             // lblPrecioDolares
             // 
             this.lblPrecioDolares.AutoSize = true;
-            this.lblPrecioDolares.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioDolares.Location = new System.Drawing.Point(416, 175);
+            this.lblPrecioDolares.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioDolares.Location = new System.Drawing.Point(477, 175);
             this.lblPrecioDolares.Name = "lblPrecioDolares";
-            this.lblPrecioDolares.Size = new System.Drawing.Size(88, 13);
+            this.lblPrecioDolares.Size = new System.Drawing.Size(122, 23);
             this.lblPrecioDolares.TabIndex = 21;
             this.lblPrecioDolares.Text = "Precio (Dolares)";
             // 
             // txtPrecioPesos
             // 
-            this.txtPrecioPesos.Location = new System.Drawing.Point(508, 127);
+            this.txtPrecioPesos.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioPesos.Location = new System.Drawing.Point(604, 130);
             this.txtPrecioPesos.Name = "txtPrecioPesos";
-            this.txtPrecioPesos.Size = new System.Drawing.Size(149, 22);
+            this.txtPrecioPesos.Size = new System.Drawing.Size(149, 29);
             this.txtPrecioPesos.TabIndex = 20;
             this.txtPrecioPesos.TextChanged += new System.EventHandler(this.txtPrecioPesos_TextChanged);
             // 
             // lblPrecioPesos
             // 
             this.lblPrecioPesos.AutoSize = true;
-            this.lblPrecioPesos.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioPesos.Location = new System.Drawing.Point(426, 130);
+            this.lblPrecioPesos.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioPesos.Location = new System.Drawing.Point(487, 130);
             this.lblPrecioPesos.Name = "lblPrecioPesos";
-            this.lblPrecioPesos.Size = new System.Drawing.Size(78, 13);
+            this.lblPrecioPesos.Size = new System.Drawing.Size(112, 23);
             this.lblPrecioPesos.TabIndex = 19;
             this.lblPrecioPesos.Text = "Precio (Pesos)";
             // 
             // txtLugarDescarga
             // 
-            this.txtLugarDescarga.Location = new System.Drawing.Point(508, 82);
+            this.txtLugarDescarga.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLugarDescarga.Location = new System.Drawing.Point(604, 85);
             this.txtLugarDescarga.MaxLength = 60;
             this.txtLugarDescarga.Name = "txtLugarDescarga";
-            this.txtLugarDescarga.Size = new System.Drawing.Size(149, 22);
+            this.txtLugarDescarga.Size = new System.Drawing.Size(149, 29);
             this.txtLugarDescarga.TabIndex = 18;
             // 
             // lblLugarDescarga
             // 
             this.lblLugarDescarga.AutoSize = true;
-            this.lblLugarDescarga.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLugarDescarga.Location = new System.Drawing.Point(400, 88);
+            this.lblLugarDescarga.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLugarDescarga.Location = new System.Drawing.Point(461, 88);
             this.lblLugarDescarga.Name = "lblLugarDescarga";
-            this.lblLugarDescarga.Size = new System.Drawing.Size(101, 13);
+            this.lblLugarDescarga.Size = new System.Drawing.Size(145, 23);
             this.lblLugarDescarga.TabIndex = 17;
             this.lblLugarDescarga.Text = "Lugar de Descarga";
             // 
             // txtLugarCarga
             // 
-            this.txtLugarCarga.Location = new System.Drawing.Point(508, 37);
+            this.txtLugarCarga.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLugarCarga.Location = new System.Drawing.Point(604, 40);
             this.txtLugarCarga.MaxLength = 60;
             this.txtLugarCarga.Name = "txtLugarCarga";
-            this.txtLugarCarga.Size = new System.Drawing.Size(149, 22);
+            this.txtLugarCarga.Size = new System.Drawing.Size(149, 29);
             this.txtLugarCarga.TabIndex = 16;
             // 
             // lblLugarCarga
             // 
             this.lblLugarCarga.AutoSize = true;
-            this.lblLugarCarga.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLugarCarga.Location = new System.Drawing.Point(417, 40);
+            this.lblLugarCarga.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLugarCarga.Location = new System.Drawing.Point(478, 40);
             this.lblLugarCarga.Name = "lblLugarCarga";
-            this.lblLugarCarga.Size = new System.Drawing.Size(84, 13);
+            this.lblLugarCarga.Size = new System.Drawing.Size(120, 23);
             this.lblLugarCarga.TabIndex = 15;
             this.lblLugarCarga.Text = "Lugar de Carga";
             // 
@@ -409,132 +427,128 @@ namespace Formulario_Cruces_JEFF
             // 
             this.dtpFechaEntrega.CalendarFont = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaEntrega.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
-            this.dtpFechaEntrega.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaEntrega.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(132, 265);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(164, 272);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
-            this.dtpFechaEntrega.Size = new System.Drawing.Size(218, 21);
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(289, 29);
             this.dtpFechaEntrega.TabIndex = 13;
             // 
             // lblFechaCarga
             // 
             this.lblFechaCarga.AutoSize = true;
-            this.lblFechaCarga.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaCarga.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaCarga.Location = new System.Drawing.Point(40, 234);
             this.lblFechaCarga.Name = "lblFechaCarga";
-            this.lblFechaCarga.Size = new System.Drawing.Size(85, 13);
+            this.lblFechaCarga.Size = new System.Drawing.Size(124, 23);
             this.lblFechaCarga.TabIndex = 12;
             this.lblFechaCarga.Text = "Fecha de Carga";
             // 
             // lblFechaEntrega
             // 
             this.lblFechaEntrega.AutoSize = true;
-            this.lblFechaEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaEntrega.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaEntrega.Location = new System.Drawing.Point(33, 272);
             this.lblFechaEntrega.Name = "lblFechaEntrega";
-            this.lblFechaEntrega.Size = new System.Drawing.Size(94, 13);
+            this.lblFechaEntrega.Size = new System.Drawing.Size(135, 23);
             this.lblFechaEntrega.TabIndex = 14;
             this.lblFechaEntrega.Text = "Fecha de Entrega";
-            // 
-            // txtEstatusCobro
-            // 
-            this.txtEstatusCobro.Location = new System.Drawing.Point(132, 189);
-            this.txtEstatusCobro.MaxLength = 25;
-            this.txtEstatusCobro.Name = "txtEstatusCobro";
-            this.txtEstatusCobro.Size = new System.Drawing.Size(218, 22);
-            this.txtEstatusCobro.TabIndex = 10;
             // 
             // dtpFechaCarga
             // 
             this.dtpFechaCarga.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
-            this.dtpFechaCarga.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaCarga.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaCarga.Location = new System.Drawing.Point(132, 227);
+            this.dtpFechaCarga.Location = new System.Drawing.Point(164, 226);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
-            this.dtpFechaCarga.Size = new System.Drawing.Size(218, 21);
+            this.dtpFechaCarga.Size = new System.Drawing.Size(289, 29);
             this.dtpFechaCarga.TabIndex = 11;
             // 
             // txtTipoServicio
             // 
-            this.txtTipoServicio.Location = new System.Drawing.Point(132, 75);
+            this.txtTipoServicio.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoServicio.Location = new System.Drawing.Point(164, 75);
             this.txtTipoServicio.MaxLength = 50;
             this.txtTipoServicio.Name = "txtTipoServicio";
-            this.txtTipoServicio.Size = new System.Drawing.Size(218, 22);
+            this.txtTipoServicio.Size = new System.Drawing.Size(218, 29);
             this.txtTipoServicio.TabIndex = 4;
             // 
             // lblTipoServicio
             // 
             this.lblTipoServicio.AutoSize = true;
-            this.lblTipoServicio.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoServicio.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoServicio.Location = new System.Drawing.Point(38, 78);
             this.lblTipoServicio.Name = "lblTipoServicio";
-            this.lblTipoServicio.Size = new System.Drawing.Size(89, 13);
+            this.lblTipoServicio.Size = new System.Drawing.Size(120, 23);
             this.lblTipoServicio.TabIndex = 3;
             this.lblTipoServicio.Text = "Tipo de Servicio";
             // 
             // lblRemision
             // 
             this.lblRemision.AutoSize = true;
-            this.lblRemision.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRemision.Location = new System.Drawing.Point(72, 154);
+            this.lblRemision.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemision.Location = new System.Drawing.Point(23, 154);
             this.lblRemision.Name = "lblRemision";
-            this.lblRemision.Size = new System.Drawing.Size(54, 13);
+            this.lblRemision.Size = new System.Drawing.Size(140, 23);
             this.lblRemision.TabIndex = 7;
-            this.lblRemision.Text = "Remision";
+            this.lblRemision.Text = "Remision / Factura";
             // 
             // lblEstatusCobro
             // 
             this.lblEstatusCobro.AutoSize = true;
-            this.lblEstatusCobro.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstatusCobro.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstatusCobro.Location = new System.Drawing.Point(31, 194);
             this.lblEstatusCobro.Name = "lblEstatusCobro";
-            this.lblEstatusCobro.Size = new System.Drawing.Size(94, 13);
+            this.lblEstatusCobro.Size = new System.Drawing.Size(129, 23);
             this.lblEstatusCobro.TabIndex = 9;
             this.lblEstatusCobro.Text = "Estatus de Cobro";
             // 
             // txtCaja
             // 
-            this.txtCaja.Location = new System.Drawing.Point(132, 113);
+            this.txtCaja.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCaja.Location = new System.Drawing.Point(164, 113);
             this.txtCaja.MaxLength = 30;
             this.txtCaja.Name = "txtCaja";
-            this.txtCaja.Size = new System.Drawing.Size(218, 22);
+            this.txtCaja.Size = new System.Drawing.Size(218, 29);
             this.txtCaja.TabIndex = 6;
             // 
             // txtCodigoCruce
             // 
             this.txtCodigoCruce.Enabled = false;
-            this.txtCodigoCruce.Location = new System.Drawing.Point(132, 37);
+            this.txtCodigoCruce.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCruce.Location = new System.Drawing.Point(167, 35);
             this.txtCodigoCruce.Name = "txtCodigoCruce";
             this.txtCodigoCruce.ReadOnly = true;
-            this.txtCodigoCruce.Size = new System.Drawing.Size(218, 22);
+            this.txtCodigoCruce.Size = new System.Drawing.Size(218, 29);
             this.txtCodigoCruce.TabIndex = 1;
             // 
             // lblCodigoCruce
             // 
             this.lblCodigoCruce.AutoSize = true;
-            this.lblCodigoCruce.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoCruce.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoCruce.Location = new System.Drawing.Point(33, 40);
             this.lblCodigoCruce.Name = "lblCodigoCruce";
-            this.lblCodigoCruce.Size = new System.Drawing.Size(92, 13);
+            this.lblCodigoCruce.Size = new System.Drawing.Size(128, 23);
             this.lblCodigoCruce.TabIndex = 0;
             this.lblCodigoCruce.Text = "Codigo de Cruce";
             // 
             // lblCaja
             // 
             this.lblCaja.AutoSize = true;
-            this.lblCaja.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaja.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaja.Location = new System.Drawing.Point(97, 116);
             this.lblCaja.Name = "lblCaja";
-            this.lblCaja.Size = new System.Drawing.Size(29, 13);
+            this.lblCaja.Size = new System.Drawing.Size(42, 23);
             this.lblCaja.TabIndex = 5;
             this.lblCaja.Text = "Caja";
             // 
             // txtRemision
             // 
-            this.txtRemision.Location = new System.Drawing.Point(132, 151);
+            this.txtRemision.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemision.Location = new System.Drawing.Point(164, 151);
             this.txtRemision.MaxLength = 45;
             this.txtRemision.Name = "txtRemision";
-            this.txtRemision.Size = new System.Drawing.Size(218, 22);
+            this.txtRemision.Size = new System.Drawing.Size(218, 29);
             this.txtRemision.TabIndex = 8;
             // 
             // menuStrip1
@@ -544,7 +558,7 @@ namespace Formulario_Cruces_JEFF
             this.direccionYVistaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(2526, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(2768, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -596,22 +610,27 @@ namespace Formulario_Cruces_JEFF
             // 
             // grpTablaDeDatos
             // 
+            this.grpTablaDeDatos.Controls.Add(this.btnOrdenarFechaCarga);
+            this.grpTablaDeDatos.Controls.Add(this.btnBuscarFechaCarga);
+            this.grpTablaDeDatos.Controls.Add(this.txtBuscarFechaCarga);
             this.grpTablaDeDatos.Controls.Add(this.btnBuscar);
             this.grpTablaDeDatos.Controls.Add(this.txtBuscar);
             this.grpTablaDeDatos.Controls.Add(this.btnRecargar);
             this.grpTablaDeDatos.Controls.Add(this.dtgTablaDatos);
+            this.grpTablaDeDatos.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpTablaDeDatos.Location = new System.Drawing.Point(13, 383);
             this.grpTablaDeDatos.Name = "grpTablaDeDatos";
-            this.grpTablaDeDatos.Size = new System.Drawing.Size(2352, 325);
+            this.grpTablaDeDatos.Size = new System.Drawing.Size(2689, 673);
             this.grpTablaDeDatos.TabIndex = 2;
             this.grpTablaDeDatos.TabStop = false;
             this.grpTablaDeDatos.Text = "Tabla de Información de Cruces";
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(574, 45);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(113, 30);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -621,14 +640,15 @@ namespace Formulario_Cruces_JEFF
             // 
             this.txtBuscar.Location = new System.Drawing.Point(42, 46);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(514, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(514, 29);
             this.txtBuscar.TabIndex = 2;
             // 
             // btnRecargar
             // 
-            this.btnRecargar.Location = new System.Drawing.Point(1342, 46);
+            this.btnRecargar.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecargar.Location = new System.Drawing.Point(1797, 40);
             this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(75, 23);
+            this.btnRecargar.Size = new System.Drawing.Size(102, 35);
             this.btnRecargar.TabIndex = 1;
             this.btnRecargar.Text = "Recargar";
             this.btnRecargar.UseVisualStyleBackColor = true;
@@ -636,10 +656,11 @@ namespace Formulario_Cruces_JEFF
             // 
             // dtgTablaDatos
             // 
+            this.dtgTablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgTablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTablaDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId_ControlCruces,
-            this.colCodigoCruce,
+            this.colCruce,
             this.colTipoServicio,
             this.colCliente,
             this.colCaja,
@@ -659,9 +680,30 @@ namespace Formulario_Cruces_JEFF
             this.colAsignada});
             this.dtgTablaDatos.Location = new System.Drawing.Point(6, 105);
             this.dtgTablaDatos.Name = "dtgTablaDatos";
-            this.dtgTablaDatos.Size = new System.Drawing.Size(2140, 150);
+            this.dtgTablaDatos.Size = new System.Drawing.Size(2359, 550);
             this.dtgTablaDatos.TabIndex = 0;
             this.dtgTablaDatos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgTablaDatos_CellMouseClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1635, 140);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cboEstatusCobro
+            // 
+            this.cboEstatusCobro.FormattingEnabled = true;
+            this.cboEstatusCobro.Items.AddRange(new object[] {
+            "PENDIENTE",
+            "PAGADO"});
+            this.cboEstatusCobro.Location = new System.Drawing.Point(167, 191);
+            this.cboEstatusCobro.Name = "cboEstatusCobro";
+            this.cboEstatusCobro.Size = new System.Drawing.Size(254, 31);
+            this.cboEstatusCobro.TabIndex = 44;
             // 
             // colId_ControlCruces
             // 
@@ -670,12 +712,12 @@ namespace Formulario_Cruces_JEFF
             this.colId_ControlCruces.Name = "colId_ControlCruces";
             this.colId_ControlCruces.ReadOnly = true;
             // 
-            // colCodigoCruce
+            // colCruce
             // 
-            this.colCodigoCruce.Frozen = true;
-            this.colCodigoCruce.HeaderText = "Codigo de Cruce";
-            this.colCodigoCruce.Name = "colCodigoCruce";
-            this.colCodigoCruce.ReadOnly = true;
+            this.colCruce.Frozen = true;
+            this.colCruce.HeaderText = "Cruce";
+            this.colCruce.Name = "colCruce";
+            this.colCruce.ReadOnly = true;
             // 
             // colTipoServicio
             // 
@@ -704,6 +746,7 @@ namespace Formulario_Cruces_JEFF
             this.colRemision.HeaderText = "Remision/Factura";
             this.colRemision.Name = "colRemision";
             this.colRemision.ReadOnly = true;
+            this.colRemision.Width = 150;
             // 
             // colEstatusCobro
             // 
@@ -711,6 +754,7 @@ namespace Formulario_Cruces_JEFF
             this.colEstatusCobro.HeaderText = "Estatus de Cobro";
             this.colEstatusCobro.Name = "colEstatusCobro";
             this.colEstatusCobro.ReadOnly = true;
+            this.colEstatusCobro.Width = 150;
             // 
             // colFechaCarga
             // 
@@ -718,6 +762,7 @@ namespace Formulario_Cruces_JEFF
             this.colFechaCarga.HeaderText = "Fecha de Carga";
             this.colFechaCarga.Name = "colFechaCarga";
             this.colFechaCarga.ReadOnly = true;
+            this.colFechaCarga.Width = 172;
             // 
             // colFechaEntrega
             // 
@@ -725,6 +770,7 @@ namespace Formulario_Cruces_JEFF
             this.colFechaEntrega.HeaderText = "Fecha de Entrega";
             this.colFechaEntrega.Name = "colFechaEntrega";
             this.colFechaEntrega.ReadOnly = true;
+            this.colFechaEntrega.Width = 172;
             // 
             // colLugarCarga
             // 
@@ -760,6 +806,7 @@ namespace Formulario_Cruces_JEFF
             this.colIntermediario.HeaderText = "Intermediario";
             this.colIntermediario.Name = "colIntermediario";
             this.colIntermediario.ReadOnly = true;
+            this.colIntermediario.Width = 155;
             // 
             // colUnidad
             // 
@@ -781,6 +828,7 @@ namespace Formulario_Cruces_JEFF
             this.colFechaPagoPedimento.HeaderText = "Fecha de Pago de Pedimento";
             this.colFechaPagoPedimento.Name = "colFechaPagoPedimento";
             this.colFechaPagoPedimento.ReadOnly = true;
+            this.colFechaPagoPedimento.Width = 172;
             // 
             // colFechaVencimientoPedimento
             // 
@@ -788,6 +836,7 @@ namespace Formulario_Cruces_JEFF
             this.colFechaVencimientoPedimento.HeaderText = "Fecha de Vencimiento de Pedimento";
             this.colFechaVencimientoPedimento.Name = "colFechaVencimientoPedimento";
             this.colFechaVencimientoPedimento.ReadOnly = true;
+            this.colFechaVencimientoPedimento.Width = 172;
             // 
             // colAsignada
             // 
@@ -796,22 +845,38 @@ namespace Formulario_Cruces_JEFF
             this.colAsignada.Name = "colAsignada";
             this.colAsignada.ReadOnly = true;
             // 
-            // pictureBox1
+            // txtBuscarFechaCarga
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1254, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.txtBuscarFechaCarga.Location = new System.Drawing.Point(829, 46);
+            this.txtBuscarFechaCarga.Name = "txtBuscarFechaCarga";
+            this.txtBuscarFechaCarga.Size = new System.Drawing.Size(514, 29);
+            this.txtBuscarFechaCarga.TabIndex = 2;
+            // 
+            // btnBuscarFechaCarga
+            // 
+            this.btnBuscarFechaCarga.Location = new System.Drawing.Point(1363, 46);
+            this.btnBuscarFechaCarga.Name = "btnBuscarFechaCarga";
+            this.btnBuscarFechaCarga.Size = new System.Drawing.Size(228, 29);
+            this.btnBuscarFechaCarga.TabIndex = 4;
+            this.btnBuscarFechaCarga.Text = "Buscar por Fecha de Carga";
+            this.btnBuscarFechaCarga.UseVisualStyleBackColor = true;
+            this.btnBuscarFechaCarga.Click += new System.EventHandler(this.btnBuscarFechaCarga_Click);
+            // 
+            // btnOrdenarFechaCarga
+            // 
+            this.btnOrdenarFechaCarga.Location = new System.Drawing.Point(1928, 42);
+            this.btnOrdenarFechaCarga.Name = "btnOrdenarFechaCarga";
+            this.btnOrdenarFechaCarga.Size = new System.Drawing.Size(299, 33);
+            this.btnOrdenarFechaCarga.TabIndex = 5;
+            this.btnOrdenarFechaCarga.Text = "Ordenar por Fecha de Carga";
+            this.btnOrdenarFechaCarga.UseVisualStyleBackColor = true;
+            this.btnOrdenarFechaCarga.Click += new System.EventHandler(this.btnOrdenarFechaCarga_Click);
             // 
             // PantallaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(2526, 720);
+            this.ClientSize = new System.Drawing.Size(2768, 1104);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpTablaDeDatos);
             this.Controls.Add(this.grpCampoDatos);
@@ -843,7 +908,6 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.GroupBox grpCampoDatos;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
         private System.Windows.Forms.Label lblFechaEntrega;
-        private System.Windows.Forms.TextBox txtEstatusCobro;
         private System.Windows.Forms.TextBox txtTipoServicio;
         private System.Windows.Forms.DateTimePicker dtpFechaCarga;
         private System.Windows.Forms.Label lblTipoServicio;
@@ -880,8 +944,22 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.TextBox txtConductor;
         private System.Windows.Forms.GroupBox grpTablaDeDatos;
         private System.Windows.Forms.DataGridView dtgTablaDatos;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Button btnRecargar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.ComboBox cboUnidades;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cboAsignada;
+        private System.Windows.Forms.ToolStripMenuItem direccionYVistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obtenerDireccionDeEsteEquipoToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cboEstatusCobro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId_ControlCruces;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoCruce;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCruce;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCaja;
@@ -899,19 +977,9 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaPagoPedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaVencimientoPedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAsignada;
-        private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.Button btnRecargar;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.ComboBox cboUnidades;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cboAsignada;
-        private System.Windows.Forms.ToolStripMenuItem direccionYVistaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem obtenerDireccionDeEsteEquipoToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtBuscarFechaCarga;
+        private System.Windows.Forms.Button btnOrdenarFechaCarga;
+        private System.Windows.Forms.Button btnBuscarFechaCarga;
     }
 }
 
