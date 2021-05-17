@@ -140,6 +140,13 @@ namespace Formulario_Cruces_JEFF
             get { return _strCliente; }
             set { _strCliente = value; }
         }
+        private string _strDemora;
+
+        public string Demora
+        {
+            get { return _strDemora; }
+            set { _strDemora = value; }
+        }
 
     }
 }

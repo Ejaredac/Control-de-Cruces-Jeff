@@ -89,7 +89,8 @@ CREATE TABLE if not exists TablaCruces (
     Conductor VARCHAR(45),
     FechaPagoPedimento DATETIME,
     FechaVencimientoPedimento DATETIME,
-    Asignada VARCHAR(2)
+    Asignada VARCHAR(2),
+    Demora VARCHAR(120)
 )";
                 cmd = new MySqlCommand(s0, conn);
                 cmd.ExecuteNonQuery();
@@ -105,7 +106,42 @@ CREATE TABLE if not exists TablaCruces (
                 dele(mEx.Message);
             }
         }
+        public void AnadirDemora(delegMensajeExcepcionador dele)
+        {
+            string connStr = "server=localhost;user=root;port=3306;password=112601";
+            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlCommand cmd;
+            string s0;
+            string s1;
+            try
+            {
+                conn.Open();
+                s0 = @"use crucesjeffbd;
+alter table tablacruces
+add column Demora varchar(120);
+update crucesjeffbd.tablacruces
+set Demora = ''
+where id_CodigoCruces > 0;
+";
+                cmd = new MySqlCommand(s0, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                dele("Añadida columna de demora exitosamente");
+            }
+            catch (MySqlException mex)
+            {
 
+                dele(mex.Message);
+            }
+            catch (System.Exception ex)
+            {
+                dele(ex.Message);
+            }
+            finally
+            {
+
+            }
+        }
         public void EstablecerConexionServidorRemoto(string strUser, string strPort, string strPassword, string strSource, delegMensajeExcepcionador dele, string strBDA)
         {
 
@@ -172,6 +208,7 @@ CREATE TABLE if not exists TablaCruces (
                     cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
                     cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
                     cruceNuevo.Asignada = msdrLector.GetString(17);
+                    cruceNuevo.Demora = msdrLector.GetString(18);
                     listaCruces.Add(cruceNuevo);
                 }
                 return listaCruces;
@@ -195,7 +232,7 @@ CREATE TABLE if not exists TablaCruces (
             string strDatos = "";
             try
             {
-                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"id_CodigoCruces like '%{b}%' or TipoServicio like '%{b}%' or " + $"Cliente like '%{b}%' or " + $"Caja like '%{b}%' or " + $"Remision like '%{b}%' or " + $"EstatusCobro like '%{b}%' or " + $"FechaCarga like '%{b}%' or " + $"FechaEntrega like '%{b}%' or  " + $"LugarCarga like '%{b}%' or " + $"LugarDescarga like '%{b}%' or " + $"PrecioPesos like '%{b}%' or  " + $"PrecioDolares like '%{b}%' or " + $"Intermediario like '%{b}%' or " + $"Unidad like '%{b}%' or " + $"Conductor like '%{b}%' or " + $"FechaPagoPedimento like '%{b}%' or " + $"FechaVencimientoPedimento like '%{b}%' or " + $"Asignada like '%{b}%'"; 
+                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"id_CodigoCruces like '%{b}%' or TipoServicio like '%{b}%' or " + $"Cliente like '%{b}%' or " + $"Caja like '%{b}%' or " + $"Remision like '%{b}%' or " + $"EstatusCobro like '%{b}%' or " + $"FechaCarga like '%{b}%' or " + $"FechaEntrega like '%{b}%' or  " + $"LugarCarga like '%{b}%' or " + $"LugarDescarga like '%{b}%' or " + $"PrecioPesos like '%{b}%' or  " + $"PrecioDolares like '%{b}%' or " + $"Intermediario like '%{b}%' or " + $"Unidad like '%{b}%' or " + $"Conductor like '%{b}%' or " + $"FechaPagoPedimento like '%{b}%' or " + $"FechaVencimientoPedimento like '%{b}%' or " + $"Asignada like '%{b}%' ORDER BY FechaCarga ASC";
                 MySqlCommand mcmComando = new MySqlCommand(strConsulta);
                 mcmComando.Connection = ConexionRemota;
                 ConexionRemota.Open();
@@ -221,6 +258,7 @@ CREATE TABLE if not exists TablaCruces (
                     cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
                     cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
                     cruceNuevo.Asignada = msdrLector.GetString(17);
+                    cruceNuevo.Demora = msdrLector.GetString(18);
                     listaCruces.Add(cruceNuevo);
                 }
                 return listaCruces;
@@ -243,8 +281,8 @@ CREATE TABLE if not exists TablaCruces (
 
             try
             {
-                string strAdicion = $"INSERT INTO crucesjeffbd.tablacruces(id_CodigoCruces,TipoServicio,Cliente,Caja,Remision,EstatusCobro,FechaCarga,FechaEntrega,LugarCarga,LugarDescarga,PrecioPesos,PrecioDolares,Intermediario,Unidad,Conductor,FechaPagoPedimento,FechaVencimientoPedimento,Asignada)" +
-                $"values(null,'{agCruce.TipoServicio}','{agCruce.Cliente}','{agCruce.Caja}','{agCruce.Remision}','{agCruce.EstatusCobro}','{agCruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.LugarCarga}','{agCruce.LugarDescarga}','{agCruce.PrecioPesos}','{agCruce.PrecioDolares}','{agCruce.Intermediario}','{agCruce.Unidad}','{agCruce.Conductor}','{agCruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.Asignada}')";
+                string strAdicion = $"INSERT INTO crucesjeffbd.tablacruces(id_CodigoCruces,TipoServicio,Cliente,Caja,Remision,EstatusCobro,FechaCarga,FechaEntrega,LugarCarga,LugarDescarga,PrecioPesos,PrecioDolares,Intermediario,Unidad,Conductor,FechaPagoPedimento,FechaVencimientoPedimento,Asignada,Demora)" +
+                $"values(null,'{agCruce.TipoServicio}','{agCruce.Cliente}','{agCruce.Caja}','{agCruce.Remision}','{agCruce.EstatusCobro}','{agCruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.LugarCarga}','{agCruce.LugarDescarga}','{agCruce.PrecioPesos}','{agCruce.PrecioDolares}','{agCruce.Intermediario}','{agCruce.Unidad}','{agCruce.Conductor}','{agCruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.Asignada}','{agCruce.Demora}')";
                 MySqlCommand mcmComando = new MySqlCommand(strAdicion);
                 mcmComando.Connection = ConexionRemota;
                 ConexionRemota.Open();
@@ -284,7 +322,7 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
         }
         public void Editar(Cruce edcruce, delegMensajeExcepcionador dele)
         {
-            string strEditar = $"UPDATE crucesjeffbd.tablacruces set TipoServicio = '{edcruce.TipoServicio}', Cliente = '{edcruce.Cliente}', Caja = '{edcruce.Caja}', Remision = '{edcruce.Remision}', EstatusCobro = '{edcruce.EstatusCobro}', FechaCarga = '{edcruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}', FechaEntrega = '{edcruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}',LugarCarga = '{edcruce.LugarCarga}',LugarDescarga = '{edcruce.LugarDescarga}', PrecioPesos = '{edcruce.PrecioPesos}', PrecioDolares = '{edcruce.PrecioDolares}', Intermediario = '{edcruce.Intermediario}', Unidad = '{edcruce.Unidad}', Conductor = '{edcruce.Conductor}',FechaPagoPedimento = '{edcruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}', FechaVencimientoPedimento = '{edcruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}',Asignada = '{edcruce.Asignada}' where id_CodigoCruces = '{edcruce.CodigoCruce}'";
+            string strEditar = $"UPDATE crucesjeffbd.tablacruces set TipoServicio = '{edcruce.TipoServicio}', Cliente = '{edcruce.Cliente}', Caja = '{edcruce.Caja}', Remision = '{edcruce.Remision}', EstatusCobro = '{edcruce.EstatusCobro}', FechaCarga = '{edcruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}', FechaEntrega = '{edcruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}',LugarCarga = '{edcruce.LugarCarga}',LugarDescarga = '{edcruce.LugarDescarga}', PrecioPesos = '{edcruce.PrecioPesos}', PrecioDolares = '{edcruce.PrecioDolares}', Intermediario = '{edcruce.Intermediario}', Unidad = '{edcruce.Unidad}', Conductor = '{edcruce.Conductor}',FechaPagoPedimento = '{edcruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}', FechaVencimientoPedimento = '{edcruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}',Asignada = '{edcruce.Asignada}',Demora = '{edcruce.Demora}' where id_CodigoCruces = '{edcruce.CodigoCruce}'";
             try
             {
                 MySqlCommand mcmComando = new MySqlCommand(strEditar);
@@ -327,7 +365,7 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
             catch (System.Exception ex)
             {
                 dele(ex.Message);
-                
+
             }
         }
         public List<Cruce> BuscarPorFecha(delegMensajeExcepcionador dele, string b)
@@ -338,7 +376,7 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
             string strDatos = "";
             try
             {
-                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"FechaCarga like '%{b}%' ORDER BY FechaCarga ASC"; 
+                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"FechaCarga >= '{b}' ORDER BY FechaCarga ASC";
                 MySqlCommand mcmComando = new MySqlCommand(strConsulta);
                 mcmComando.Connection = ConexionRemota;
                 ConexionRemota.Open();
@@ -364,6 +402,7 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
                     cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
                     cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
                     cruceNuevo.Asignada = msdrLector.GetString(17);
+                    cruceNuevo.Demora = msdrLector.GetString(18);
                     listaCruces.Add(cruceNuevo);
                 }
                 return listaCruces;
@@ -414,6 +453,7 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
                     cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
                     cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
                     cruceNuevo.Asignada = msdrLector.GetString(17);
+                    cruceNuevo.Demora = msdrLector.GetString(18);
                     listaCruces.Add(cruceNuevo);
                 }
                 return listaCruces;

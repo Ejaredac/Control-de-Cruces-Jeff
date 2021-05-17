@@ -25,3 +25,4 @@ C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-d
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Release\Formulario-Cruces_JEFF.csproj.CopyComplete
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Release\Formulario-Cruces_JEFF.exe
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Release\Formulario-Cruces_JEFF.pdb
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Release\Formulario-Cruces_JEFF.csprojAssemblyReference.cache
