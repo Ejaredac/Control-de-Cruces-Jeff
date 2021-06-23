@@ -232,7 +232,7 @@ where id_CodigoCruces > 0;
             string strDatos = "";
             try
             {
-                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"id_CodigoCruces like '%{b}%' or TipoServicio like '%{b}%' or " + $"Cliente like '%{b}%' or " + $"Caja like '%{b}%' or " + $"Remision like '%{b}%' or " + $"EstatusCobro like '%{b}%' or " + $"FechaCarga like '%{b}%' or " + $"FechaEntrega like '%{b}%' or  " + $"LugarCarga like '%{b}%' or " + $"LugarDescarga like '%{b}%' or " + $"PrecioPesos like '%{b}%' or  " + $"PrecioDolares like '%{b}%' or " + $"Intermediario like '%{b}%' or " + $"Unidad like '%{b}%' or " + $"Conductor like '%{b}%' or " + $"FechaPagoPedimento like '%{b}%' or " + $"FechaVencimientoPedimento like '%{b}%' or " + $"Asignada like '%{b}%' ORDER BY FechaCarga ASC";
+                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"id_CodigoCruces like '%{b}%' or TipoServicio like '%{b}%' or " + $"Cliente like '%{b}%' or " + $"Caja like '%{b}%' or " + $"Remision like '%{b}%' or " + $"EstatusCobro like '%{b}%' or " + $"FechaCarga like '%{b}%' or " + $"FechaEntrega like '%{b}%' or  " + $"LugarCarga like '%{b}%' or " + $"LugarDescarga like '%{b}%' or " + $"PrecioPesos like '%{b}%' or  " + $"PrecioDolares like '%{b}%' or " + $"Intermediario like '%{b}%' or " + $"Unidad like '%{b}%' or " + $"Conductor like '%{b}%' or " + $"FechaPagoPedimento like '%{b}%' or " + $"FechaVencimientoPedimento like '%{b}%' or " + $"Asignada like '%{b}%' or "  + $"Demora like '%{b}%'"+" ORDER BY FechaCarga ASC";
                 MySqlCommand mcmComando = new MySqlCommand(strConsulta);
                 mcmComando.Connection = ConexionRemota;
                 ConexionRemota.Open();
