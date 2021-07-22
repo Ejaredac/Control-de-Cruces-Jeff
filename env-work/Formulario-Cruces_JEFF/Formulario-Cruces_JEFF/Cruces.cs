@@ -97,12 +97,12 @@ namespace Formulario_Cruces_JEFF
             get { return _strIntermediario; }
             set { _strIntermediario = value; }
         }
-        private string _intUnidad;
+        private string _strUnidad;
 
         public string Unidad
         {
-            get { return _intUnidad; }
-            set { _intUnidad = value; }
+            get { return _strUnidad; }
+            set { _strUnidad = value; }
         }
         private string _strConductor;
 

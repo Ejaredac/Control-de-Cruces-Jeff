@@ -31,6 +31,8 @@ namespace Formulario_Cruces_JEFF
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipal));
             this.grpCampoDatos = new System.Windows.Forms.GroupBox();
+            this.rtxtDemora = new System.Windows.Forms.RichTextBox();
+            this.lblDemora = new System.Windows.Forms.Label();
             this.btnVaciarCampos = new System.Windows.Forms.Button();
             this.cboEstatusCobro = new System.Windows.Forms.ComboBox();
             this.cboAsignada = new System.Windows.Forms.ComboBox();
@@ -74,6 +76,7 @@ namespace Formulario_Cruces_JEFF
             this.mstMenu = new System.Windows.Forms.MenuStrip();
             this.archivoYConexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.añadirColumnaDemoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conectarABaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.direccionYVistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,10 +89,6 @@ namespace Formulario_Cruces_JEFF
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.dtgTablaDatos = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.añadirColumnaDemoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblDemora = new System.Windows.Forms.Label();
-            this.rtxtDemora = new System.Windows.Forms.RichTextBox();
             this.colId_ControlCruces = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCruce = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,6 +109,8 @@ namespace Formulario_Cruces_JEFF
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Demora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.grpCampoDatos.SuspendLayout();
             this.mstMenu.SuspendLayout();
             this.grpTablaDeDatos.SuspendLayout();
@@ -169,6 +170,24 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.TabIndex = 0;
             this.grpCampoDatos.TabStop = false;
             this.grpCampoDatos.Text = "Campo de Datos";
+            // 
+            // rtxtDemora
+            // 
+            this.rtxtDemora.Location = new System.Drawing.Point(884, 234);
+            this.rtxtDemora.MaxLength = 120;
+            this.rtxtDemora.Name = "rtxtDemora";
+            this.rtxtDemora.Size = new System.Drawing.Size(347, 88);
+            this.rtxtDemora.TabIndex = 47;
+            this.rtxtDemora.Text = "";
+            // 
+            // lblDemora
+            // 
+            this.lblDemora.AutoSize = true;
+            this.lblDemora.Location = new System.Drawing.Point(809, 254);
+            this.lblDemora.Name = "lblDemora";
+            this.lblDemora.Size = new System.Drawing.Size(53, 16);
+            this.lblDemora.TabIndex = 46;
+            this.lblDemora.Text = "Demora";
             // 
             // btnVaciarCampos
             // 
@@ -596,7 +615,7 @@ namespace Formulario_Cruces_JEFF
             this.direccionYVistaToolStripMenuItem});
             this.mstMenu.Location = new System.Drawing.Point(0, 0);
             this.mstMenu.Name = "mstMenu";
-            this.mstMenu.Size = new System.Drawing.Size(2768, 24);
+            this.mstMenu.Size = new System.Drawing.Size(2500, 24);
             this.mstMenu.TabIndex = 1;
             this.mstMenu.Text = "menuStrip1";
             // 
@@ -618,6 +637,13 @@ namespace Formulario_Cruces_JEFF
             this.crearBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
             this.crearBaseDeDatosToolStripMenuItem.Text = "Crear Base de Datos Local";
             this.crearBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.crearBaseDeDatosToolStripMenuItem_Click);
+            // 
+            // añadirColumnaDemoraToolStripMenuItem
+            // 
+            this.añadirColumnaDemoraToolStripMenuItem.Name = "añadirColumnaDemoraToolStripMenuItem";
+            this.añadirColumnaDemoraToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.añadirColumnaDemoraToolStripMenuItem.Text = "Añadir columna Demora";
+            this.añadirColumnaDemoraToolStripMenuItem.Click += new System.EventHandler(this.añadirColumnaDemoraToolStripMenuItem_Click);
             // 
             // conectarABaseDeDatosToolStripMenuItem
             // 
@@ -650,6 +676,7 @@ namespace Formulario_Cruces_JEFF
             // 
             // grpTablaDeDatos
             // 
+            this.grpTablaDeDatos.Controls.Add(this.chkEstado);
             this.grpTablaDeDatos.Controls.Add(this.btnOrdenarFechaCarga);
             this.grpTablaDeDatos.Controls.Add(this.btnBuscarFechaCarga);
             this.grpTablaDeDatos.Controls.Add(this.txtBuscarFechaCarga);
@@ -661,7 +688,7 @@ namespace Formulario_Cruces_JEFF
             this.grpTablaDeDatos.ForeColor = System.Drawing.Color.Black;
             this.grpTablaDeDatos.Location = new System.Drawing.Point(13, 383);
             this.grpTablaDeDatos.Name = "grpTablaDeDatos";
-            this.grpTablaDeDatos.Size = new System.Drawing.Size(2743, 797);
+            this.grpTablaDeDatos.Size = new System.Drawing.Size(2054, 797);
             this.grpTablaDeDatos.TabIndex = 2;
             this.grpTablaDeDatos.TabStop = false;
             this.grpTablaDeDatos.Text = "Tabla de Información de Cruces";
@@ -733,6 +760,7 @@ namespace Formulario_Cruces_JEFF
             // 
             // dtgTablaDatos
             // 
+            this.dtgTablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgTablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgTablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTablaDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -758,9 +786,149 @@ namespace Formulario_Cruces_JEFF
             this.Demora});
             this.dtgTablaDatos.Location = new System.Drawing.Point(12, 95);
             this.dtgTablaDatos.Name = "dtgTablaDatos";
-            this.dtgTablaDatos.Size = new System.Drawing.Size(2725, 686);
+            this.dtgTablaDatos.Size = new System.Drawing.Size(1859, 686);
             this.dtgTablaDatos.TabIndex = 0;
             this.dtgTablaDatos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgTablaDatos_CellMouseClick);
+            // 
+            // colId_ControlCruces
+            // 
+            this.colId_ControlCruces.HeaderText = "ID - Control de Cruces";
+            this.colId_ControlCruces.Name = "colId_ControlCruces";
+            this.colId_ControlCruces.ReadOnly = true;
+            this.colId_ControlCruces.Width = 110;
+            // 
+            // colCruce
+            // 
+            this.colCruce.HeaderText = "Cruce";
+            this.colCruce.Name = "colCruce";
+            this.colCruce.ReadOnly = true;
+            this.colCruce.Width = 67;
+            // 
+            // colTipoServicio
+            // 
+            this.colTipoServicio.HeaderText = "Tipo de Servicio";
+            this.colTipoServicio.Name = "colTipoServicio";
+            this.colTipoServicio.ReadOnly = true;
+            this.colTipoServicio.Width = 114;
+            // 
+            // colCliente
+            // 
+            this.colCliente.HeaderText = "Cliente";
+            this.colCliente.Name = "colCliente";
+            this.colCliente.ReadOnly = true;
+            this.colCliente.Width = 73;
+            // 
+            // colCaja
+            // 
+            this.colCaja.HeaderText = "Caja";
+            this.colCaja.Name = "colCaja";
+            this.colCaja.ReadOnly = true;
+            this.colCaja.Width = 59;
+            // 
+            // colRemision
+            // 
+            this.colRemision.HeaderText = "Remision/Factura";
+            this.colRemision.Name = "colRemision";
+            this.colRemision.ReadOnly = true;
+            this.colRemision.Width = 135;
+            // 
+            // colEstatusCobro
+            // 
+            this.colEstatusCobro.HeaderText = "Estatus de Cobro";
+            this.colEstatusCobro.Name = "colEstatusCobro";
+            this.colEstatusCobro.ReadOnly = true;
+            this.colEstatusCobro.Width = 92;
+            // 
+            // colFechaCarga
+            // 
+            this.colFechaCarga.HeaderText = "Fecha de Carga";
+            this.colFechaCarga.Name = "colFechaCarga";
+            this.colFechaCarga.ReadOnly = true;
+            this.colFechaCarga.Width = 114;
+            // 
+            // colFechaEntrega
+            // 
+            this.colFechaEntrega.HeaderText = "Fecha de Entrega";
+            this.colFechaEntrega.Name = "colFechaEntrega";
+            this.colFechaEntrega.ReadOnly = true;
+            this.colFechaEntrega.Width = 124;
+            // 
+            // colLugarCarga
+            // 
+            this.colLugarCarga.HeaderText = "Lugar de Carga";
+            this.colLugarCarga.Name = "colLugarCarga";
+            this.colLugarCarga.ReadOnly = true;
+            this.colLugarCarga.Width = 111;
+            // 
+            // colLugarDescarga
+            // 
+            this.colLugarDescarga.HeaderText = "Lugar de Descarga";
+            this.colLugarDescarga.Name = "colLugarDescarga";
+            this.colLugarDescarga.ReadOnly = true;
+            this.colLugarDescarga.Width = 130;
+            // 
+            // colPrecioPesos
+            // 
+            this.colPrecioPesos.HeaderText = "Precio Pesos";
+            this.colPrecioPesos.Name = "colPrecioPesos";
+            this.colPrecioPesos.ReadOnly = true;
+            this.colPrecioPesos.Width = 102;
+            // 
+            // colPrecioDolares
+            // 
+            this.colPrecioDolares.HeaderText = "Precio (Dolares)";
+            this.colPrecioDolares.Name = "colPrecioDolares";
+            this.colPrecioDolares.ReadOnly = true;
+            this.colPrecioDolares.Width = 115;
+            // 
+            // colIntermediario
+            // 
+            this.colIntermediario.HeaderText = "Intermediario";
+            this.colIntermediario.Name = "colIntermediario";
+            this.colIntermediario.ReadOnly = true;
+            this.colIntermediario.Width = 107;
+            // 
+            // colUnidad
+            // 
+            this.colUnidad.HeaderText = "Unidad";
+            this.colUnidad.Name = "colUnidad";
+            this.colUnidad.ReadOnly = true;
+            this.colUnidad.Width = 73;
+            // 
+            // colConductor
+            // 
+            this.colConductor.HeaderText = "Conductor";
+            this.colConductor.Name = "colConductor";
+            this.colConductor.ReadOnly = true;
+            this.colConductor.Width = 92;
+            // 
+            // colFechaPagoPedimento
+            // 
+            this.colFechaPagoPedimento.HeaderText = "Fecha de Pago de Pedimento";
+            this.colFechaPagoPedimento.Name = "colFechaPagoPedimento";
+            this.colFechaPagoPedimento.ReadOnly = true;
+            this.colFechaPagoPedimento.Width = 131;
+            // 
+            // colFechaVencimientoPedimento
+            // 
+            this.colFechaVencimientoPedimento.HeaderText = "Fecha de Vencimiento de Pedimento";
+            this.colFechaVencimientoPedimento.Name = "colFechaVencimientoPedimento";
+            this.colFechaVencimientoPedimento.ReadOnly = true;
+            this.colFechaVencimientoPedimento.Width = 168;
+            // 
+            // colAsignada
+            // 
+            this.colAsignada.HeaderText = "Asignada";
+            this.colAsignada.Name = "colAsignada";
+            this.colAsignada.ReadOnly = true;
+            this.colAsignada.Width = 87;
+            // 
+            // Demora
+            // 
+            this.Demora.HeaderText = "Demora";
+            this.Demora.Name = "Demora";
+            this.Demora.ReadOnly = true;
+            this.Demora.Width = 78;
             // 
             // pictureBox1
             // 
@@ -772,185 +940,23 @@ namespace Formulario_Cruces_JEFF
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // añadirColumnaDemoraToolStripMenuItem
+            // chkEstado
             // 
-            this.añadirColumnaDemoraToolStripMenuItem.Name = "añadirColumnaDemoraToolStripMenuItem";
-            this.añadirColumnaDemoraToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.añadirColumnaDemoraToolStripMenuItem.Text = "Añadir columna Demora";
-            this.añadirColumnaDemoraToolStripMenuItem.Click += new System.EventHandler(this.añadirColumnaDemoraToolStripMenuItem_Click);
-            // 
-            // lblDemora
-            // 
-            this.lblDemora.AutoSize = true;
-            this.lblDemora.Location = new System.Drawing.Point(809, 254);
-            this.lblDemora.Name = "lblDemora";
-            this.lblDemora.Size = new System.Drawing.Size(53, 16);
-            this.lblDemora.TabIndex = 46;
-            this.lblDemora.Text = "Demora";
-            // 
-            // rtxtDemora
-            // 
-            this.rtxtDemora.Location = new System.Drawing.Point(884, 234);
-            this.rtxtDemora.MaxLength = 120;
-            this.rtxtDemora.Name = "rtxtDemora";
-            this.rtxtDemora.Size = new System.Drawing.Size(347, 88);
-            this.rtxtDemora.TabIndex = 47;
-            this.rtxtDemora.Text = "";
-            // 
-            // colId_ControlCruces
-            // 
-            this.colId_ControlCruces.Frozen = true;
-            this.colId_ControlCruces.HeaderText = "ID - Control de Cruces";
-            this.colId_ControlCruces.Name = "colId_ControlCruces";
-            this.colId_ControlCruces.ReadOnly = true;
-            // 
-            // colCruce
-            // 
-            this.colCruce.Frozen = true;
-            this.colCruce.HeaderText = "Cruce";
-            this.colCruce.Name = "colCruce";
-            this.colCruce.ReadOnly = true;
-            // 
-            // colTipoServicio
-            // 
-            this.colTipoServicio.Frozen = true;
-            this.colTipoServicio.HeaderText = "Tipo de Servicio";
-            this.colTipoServicio.Name = "colTipoServicio";
-            this.colTipoServicio.ReadOnly = true;
-            // 
-            // colCliente
-            // 
-            this.colCliente.Frozen = true;
-            this.colCliente.HeaderText = "Cliente";
-            this.colCliente.Name = "colCliente";
-            this.colCliente.ReadOnly = true;
-            // 
-            // colCaja
-            // 
-            this.colCaja.Frozen = true;
-            this.colCaja.HeaderText = "Caja";
-            this.colCaja.Name = "colCaja";
-            this.colCaja.ReadOnly = true;
-            // 
-            // colRemision
-            // 
-            this.colRemision.Frozen = true;
-            this.colRemision.HeaderText = "Remision/Factura";
-            this.colRemision.Name = "colRemision";
-            this.colRemision.ReadOnly = true;
-            this.colRemision.Width = 150;
-            // 
-            // colEstatusCobro
-            // 
-            this.colEstatusCobro.Frozen = true;
-            this.colEstatusCobro.HeaderText = "Estatus de Cobro";
-            this.colEstatusCobro.Name = "colEstatusCobro";
-            this.colEstatusCobro.ReadOnly = true;
-            this.colEstatusCobro.Width = 150;
-            // 
-            // colFechaCarga
-            // 
-            this.colFechaCarga.Frozen = true;
-            this.colFechaCarga.HeaderText = "Fecha de Carga";
-            this.colFechaCarga.Name = "colFechaCarga";
-            this.colFechaCarga.ReadOnly = true;
-            this.colFechaCarga.Width = 172;
-            // 
-            // colFechaEntrega
-            // 
-            this.colFechaEntrega.Frozen = true;
-            this.colFechaEntrega.HeaderText = "Fecha de Entrega";
-            this.colFechaEntrega.Name = "colFechaEntrega";
-            this.colFechaEntrega.ReadOnly = true;
-            this.colFechaEntrega.Width = 172;
-            // 
-            // colLugarCarga
-            // 
-            this.colLugarCarga.Frozen = true;
-            this.colLugarCarga.HeaderText = "Lugar de Carga";
-            this.colLugarCarga.Name = "colLugarCarga";
-            this.colLugarCarga.ReadOnly = true;
-            // 
-            // colLugarDescarga
-            // 
-            this.colLugarDescarga.Frozen = true;
-            this.colLugarDescarga.HeaderText = "Lugar de Descarga";
-            this.colLugarDescarga.Name = "colLugarDescarga";
-            this.colLugarDescarga.ReadOnly = true;
-            // 
-            // colPrecioPesos
-            // 
-            this.colPrecioPesos.Frozen = true;
-            this.colPrecioPesos.HeaderText = "Precio Pesos";
-            this.colPrecioPesos.Name = "colPrecioPesos";
-            this.colPrecioPesos.ReadOnly = true;
-            // 
-            // colPrecioDolares
-            // 
-            this.colPrecioDolares.Frozen = true;
-            this.colPrecioDolares.HeaderText = "Precio (Dolares)";
-            this.colPrecioDolares.Name = "colPrecioDolares";
-            this.colPrecioDolares.ReadOnly = true;
-            // 
-            // colIntermediario
-            // 
-            this.colIntermediario.Frozen = true;
-            this.colIntermediario.HeaderText = "Intermediario";
-            this.colIntermediario.Name = "colIntermediario";
-            this.colIntermediario.ReadOnly = true;
-            this.colIntermediario.Width = 155;
-            // 
-            // colUnidad
-            // 
-            this.colUnidad.Frozen = true;
-            this.colUnidad.HeaderText = "Unidad";
-            this.colUnidad.Name = "colUnidad";
-            this.colUnidad.ReadOnly = true;
-            // 
-            // colConductor
-            // 
-            this.colConductor.Frozen = true;
-            this.colConductor.HeaderText = "Conductor";
-            this.colConductor.Name = "colConductor";
-            this.colConductor.ReadOnly = true;
-            // 
-            // colFechaPagoPedimento
-            // 
-            this.colFechaPagoPedimento.Frozen = true;
-            this.colFechaPagoPedimento.HeaderText = "Fecha de Pago de Pedimento";
-            this.colFechaPagoPedimento.Name = "colFechaPagoPedimento";
-            this.colFechaPagoPedimento.ReadOnly = true;
-            this.colFechaPagoPedimento.Width = 172;
-            // 
-            // colFechaVencimientoPedimento
-            // 
-            this.colFechaVencimientoPedimento.Frozen = true;
-            this.colFechaVencimientoPedimento.HeaderText = "Fecha de Vencimiento de Pedimento";
-            this.colFechaVencimientoPedimento.Name = "colFechaVencimientoPedimento";
-            this.colFechaVencimientoPedimento.ReadOnly = true;
-            this.colFechaVencimientoPedimento.Width = 172;
-            // 
-            // colAsignada
-            // 
-            this.colAsignada.Frozen = true;
-            this.colAsignada.HeaderText = "Asignada";
-            this.colAsignada.Name = "colAsignada";
-            this.colAsignada.ReadOnly = true;
-            // 
-            // Demora
-            // 
-            this.Demora.Frozen = true;
-            this.Demora.HeaderText = "Demora";
-            this.Demora.Name = "Demora";
-            this.Demora.ReadOnly = true;
-            this.Demora.Width = 175;
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(1893, 117);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(100, 20);
+            this.chkEstado.TabIndex = 6;
+            this.chkEstado.Text = "PENDIENTE";
+            this.chkEstado.UseVisualStyleBackColor = true;
+            this.chkEstado.CheckedChanged += new System.EventHandler(this.chkEstado_CheckedChanged);
             // 
             // PantallaPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(2768, 1192);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpTablaDeDatos);
             this.Controls.Add(this.grpCampoDatos);
@@ -1059,6 +1065,7 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaVencimientoPedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAsignada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Demora;
+        private System.Windows.Forms.CheckBox chkEstado;
     }
 }
 

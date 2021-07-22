@@ -137,10 +137,7 @@ where id_CodigoCruces > 0;
             {
                 dele(ex.Message);
             }
-            finally
-            {
 
-            }
         }
         public void EstablecerConexionServidorRemoto(string strUser, string strPort, string strPassword, string strSource, delegMensajeExcepcionador dele, string strBDA)
         {
@@ -151,14 +148,14 @@ where id_CodigoCruces > 0;
             string strDatos = "";
             try
             {
-                string strConsulta = "SHOW DATABASES";
+                string strConsulta = "use crucesjeffbd; describe tablacruces";
                 MySqlCommand mcmComando = new MySqlCommand(strConsulta);
                 mcmComando.Connection = ConexionRemota;
                 ConexionRemota.Open();
                 msdrLector = mcmComando.ExecuteReader();
                 while (msdrLector.Read())
                 {
-                    strDatos += msdrLector.GetString(0) + "\n";
+                    strDatos += msdrLector.GetString(0) + " - " + msdrLector.GetString(1) + "\n";
                 }
 
                 dele(strDatos);
@@ -179,7 +176,6 @@ where id_CodigoCruces > 0;
         {
             List<Cruce> listaCruces = new List<Cruce>();
             MySqlDataReader msdrLector = null;
-            string strDatos = "";
             try
             {
                 string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces;";
@@ -229,13 +225,34 @@ where id_CodigoCruces > 0;
         {
             List<Cruce> listaCruces = new List<Cruce>();
             MySqlDataReader msdrLector = null;
-            string strDatos = "";
             try
             {
-                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"id_CodigoCruces like '%{b}%' or TipoServicio like '%{b}%' or " + $"Cliente like '%{b}%' or " + $"Caja like '%{b}%' or " + $"Remision like '%{b}%' or " + $"EstatusCobro like '%{b}%' or " + $"FechaCarga like '%{b}%' or " + $"FechaEntrega like '%{b}%' or  " + $"LugarCarga like '%{b}%' or " + $"LugarDescarga like '%{b}%' or " + $"PrecioPesos like '%{b}%' or  " + $"PrecioDolares like '%{b}%' or " + $"Intermediario like '%{b}%' or " + $"Unidad like '%{b}%' or " + $"Conductor like '%{b}%' or " + $"FechaPagoPedimento like '%{b}%' or " + $"FechaVencimientoPedimento like '%{b}%' or " + $"Asignada like '%{b}%' or "  + $"Demora like '%{b}%'"+" ORDER BY FechaCarga ASC";
+                string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces"
+                + "\n where " +
+                $"id_CodigoCruces like '%{b}%' " +
+                $"or TipoServicio like '%{b}%' " +
+                $"or Cliente like '%{b}%' " +
+                $"or Caja like '%{b}%' " +
+                $"or Remision like '%{b}%' " +
+                $"or EstatusCobro like '%{b}%' " +
+                $"or FechaCarga like '%{b}%' " +
+                $"or FechaEntrega like '%{b}%' " +
+                $"or LugarCarga like '%{b}%' " +
+                $"or LugarDescarga like '%{b}%' " +
+                $"or PrecioPesos like '%{b}%' " +
+                $"or PrecioDolares like '%{b}%' " +
+                $"or Intermediario like '%{b}%' " +
+                $"or Unidad like '%{b}%' " +
+                $"or Conductor like '%{b}%' " +
+                $"or FechaPagoPedimento like '%{b}%' " +
+                $"or FechaVencimientoPedimento like '%{b}%' " +
+                $"or Asignada like '%{b}%' " +
+                $"or Demora like '%{b}%' " +
+                "ORDER BY FechaCarga ASC";
                 MySqlCommand mcmComando = new MySqlCommand(strConsulta);
                 mcmComando.Connection = ConexionRemota;
                 ConexionRemota.Open();
+                mcmComando.Prepare();
                 msdrLector = mcmComando.ExecuteReader();
                 while (msdrLector.Read())
                 {
@@ -275,14 +292,31 @@ where id_CodigoCruces > 0;
             }
             return listaCruces;
         }
-
         public Cruce AgregarCruce(Cruce agCruce, delegMensajeExcepcionador dele)
         {
 
             try
             {
                 string strAdicion = $"INSERT INTO crucesjeffbd.tablacruces(id_CodigoCruces,TipoServicio,Cliente,Caja,Remision,EstatusCobro,FechaCarga,FechaEntrega,LugarCarga,LugarDescarga,PrecioPesos,PrecioDolares,Intermediario,Unidad,Conductor,FechaPagoPedimento,FechaVencimientoPedimento,Asignada,Demora)" +
-                $"values(null,'{agCruce.TipoServicio}','{agCruce.Cliente}','{agCruce.Caja}','{agCruce.Remision}','{agCruce.EstatusCobro}','{agCruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.LugarCarga}','{agCruce.LugarDescarga}','{agCruce.PrecioPesos}','{agCruce.PrecioDolares}','{agCruce.Intermediario}','{agCruce.Unidad}','{agCruce.Conductor}','{agCruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}','{agCruce.Asignada}','{agCruce.Demora}')";
+                $"values(null," +
+                $"'{agCruce.TipoServicio}'," +
+                $"'{agCruce.Cliente}'," +
+                $"'{agCruce.Caja}'," +
+                $"'{agCruce.Remision}'," +
+                $"'{agCruce.EstatusCobro}'," +
+                $"'{agCruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+                $"'{agCruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+                $"'{agCruce.LugarCarga}'," +
+                $"'{agCruce.LugarDescarga}'," +
+                $"'{agCruce.PrecioPesos}'," +
+                $"'{agCruce.PrecioDolares}'," +
+                $"'{agCruce.Intermediario}'," +
+                $"'{agCruce.Unidad}'," +
+                $"'{agCruce.Conductor}'," +
+                $"'{agCruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+                $"'{agCruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+                $"'{agCruce.Asignada}'," +
+                $"'{agCruce.Demora}')";
                 MySqlCommand mcmComando = new MySqlCommand(strAdicion);
                 mcmComando.Connection = ConexionRemota;
                 ConexionRemota.Open();
@@ -301,8 +335,8 @@ where id_CodigoCruces > 0;
         }
         public void Eliminar(Cruce elicruce, delegMensajeExcepcionador dele)
         {
-            string strEliminar = @"delete from crucesjeffbd.tablacruces
-where id_CodigoCruces = " + elicruce.CodigoCruce;
+            string strEliminar = @"delete from crucesjeffbd.tablacruces where id_CodigoCruces = " +
+                elicruce.CodigoCruce;
             try
             {
                 MySqlCommand mcmComando = new MySqlCommand(strEliminar);
@@ -322,7 +356,25 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
         }
         public void Editar(Cruce edcruce, delegMensajeExcepcionador dele)
         {
-            string strEditar = $"UPDATE crucesjeffbd.tablacruces set TipoServicio = '{edcruce.TipoServicio}', Cliente = '{edcruce.Cliente}', Caja = '{edcruce.Caja}', Remision = '{edcruce.Remision}', EstatusCobro = '{edcruce.EstatusCobro}', FechaCarga = '{edcruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}', FechaEntrega = '{edcruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}',LugarCarga = '{edcruce.LugarCarga}',LugarDescarga = '{edcruce.LugarDescarga}', PrecioPesos = '{edcruce.PrecioPesos}', PrecioDolares = '{edcruce.PrecioDolares}', Intermediario = '{edcruce.Intermediario}', Unidad = '{edcruce.Unidad}', Conductor = '{edcruce.Conductor}',FechaPagoPedimento = '{edcruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}', FechaVencimientoPedimento = '{edcruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}',Asignada = '{edcruce.Asignada}',Demora = '{edcruce.Demora}' where id_CodigoCruces = '{edcruce.CodigoCruce}'";
+            string strEditar = $"UPDATE crucesjeffbd.tablacruces set TipoServicio = '{edcruce.TipoServicio}'," +
+            $"Cliente = '{edcruce.Cliente}'," +
+            $"Caja = '{edcruce.Caja}'," +
+            $"Remision = '{edcruce.Remision}'," +
+            $"EstatusCobro = '{edcruce.EstatusCobro}'," +
+            $"FechaCarga = '{edcruce.FechaCarga.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+            $"FechaEntrega = '{edcruce.FechaEntrega.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+            $"LugarCarga = '{edcruce.LugarCarga}'," +
+            $"LugarDescarga = '{edcruce.LugarDescarga}'," +
+            $"PrecioPesos = '{edcruce.PrecioPesos}'," +
+            $"PrecioDolares = '{edcruce.PrecioDolares}'," +
+            $"Intermediario = '{edcruce.Intermediario}'," +
+            $"Unidad = '{edcruce.Unidad}'," +
+            $"Conductor = '{edcruce.Conductor}'," +
+            $"FechaPagoPedimento = '{edcruce.FechaPagoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+            $"FechaVencimientoPedimento = '{edcruce.FechaVencimientoPedimento.ToString("yyyy-MM-dd HH:mm:ss")}'," +
+            $"Asignada = '{edcruce.Asignada}'," +
+            $"Demora = '{edcruce.Demora}' " +
+            $"where id_CodigoCruces = '{edcruce.CodigoCruce}'";
             try
             {
                 MySqlCommand mcmComando = new MySqlCommand(strEditar);
@@ -373,7 +425,6 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
 
             List<Cruce> listaCruces = new List<Cruce>();
             MySqlDataReader msdrLector = null;
-            string strDatos = "";
             try
             {
                 string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces" + "\n where " + $"FechaCarga >= '{b}' ORDER BY FechaCarga ASC";
@@ -424,7 +475,6 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
 
             List<Cruce> listaCruces = new List<Cruce>();
             MySqlDataReader msdrLector = null;
-            string strDatos = "";
             try
             {
                 string strConsulta = "SELECT * FROM crucesjeffbd.tablacruces ORDER BY FechaCarga ASC";
@@ -469,6 +519,54 @@ where id_CodigoCruces = " + elicruce.CodigoCruce;
 
             }
             return listaCruces;
+        }
+        public Cruce BuscarCruce(delegMensajeExcepcionador dele, int id)
+        {
+            MySqlDataReader msdrLector = null;
+            string strConsulta = "select * from crucesjeffbd.tablacruces" +
+            $"\nwhere id_CodigoCruces like '%{id}%'";
+            Cruce cruceNuevo = new Cruce();
+            try
+            {
+                MySqlCommand mcmCommand = new MySqlCommand(strConsulta, ConexionRemota);
+                ConexionRemota.Open();
+                MySqlDataReader msrLector = mcmCommand.ExecuteReader();
+                
+                if (msrLector.Read())
+                {
+                    
+                    cruceNuevo.CodigoCruce = msdrLector.GetInt32(0);
+                    cruceNuevo.TipoServicio = msdrLector.GetString(1);
+                    cruceNuevo.Cliente = msdrLector.GetString(2);
+                    cruceNuevo.Caja = msdrLector.GetString(3);
+                    cruceNuevo.Remision = msdrLector.GetString(4);
+                    cruceNuevo.EstatusCobro = msdrLector.GetString(5);
+                    cruceNuevo.FechaCarga = msdrLector.GetDateTime(6);
+                    cruceNuevo.FechaEntrega = msdrLector.GetDateTime(7);
+                    cruceNuevo.LugarCarga = msdrLector.GetString(8);
+                    cruceNuevo.LugarDescarga = msdrLector.GetString(9);
+                    cruceNuevo.PrecioPesos = msdrLector.GetDouble(10);
+                    cruceNuevo.PrecioDolares = msdrLector.GetDouble(11);
+                    cruceNuevo.Intermediario = msdrLector.GetString(12);
+                    cruceNuevo.Unidad = msdrLector.GetString(13);
+                    cruceNuevo.Conductor = msdrLector.GetString(14);
+                    cruceNuevo.FechaPagoPedimento = msdrLector.GetDateTime(15);
+                    cruceNuevo.FechaVencimientoPedimento = msdrLector.GetDateTime(16);
+                    cruceNuevo.Asignada = msdrLector.GetString(17);
+                    cruceNuevo.Demora = msdrLector.GetString(18);
+                    
+                }
+            }
+            catch (System.Exception e)
+            {
+
+                dele(e.Message);
+            }
+            finally
+            {
+                ConexionRemota.Close();
+            }
+            return cruceNuevo;
         }
     }
 }

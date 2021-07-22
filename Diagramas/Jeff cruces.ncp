@@ -1,0 +1,230 @@
+<Project>
+  <Name>Jeff cruces</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Cruces</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Cruce</Name>
+        <Access>Public</Access>
+        <Location left="280" top="151" />
+        <Size width="287" height="723" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int _intCodigoCruce</Member>
+        <Member type="Field">string _strTipoServicio</Member>
+        <Member type="Field">string _strCaja</Member>
+        <Member type="Field">string _strRemision</Member>
+        <Member type="Field">string _strEstatusCobro</Member>
+        <Member type="Field">DateTime _dtmFechaCarga</Member>
+        <Member type="Field">DateTime _dtmFechaEntrega</Member>
+        <Member type="Field">string _strLugarCarga</Member>
+        <Member type="Field">string _strLugarDescarga</Member>
+        <Member type="Field">double _dblPrecioPesos</Member>
+        <Member type="Field">double _dblPrecioDolares</Member>
+        <Member type="Field">string _strIntermediario</Member>
+        <Member type="Field">string _strUnidad</Member>
+        <Member type="Field">string _strConductor</Member>
+        <Member type="Field">DateTime _dtmFechaPagoPedimento</Member>
+        <Member type="Field">DateTime _dtmFechaVencimientoPedimento</Member>
+        <Member type="Field">string _strAsignada</Member>
+        <Member type="Field">string _strCliente</Member>
+        <Member type="Field">string _strDemora</Member>
+        <Member type="Property">public int CodigoCruce { get; set; }</Member>
+        <Member type="Property">public string TipoServicio { get; set; }</Member>
+        <Member type="Property">public string Caja { get; set; }</Member>
+        <Member type="Property">public string Remision { get; set; }</Member>
+        <Member type="Property">public string EstatusCobro { get; set; }</Member>
+        <Member type="Property">public DateTime FechaCarga { get; set; }</Member>
+        <Member type="Property">public DateTime FechaEntrega { get; set; }</Member>
+        <Member type="Property">public string LugarCarga { get; set; }</Member>
+        <Member type="Property">public string LugarDescarga { get; set; }</Member>
+        <Member type="Property">public double PrecioPesos { get; set; }</Member>
+        <Member type="Property">public double PrecioDolares { get; set; }</Member>
+        <Member type="Property">public string Intermediario { get; set; }</Member>
+        <Member type="Property">public string Unidad { get; set; }</Member>
+        <Member type="Property">public string Conductor { get; set; }</Member>
+        <Member type="Property">public DateTime FechaPagoPedimento { get; set; }</Member>
+        <Member type="Property">public DateTime FechaVencimientoPedimento { get; set; }</Member>
+        <Member type="Property">public string Asignada { get; set; }</Member>
+        <Member type="Property">public string Cliente { get; set; }</Member>
+        <Member type="Property">public string Demora { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Este funciona como ID, para la base de datos</Text>
+        <Location left="32" top="242" />
+        <Size width="160" height="75" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Comment" first="1" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>255</X>
+          <Y>213</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Comment" first="1" second="0">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>255</X>
+          <Y>551</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Ventanas</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>PantallaPrincipal</Name>
+        <Access>Public</Access>
+        <Location left="233" top="124" />
+        <Size width="439" height="196" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">ConexionBDJeff ne</Member>
+        <Member type="Field">Cruce scru</Member>
+        <Member type="Constructor">public PantallaPrincipal()</Member>
+        <Member type="Method">private void crearBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void conectarABaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void btnRecargar_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">void Recargar()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ContrasenaPag</Name>
+        <Access>Public</Access>
+        <Location left="233" top="468" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Cont</Name>
+        <Access>Public</Access>
+        <Location left="634" top="423" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConexionRemotaFormulario</Name>
+        <Access>Public</Access>
+        <Location left="860" top="124" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="2">
+        <Label>que</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartRole>Tiene </StartRole>
+        <EndRole>puede compartir</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>para </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartRole>Usa uno </StartRole>
+        <EndRole>funcionar con el metodo</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>de </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartRole>Por medio </StartRole>
+        <EndRole>metodo usa</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <Label>para </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartRole>Usa</StartRole>
+        <EndRole>acceder</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Base de Datos</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ConexionBDJeff</Name>
+        <Access>Public</Access>
+        <Location left="355" top="201" />
+        <Size width="814" height="468" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string _strServidor</Member>
+        <Member type="Field">string _strDatabase</Member>
+        <Member type="Field">string _strPort</Member>
+        <Member type="Field">MySqlConnection _conConexionRemota</Member>
+        <Member type="Field">string _strUsuario</Member>
+        <Member type="Field">string _strContrasena</Member>
+        <Member type="Property">public string Servidor { get; set; }</Member>
+        <Member type="Property">public string Database { get; set; }</Member>
+        <Member type="Property">public string Port { get; set; }</Member>
+        <Member type="Property">public MySqlConnection ConexionRemota { get; set; }</Member>
+        <Member type="Property">public string Usuario { get; set; }</Member>
+        <Member type="Property">public string Contrasena { get; set; }</Member>
+        <Member type="Method">public void CrearBaseDatosLocal(delegMensajeExcepcionador dele)</Member>
+        <Member type="Method">public void AnadirDemora(delegMensajeExcepcionador dele)</Member>
+        <Member type="Method">public void EstablecerConexionServidorRemoto(string strUser, string strPort, string strPassword, string strSource, delegMensajeExcepcionador dele, string strBDA)</Member>
+        <Member type="Method">public List&lt;Cruce&gt; ObtenerListaCruces(delegMensajeExcepcionador dele)</Member>
+        <Member type="Method">public List&lt;Cruce&gt; ObtenerListaCrucesBuscados(delegMensajeExcepcionador dele, string b)</Member>
+        <Member type="Method">public Cruce AgregarCruce(Cruce agCruce, deleMensajeExcepcionador dele)</Member>
+        <Member type="Method">public void Eliminar(Cruce eliCruce, delegMensajeExcepcionador dele)</Member>
+        <Member type="Method">public void Editar(Cruce edCruce, delegMensajeExcepcionador dele)</Member>
+        <Member type="Method">public void EliminarBaseDatos(deleMensajeExcepcionador dele)</Member>
+        <Member type="Method">public List&lt;Cruce&gt; BuscarPorFecha(deleMensajeExcepcionador dele, string b)</Member>
+        <Member type="Method">public List&lt;Cruce&gt; OrdenarPorFechaCarga(deleMensajeExcepcionador dele)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Delegate">
+        <Name>delegMensajeExcepcionador</Name>
+        <Access>Public</Access>
+        <Location left="395" top="65" />
+        <Size width="195" height="78" />
+        <Collapsed>False</Collapsed>
+        <ReturnType>void</ReturnType>
+        <Param>string me</Param>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Delegado para uso de mensajes de error</Text>
+        <Location left="678" top="80" />
+        <Size width="140" height="50" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Dependency" first="0" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="2" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

@@ -562,6 +562,12 @@
         "Entry"
         {
         "MsmKey" = "8:_A8E78FA7BFB0B9902ACD45A09C2E6EB8"
+        "OwnerKey" = "8:_A68E8E2D8C091BEA0AD69847EBD319E7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A8E78FA7BFB0B9902ACD45A09C2E6EB8"
         "OwnerKey" = "8:_7ECE7BA6FDC007D9EE6EA5DCD92C59B7"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -5826,13 +5832,13 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Jeff Cruces"
         "ProductCode" = "8:{159B40C8-A258-4FE6-8DFF-B819B5CD6DC9}"
-        "PackageCode" = "8:{39411278-78BC-4073-BF42-1C2E2D7960CF}"
+        "PackageCode" = "8:{2882F343-B593-4E31-9675-674EA5EA0038}"
         "UpgradeCode" = "8:{799AE306-DFC3-4838-88FD-0AC7F7F40CB8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
+        "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:0.1.4"
         "Manufacturer" = "8:Transporte de Carga Jeff"
         "ARPHELPTELEPHONE" = "8:"
@@ -6375,7 +6381,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_420A89F20C4640EEAE43F9A911FD988A"
             {
-            "SourcePath" = "8:..\\Formulario-Cruces_JEFF\\obj\\Release\\Formulario-Cruces_JEFF.exe"
+            "SourcePath" = "8:..\\Formulario-Cruces_JEFF\\obj\\Debug\\Formulario-Cruces_JEFF.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BCC3C040881842F284E206135E1F0171"
