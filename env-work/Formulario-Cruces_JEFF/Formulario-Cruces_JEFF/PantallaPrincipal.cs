@@ -10,6 +10,7 @@ namespace Formulario_Cruces_JEFF
     {
         ConexionBDJeff ne = new ConexionBDJeff();
         Cruce scru;
+        List<Cruce> listaCruces = new List<Cruce>();
         string strEstado = "PENDIENTE";
         public PantallaPrincipal()
         {
@@ -39,23 +40,22 @@ namespace Formulario_Cruces_JEFF
 
         void Recargar()
         {
-            List<Cruce> lista = ne.ObtenerListaCruces((s) => MessageBox.Show(s));
+            listaCruces = ne.ObtenerListaCruces((s) => MessageBox.Show(s));
             dtgTablaDatos.Rows.Clear();
             int i = 1;
-            foreach (Cruce cruz in lista)
+            foreach (Cruce cruz in listaCruces)
             {
-                if (cruz.EstatusCobro.Equals(strEstado))
+
+                int ind = dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd-MMMM-yyyy"), cruz.FechaEntrega.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaVencimientoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.Asignada, cruz.Demora);
+                i++;
+                if (cruz.EstatusCobro == "PAGADO" || cruz.EstatusCobro == "PAGADA")
                 {
-                    int ind = dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd-MMMM-yyyy"), cruz.FechaEntrega.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaVencimientoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.Asignada, cruz.Demora);
-                    i++;
-                    if (cruz.EstatusCobro == "PAGADO" || cruz.EstatusCobro == "PAGADA")
+                    foreach (DataGridViewCell cell in dtgTablaDatos.Rows[ind].Cells)
                     {
-                        foreach (DataGridViewCell cell in dtgTablaDatos.Rows[ind].Cells)
-                        {
-                            cell.Style.BackColor = Color.CornflowerBlue;
-                        }
+                        cell.Style.BackColor = Color.CornflowerBlue;
                     }
                 }
+
             }
         }
 
@@ -66,24 +66,8 @@ namespace Formulario_Cruces_JEFF
                 try
                 {
                     Cruce nuevoCruce = new Cruce();
-                    nuevoCruce.TipoServicio = txtTipoServicio.Text;
-                    nuevoCruce.Cliente = txtCliente.Text;
-                    nuevoCruce.Caja = txtCaja.Text;
-                    nuevoCruce.Remision = txtRemision.Text;
-                    nuevoCruce.EstatusCobro = cboEstatusCobro.Text;
-                    nuevoCruce.FechaCarga = dtpFechaCarga.Value;
-                    nuevoCruce.FechaEntrega = dtpFechaEntrega.Value;
-                    nuevoCruce.LugarCarga = txtLugarCarga.Text;
-                    nuevoCruce.LugarDescarga = txtLugarDescarga.Text;
-                    nuevoCruce.PrecioPesos = double.Parse(txtPrecioPesos.Text);
-                    nuevoCruce.PrecioDolares = double.Parse(txtPrecioDolares.Text);
-                    nuevoCruce.Intermediario = txtIntermediario.Text;
-                    nuevoCruce.Unidad = cboUnidades.Text;
-                    nuevoCruce.Conductor = txtConductor.Text;
-                    nuevoCruce.FechaPagoPedimento = dtpFechaPagoPedimento.Value;
-                    nuevoCruce.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
-                    nuevoCruce.Asignada = cboAsignada.Text;
-                    nuevoCruce.Demora = rtxtDemora.Text;
+                    AgregarPag agre = new AgregarPag(ref nuevoCruce);
+                    agre.ShowDialog();
                     ne.AgregarCruce(nuevoCruce, (s) => MessageBox.Show(s));
                     Recargar();
                     MessageBox.Show("Se ha agregado un nuevo cruce");
@@ -128,24 +112,25 @@ namespace Formulario_Cruces_JEFF
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string busqueda = txtBuscar.Text;
-            List<Cruce> lista = ne.ObtenerListaCrucesBuscados((s) => MessageBox.Show(s), busqueda);
+            string[] busqueda = new string[0];
+            BuscarPagina bscPag = new BuscarPagina(ref busqueda);
+            bscPag.ShowDialog();
+            listaCruces = ne.ObtenerListaCrucesBuscados((s) => MessageBox.Show(s), busqueda);
             dtgTablaDatos.Rows.Clear();
             int i = 1;
-            foreach (Cruce cruz in lista)
+            foreach (Cruce cruz in listaCruces)
             {
-                if (cruz.EstatusCobro.Equals(strEstado))
+
+                int ind = dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd-MMMM-yyyy"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada, cruz.Demora);
+                i++;
+                if (cruz.EstatusCobro == "PAGADO" || cruz.EstatusCobro == "PAGADA")
                 {
-                    int ind = dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd-MMMM-yyyy"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada, cruz.Demora);
-                    i++;
-                    if (cruz.EstatusCobro == "PAGADO" || cruz.EstatusCobro == "PAGADA")
+                    foreach (DataGridViewCell cell in dtgTablaDatos.Rows[ind].Cells)
                     {
-                        foreach (DataGridViewCell cell in dtgTablaDatos.Rows[ind].Cells)
-                        {
-                            cell.Style.BackColor = Color.CornflowerBlue;
-                        }
+                        cell.Style.BackColor = Color.CornflowerBlue;
                     }
                 }
+
             }
         }
 
@@ -231,34 +216,24 @@ where id_CodigoCruces = " + num;
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Cruce edCruce = new Cruce();
-            if (MessageBox.Show("¿Desea editar el registro?", "ELIMINACION", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (!(txtCodigoCruce.Text == null || txtCodigoCruce.Text == ""))
             {
-                edCruce.CodigoCruce = int.Parse(txtCodigoCruce.Text);
-                edCruce.TipoServicio = txtTipoServicio.Text;
-                edCruce.Cliente = txtCliente.Text;
-                edCruce.Caja = txtCaja.Text;
-                edCruce.Remision = txtRemision.Text;
-                edCruce.EstatusCobro = cboEstatusCobro.Text;
-                edCruce.FechaCarga = dtpFechaCarga.Value;
-                edCruce.FechaEntrega = dtpFechaEntrega.Value;
-                edCruce.LugarCarga = txtLugarCarga.Text;
-                edCruce.LugarDescarga = txtLugarDescarga.Text;
-                edCruce.PrecioPesos = double.Parse(txtPrecioPesos.Text);
-                edCruce.PrecioDolares = double.Parse(txtPrecioDolares.Text);
-                edCruce.Intermediario = txtIntermediario.Text;
-                edCruce.Unidad = cboUnidades.Text;
-                edCruce.Conductor = txtConductor.Text;
-                edCruce.FechaPagoPedimento = dtpFechaPagoPedimento.Value;
-                edCruce.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
-                edCruce.Asignada = cboAsignada.Text;
-                edCruce.Demora = rtxtDemora.Text;
-                ne.Editar(edCruce, (a) => MessageBox.Show(a));
-                Recargar();
-                MessageBox.Show("Se edito el registro seleccionado");
+                if (MessageBox.Show("¿Desea editar el registro?", "EDITAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    EditarPag editpa = new EditarPag(ref scru);
+                    editpa.ShowDialog();
+                    ne.Editar(scru, (a) => MessageBox.Show(a));
+                    Recargar();
+                    MessageBox.Show("Se edito el registro seleccionado");
+                }
+                else
+                {
+                    MessageBox.Show("No se edito ningun registro");
+                }
             }
             else
             {
-                MessageBox.Show("No se edito ningun registro");
+                MessageBox.Show("No se selecciono ningun registro");
             }
             VaciarCampos();
         }
@@ -338,7 +313,7 @@ where id_CodigoCruces = " + num;
             MessageBox.Show("La direccion de esta maquina es: " + ObtenerIP());
         }
 
-        string ObtenerIP()
+        public static string ObtenerIP()
         {
             string hostName = Dns.GetHostName();
             string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
@@ -357,46 +332,27 @@ where id_CodigoCruces = " + num;
 
         private void btnBuscarFechaCarga_Click(object sender, EventArgs e)
         {
-            string busqueda = txtBuscarFechaCarga.Text;
-            List<Cruce> lista = ne.BuscarPorFecha((s) => MessageBox.Show(s), busqueda);
-            dtgTablaDatos.Rows.Clear();
-            int i = 1;
-            foreach (Cruce cruz in lista)
-            {
-                if (cruz.EstatusCobro.Equals(strEstado))
-                {
-                    int ind = dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd-MMMM-yyyy"), cruz.FechaEntrega.ToString("f"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("f"), cruz.FechaVencimientoPedimento.ToString("f"), cruz.Asignada, cruz.Demora);
-                    i++;
-                    if (cruz.EstatusCobro == "PAGADO" || cruz.EstatusCobro == "PAGADA")
-                    {
-                        foreach (DataGridViewCell cell in dtgTablaDatos.Rows[ind].Cells)
-                        {
-                            cell.Style.BackColor = Color.CornflowerBlue;
-                        }
-                    }
-                }
-            }
+
         }
 
         private void btnOrdenarFechaCarga_Click(object sender, EventArgs e)
         {
-            List<Cruce> lista = ne.OrdenarPorFechaCarga((s) => MessageBox.Show(s));
+            listaCruces = ne.OrdenarPorFechaCarga((s) => MessageBox.Show(s));
             dtgTablaDatos.Rows.Clear();
             int i = 1;
-            foreach (Cruce cruz in lista)
+            foreach (Cruce cruz in listaCruces)
             {
-                if (cruz.EstatusCobro.Equals(strEstado))
+
+                int ind = dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd-MMMM-yyyy"), cruz.FechaEntrega.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaVencimientoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.Asignada, cruz.Demora);
+                i++;
+                if (cruz.EstatusCobro == "PAGADO" || cruz.EstatusCobro == "PAGADA")
                 {
-                    int ind = dtgTablaDatos.Rows.Add(cruz.CodigoCruce, i, cruz.TipoServicio, cruz.Cliente, cruz.Caja, cruz.Remision, cruz.EstatusCobro, cruz.FechaCarga.ToString("dd-MMMM-yyyy"), cruz.FechaEntrega.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.LugarCarga, cruz.LugarDescarga, cruz.PrecioPesos.ToString("C"), cruz.PrecioDolares.ToString("C"), cruz.Intermediario, cruz.Unidad, cruz.Conductor, cruz.FechaPagoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.FechaVencimientoPedimento.ToString("dd,dddd-MMMM-yyyy HH:mm:ss"), cruz.Asignada, cruz.Demora);
-                    i++;
-                    if (cruz.EstatusCobro == "PAGADO" || cruz.EstatusCobro == "PAGADA")
+                    foreach (DataGridViewCell cell in dtgTablaDatos.Rows[ind].Cells)
                     {
-                        foreach (DataGridViewCell cell in dtgTablaDatos.Rows[ind].Cells)
-                        {
-                            cell.Style.BackColor = Color.CornflowerBlue;
-                        }
+                        cell.Style.BackColor = Color.CornflowerBlue;
                     }
                 }
+
             }
         }
 
@@ -417,16 +373,6 @@ where id_CodigoCruces = " + num;
 
         private void chkEstado_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkEstado.Checked == true)
-            {
-                strEstado = "PAGADO";
-                chkEstado.Text = strEstado;
-            }
-            else
-            {
-                strEstado = "PENDIENTE";
-                chkEstado.Text = strEstado;
-            }
         }
     }
 }

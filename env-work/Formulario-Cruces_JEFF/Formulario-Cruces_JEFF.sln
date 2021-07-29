@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulario-Cruces_JEFF", "Formulario-Cruces_JEFF\Formulario-Cruces_JEFF.csproj", "{CFF3A6C8-2E8D-4B5B-93E1-C05BB9B9964A}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Jeff Cruces", "Setup\Setup.vdproj", "{CEF1C65F-6CA8-455B-8DF1-BCF42725FB63}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupJeff", "SetupJeff\SetupJeff.vdproj", "{A4AC5FF0-FBEB-415E-B57F-B3631E702753}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +17,8 @@ Global
 		{CFF3A6C8-2E8D-4B5B-93E1-C05BB9B9964A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFF3A6C8-2E8D-4B5B-93E1-C05BB9B9964A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFF3A6C8-2E8D-4B5B-93E1-C05BB9B9964A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEF1C65F-6CA8-455B-8DF1-BCF42725FB63}.Debug|Any CPU.ActiveCfg = Release
-		{CEF1C65F-6CA8-455B-8DF1-BCF42725FB63}.Debug|Any CPU.Build.0 = Release
-		{CEF1C65F-6CA8-455B-8DF1-BCF42725FB63}.Release|Any CPU.ActiveCfg = Release
+		{A4AC5FF0-FBEB-415E-B57F-B3631E702753}.Debug|Any CPU.ActiveCfg = Debug
+		{A4AC5FF0-FBEB-415E-B57F-B3631E702753}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

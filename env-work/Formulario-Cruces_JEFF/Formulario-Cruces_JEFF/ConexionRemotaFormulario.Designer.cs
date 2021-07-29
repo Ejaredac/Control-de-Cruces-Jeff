@@ -42,6 +42,8 @@ namespace Formulario_Cruces_JEFF
             this.txtServidorRuta = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblIP = new System.Windows.Forms.Label();
+            this.lblIndicacion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblBDA
@@ -151,11 +153,31 @@ namespace Formulario_Cruces_JEFF
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Location = new System.Drawing.Point(264, 199);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(62, 13);
+            this.lblIP.TabIndex = 3;
+            this.lblIP.Text = "IP ACTUAL";
+            // 
+            // lblIndicacion
+            // 
+            this.lblIndicacion.AutoSize = true;
+            this.lblIndicacion.Location = new System.Drawing.Point(130, 199);
+            this.lblIndicacion.Name = "lblIndicacion";
+            this.lblIndicacion.Size = new System.Drawing.Size(128, 13);
+            this.lblIndicacion.TabIndex = 4;
+            this.lblIndicacion.Text = "Direccion de este equipo:";
+            // 
             // ConexionRemotaFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 299);
+            this.Controls.Add(this.lblIndicacion);
+            this.Controls.Add(this.lblIP);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtServidorRuta);
@@ -172,6 +194,7 @@ namespace Formulario_Cruces_JEFF
             this.Name = "ConexionRemotaFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conexion remota";
+            this.Load += new System.EventHandler(this.ConexionRemotaFormulario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +214,7 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.TextBox txtServidorRuta;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblIP;
+        private System.Windows.Forms.Label lblIndicacion;
     }
 }

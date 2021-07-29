@@ -53,6 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarPag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarPag.Designer.cs">
+      <DependentUpon>AgregarPag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarPagina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarPagina.Designer.cs">
+      <DependentUpon>BuscarPagina.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConexionBDJeff.cs" />
     <Compile Include="Cruces.cs" />
     <Compile Include="ContrasenaPag.cs">
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="ContrasenaPag.Designer.cs">
       <DependentUpon>ContrasenaPag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarPag.Designer.cs">
+      <DependentUpon>EditarPag.cs</DependentUpon>
     </Compile>
     <Compile Include="PantallaPrincipal.cs">
       <SubType>Form</SubType>
@@ -75,8 +93,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarPag.resx">
+      <DependentUpon>AgregarPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarPagina.resx">
+      <DependentUpon>BuscarPagina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContrasenaPag.resx">
       <DependentUpon>ContrasenaPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarPag.resx">
+      <DependentUpon>EditarPag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>

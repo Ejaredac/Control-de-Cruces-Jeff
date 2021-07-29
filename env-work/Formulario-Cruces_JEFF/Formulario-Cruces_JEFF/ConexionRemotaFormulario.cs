@@ -58,5 +58,10 @@ namespace Formulario_Cruces_JEFF
             ConexionRetornadora = ConexionFormularioEntrada;
             this.Close();
         }
+
+        private void ConexionRemotaFormulario_Load(object sender, EventArgs e)
+        {
+            lblIP.Text = PantallaPrincipal.ObtenerIP();
+        }
     }
 }
