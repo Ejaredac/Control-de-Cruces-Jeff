@@ -1,7 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
+using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Net;
 using System.Windows.Forms;
 namespace Formulario_Cruces_JEFF
@@ -67,10 +70,16 @@ namespace Formulario_Cruces_JEFF
                 {
                     Cruce nuevoCruce = new Cruce();
                     AgregarPag agre = new AgregarPag(ref nuevoCruce);
-                    agre.ShowDialog();
-                    ne.AgregarCruce(nuevoCruce, (s) => MessageBox.Show(s));
-                    Recargar();
-                    MessageBox.Show("Se ha agregado un nuevo cruce");
+                    if (agre.ShowDialog() == DialogResult.OK)
+                    {
+                        ne.AgregarCruce(nuevoCruce, (s) => MessageBox.Show(s));
+                        Recargar();
+                        MessageBox.Show("Se ha agregado un nuevo cruce");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se agrega el nuevo cruce");
+                    }
                 }
                 catch (MySql.Data.MySqlClient.MySqlException mex)
                 {
@@ -221,10 +230,17 @@ where id_CodigoCruces = " + num;
                 if (MessageBox.Show("¿Desea editar el registro?", "EDITAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     EditarPag editpa = new EditarPag(ref scru);
-                    editpa.ShowDialog();
-                    ne.Editar(scru, (a) => MessageBox.Show(a));
-                    Recargar();
-                    MessageBox.Show("Se edito el registro seleccionado");
+
+                    if (editpa.ShowDialog() == DialogResult.OK)
+                    {
+                        ne.Editar(scru, (a) => MessageBox.Show(a));
+                        Recargar();
+                        MessageBox.Show("Se edito el registro seleccionado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se edito el registro");
+                    }
                 }
                 else
                 {
@@ -373,6 +389,79 @@ where id_CodigoCruces = " + num;
 
         private void chkEstado_CheckedChanged(object sender, EventArgs e)
         {
+        }
+
+        private void exportarReporteAExcelxlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Va a exportar los datos de la tabla a un archivo de Excel", "EXPORTACION", MessageBoxButtons.YesNo) == DialogResult.Yes))
+            {
+                try
+                {
+
+
+                    string path = "C:\\Users\\ejare\\Desktop\\Reporte.xlsx";
+                    SaveFileDialog folderBrowser = new SaveFileDialog();
+                    folderBrowser.ValidateNames = false;
+                    folderBrowser.CheckFileExists = false;
+                    folderBrowser.CheckPathExists = true;
+                    folderBrowser.FileName = "Reporte.xlsx";
+                    if (folderBrowser.ShowDialog() == DialogResult.OK)
+                    {
+                        path = Path.GetFullPath(folderBrowser.FileName);
+                    }
+
+                    SLDocument sLDocument = new SLDocument();
+
+                    DataTable data = new DataTable();
+                    //Columnas
+                    data.Columns.Add("Codigo de Cruce", typeof(int));
+                    data.Columns.Add("Tipo de Servicio", typeof(string));
+                    data.Columns.Add("Caja", typeof(string));
+                    data.Columns.Add("Remision / Factura", typeof(string));
+                    data.Columns.Add("Estatus de Cobro", typeof(string));
+                    data.Columns.Add("Fecha de Carga", typeof(string));
+                    data.Columns.Add("Fecha de Entrega", typeof(string));
+                    data.Columns.Add("Lugar de Carga", typeof(string));
+                    data.Columns.Add("Lugar de Descarga", typeof(string));
+                    data.Columns.Add("Precio (Pesos)", typeof(double));
+                    data.Columns.Add("Precio (Dolares)", typeof(double));
+                    data.Columns.Add("Intermediario", typeof(string));
+                    data.Columns.Add("Unidad", typeof(string));
+                    data.Columns.Add("Conductor", typeof(string));
+                    data.Columns.Add("Fecha de Pago de Pedimento", typeof(string));
+                    data.Columns.Add("Fecha de Vencimiento de Pedimento", typeof(string));
+                    data.Columns.Add("Asignada", typeof(string));
+                    data.Columns.Add("Cliente", typeof(string));
+                    data.Columns.Add("Demora", typeof(string));
+
+                    //registros
+                    foreach (Cruce cru in listaCruces)
+                    {
+                        data.Rows.Add(cru.CodigoCruce,
+                            cru.TipoServicio, cru.Caja,
+                            cru.Remision, cru.EstatusCobro,
+                            cru.FechaCarga.ToString("g"), cru.FechaEntrega.ToString("g"),
+                            cru.LugarCarga, cru.LugarDescarga,
+                            cru.PrecioPesos, cru.PrecioDolares,
+                            cru.Intermediario, cru.Unidad,
+                            cru.Conductor,
+                            cru.FechaPagoPedimento.ToString("g"), cru.FechaVencimientoPedimento.ToString("g"),
+                            cru.Asignada, cru.Cliente,
+                            cru.Demora);
+                    }
+                    sLDocument.ImportDataTable(1, 1, data, true);
+                    sLDocument.SaveAs(path);
+                    MessageBox.Show("Se exportó el archivo correctamente");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se exportó ningun archivo");
+            }
         }
     }
 }

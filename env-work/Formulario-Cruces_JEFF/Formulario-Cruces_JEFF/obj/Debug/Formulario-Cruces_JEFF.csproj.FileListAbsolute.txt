@@ -26,3 +26,11 @@ C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-d
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario_Cruces_JEFF.BuscarPagina.resources
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario_Cruces_JEFF.AgregarPag.resources
 C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario_Cruces_JEFF.EditarPag.resources
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\SpreadsheetLight.dll
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\System.Drawing.Common.dll
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\System.IO.Packaging.dll
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\SpreadsheetLight.xml
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\bin\Debug\System.IO.Packaging.xml
+C:\Users\ejare\Documents\_DevOps\SoftDevs\Sistema de control de cruces\Control-de-Cruces-Jeff\env-work\Formulario-Cruces_JEFF\Formulario-Cruces_JEFF\obj\Debug\Formulario-Cruces_JEFF.csproj.AssemblyReference.cache

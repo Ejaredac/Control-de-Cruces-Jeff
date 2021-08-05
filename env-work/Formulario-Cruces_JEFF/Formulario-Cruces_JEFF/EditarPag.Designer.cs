@@ -513,6 +513,7 @@ namespace Formulario_Cruces_JEFF
             this.Controls.Add(this.lblCodigoCruce);
             this.Controls.Add(this.lblCaja);
             this.Controls.Add(this.txtRemision);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarPag";
             this.Text = "EditarPag";
             this.Load += new System.EventHandler(this.EditarPag_Load);

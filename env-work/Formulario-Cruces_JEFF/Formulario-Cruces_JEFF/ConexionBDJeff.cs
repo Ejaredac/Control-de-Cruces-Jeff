@@ -112,7 +112,7 @@ CREATE TABLE if not exists TablaCruces (
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd;
             string s0;
-            string s1;
+            
             try
             {
                 conn.Open();
@@ -470,7 +470,7 @@ where id_CodigoCruces > 0;
             string connStr = "server=localhost;user=root;port=3306;password=112601";
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd;
-            string s0;
+            
             string s1;
             try
             {

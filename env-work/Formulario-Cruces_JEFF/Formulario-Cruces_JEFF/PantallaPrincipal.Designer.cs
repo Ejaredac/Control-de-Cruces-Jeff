@@ -107,6 +107,8 @@ namespace Formulario_Cruces_JEFF
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Demora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarReporteAExcelxlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpCampoDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mstMenu.SuspendLayout();
@@ -183,6 +185,7 @@ namespace Formulario_Cruces_JEFF
             this.rtxtDemora.Location = new System.Drawing.Point(884, 234);
             this.rtxtDemora.MaxLength = 120;
             this.rtxtDemora.Name = "rtxtDemora";
+            this.rtxtDemora.ReadOnly = true;
             this.rtxtDemora.Size = new System.Drawing.Size(347, 88);
             this.rtxtDemora.TabIndex = 47;
             this.rtxtDemora.Text = "";
@@ -212,6 +215,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.cboEstatusCobro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEstatusCobro.FormattingEnabled = true;
+            this.cboEstatusCobro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cboEstatusCobro.Items.AddRange(new object[] {
             "PENDIENTE",
             "PAGADO"});
@@ -299,6 +303,7 @@ namespace Formulario_Cruces_JEFF
             this.txtConductor.Location = new System.Drawing.Point(909, 114);
             this.txtConductor.MaxLength = 45;
             this.txtConductor.Name = "txtConductor";
+            this.txtConductor.ReadOnly = true;
             this.txtConductor.Size = new System.Drawing.Size(174, 22);
             this.txtConductor.TabIndex = 37;
             // 
@@ -378,6 +383,7 @@ namespace Formulario_Cruces_JEFF
             this.txtCliente.Location = new System.Drawing.Point(604, 266);
             this.txtCliente.MaxLength = 40;
             this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(149, 22);
             this.txtCliente.TabIndex = 26;
             // 
@@ -397,6 +403,7 @@ namespace Formulario_Cruces_JEFF
             this.txtIntermediario.Location = new System.Drawing.Point(604, 220);
             this.txtIntermediario.MaxLength = 45;
             this.txtIntermediario.Name = "txtIntermediario";
+            this.txtIntermediario.ReadOnly = true;
             this.txtIntermediario.Size = new System.Drawing.Size(149, 22);
             this.txtIntermediario.TabIndex = 26;
             // 
@@ -415,6 +422,7 @@ namespace Formulario_Cruces_JEFF
             this.txtPrecioDolares.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioDolares.Location = new System.Drawing.Point(604, 175);
             this.txtPrecioDolares.Name = "txtPrecioDolares";
+            this.txtPrecioDolares.ReadOnly = true;
             this.txtPrecioDolares.Size = new System.Drawing.Size(149, 22);
             this.txtPrecioDolares.TabIndex = 22;
             this.txtPrecioDolares.Text = "0";
@@ -435,6 +443,7 @@ namespace Formulario_Cruces_JEFF
             this.txtPrecioPesos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioPesos.Location = new System.Drawing.Point(604, 130);
             this.txtPrecioPesos.Name = "txtPrecioPesos";
+            this.txtPrecioPesos.ReadOnly = true;
             this.txtPrecioPesos.Size = new System.Drawing.Size(149, 22);
             this.txtPrecioPesos.TabIndex = 20;
             this.txtPrecioPesos.Text = "0";
@@ -456,6 +465,7 @@ namespace Formulario_Cruces_JEFF
             this.txtLugarDescarga.Location = new System.Drawing.Point(604, 85);
             this.txtLugarDescarga.MaxLength = 60;
             this.txtLugarDescarga.Name = "txtLugarDescarga";
+            this.txtLugarDescarga.ReadOnly = true;
             this.txtLugarDescarga.Size = new System.Drawing.Size(149, 22);
             this.txtLugarDescarga.TabIndex = 18;
             // 
@@ -475,6 +485,7 @@ namespace Formulario_Cruces_JEFF
             this.txtLugarCarga.Location = new System.Drawing.Point(604, 40);
             this.txtLugarCarga.MaxLength = 60;
             this.txtLugarCarga.Name = "txtLugarCarga";
+            this.txtLugarCarga.ReadOnly = true;
             this.txtLugarCarga.Size = new System.Drawing.Size(149, 22);
             this.txtLugarCarga.TabIndex = 16;
             // 
@@ -535,6 +546,7 @@ namespace Formulario_Cruces_JEFF
             this.txtTipoServicio.Location = new System.Drawing.Point(164, 75);
             this.txtTipoServicio.MaxLength = 50;
             this.txtTipoServicio.Name = "txtTipoServicio";
+            this.txtTipoServicio.ReadOnly = true;
             this.txtTipoServicio.Size = new System.Drawing.Size(218, 22);
             this.txtTipoServicio.TabIndex = 4;
             // 
@@ -574,6 +586,7 @@ namespace Formulario_Cruces_JEFF
             this.txtCaja.Location = new System.Drawing.Point(164, 113);
             this.txtCaja.MaxLength = 30;
             this.txtCaja.Name = "txtCaja";
+            this.txtCaja.ReadOnly = true;
             this.txtCaja.Size = new System.Drawing.Size(218, 22);
             this.txtCaja.TabIndex = 6;
             // 
@@ -613,6 +626,7 @@ namespace Formulario_Cruces_JEFF
             this.txtRemision.Location = new System.Drawing.Point(164, 151);
             this.txtRemision.MaxLength = 45;
             this.txtRemision.Name = "txtRemision";
+            this.txtRemision.ReadOnly = true;
             this.txtRemision.Size = new System.Drawing.Size(218, 22);
             this.txtRemision.TabIndex = 8;
             // 
@@ -621,7 +635,8 @@ namespace Formulario_Cruces_JEFF
             this.mstMenu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mstMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoYConexionToolStripMenuItem,
-            this.direccionYVistaToolStripMenuItem});
+            this.direccionYVistaToolStripMenuItem,
+            this.reporteToolStripMenuItem});
             this.mstMenu.Location = new System.Drawing.Point(0, 0);
             this.mstMenu.Name = "mstMenu";
             this.mstMenu.Size = new System.Drawing.Size(1904, 24);
@@ -907,6 +922,21 @@ namespace Formulario_Cruces_JEFF
             this.Demora.ReadOnly = true;
             this.Demora.Width = 78;
             // 
+            // reporteToolStripMenuItem
+            // 
+            this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportarReporteAExcelxlsToolStripMenuItem});
+            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reporteToolStripMenuItem.Text = "Reporte";
+            // 
+            // exportarReporteAExcelxlsToolStripMenuItem
+            // 
+            this.exportarReporteAExcelxlsToolStripMenuItem.Name = "exportarReporteAExcelxlsToolStripMenuItem";
+            this.exportarReporteAExcelxlsToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.exportarReporteAExcelxlsToolStripMenuItem.Text = "Exportar Reporte a Excel (xlsx)";
+            this.exportarReporteAExcelxlsToolStripMenuItem.Click += new System.EventHandler(this.exportarReporteAExcelxlsToolStripMenuItem_Click);
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1017,6 +1047,8 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaVencimientoPedimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAsignada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Demora;
+        private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarReporteAExcelxlsToolStripMenuItem;
     }
 }
 

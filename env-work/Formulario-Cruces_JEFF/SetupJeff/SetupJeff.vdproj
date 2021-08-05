@@ -231,6 +231,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4DB946DC3A79AC3E01B3B82B332AFB28"
+        "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4DF52C78705FBF4273E3B0E53B1CCFDE"
         "OwnerKey" = "8:_B1AD77CDAA3A441929A5A4DD1FF11C33"
         "MsmSig" = "8:_UNDEFINED"
@@ -663,6 +669,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A80D7BA3C82F841494939F72504FEC31"
+        "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A80D7BA3C82F841494939F72504FEC31"
+        "OwnerKey" = "8:_4DB946DC3A79AC3E01B3B82B332AFB28"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AEC8E04641D1BC9CBDC1CDCDA9F095D8"
         "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
         "MsmSig" = "8:_UNDEFINED"
@@ -677,6 +695,12 @@
         {
         "MsmKey" = "8:_B1AD77CDAA3A441929A5A4DD1FF11C33"
         "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B1AD77CDAA3A441929A5A4DD1FF11C33"
+        "OwnerKey" = "8:_4DB946DC3A79AC3E01B3B82B332AFB28"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -807,6 +831,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CDC45A3AE56820D6BEBD7E990AF9E859"
+        "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D3AD0FF4BFAC1F75ECF6298FF6642878"
         "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
         "MsmSig" = "8:_UNDEFINED"
@@ -867,6 +897,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E44BA05938D36765C26F126EEDEDB46B"
+        "OwnerKey" = "8:_4DB946DC3A79AC3E01B3B82B332AFB28"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E44BA05938D36765C26F126EEDEDB46B"
+        "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_EC75BA176549CCC9FC80F1E772451EA8"
         "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
         "MsmSig" = "8:_UNDEFINED"
@@ -916,13 +958,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1DBCBCC43FA72FC8F855754F521B3F23"
+        "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F982893B68AE48C6AEEC0B6D4755DB2D"
+        "OwnerKey" = "8:_CDC45A3AE56820D6BEBD7E990AF9E859"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E44BA05938D36765C26F126EEDEDB46B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A80D7BA3C82F841494939F72504FEC31"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1669,6 +1723,12 @@
         "OwnerKey" = "8:_29979AF388CF60301F10A160E1F278CB"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1DBCBCC43FA72FC8F855754F521B3F23"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -1687,6 +1747,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -1703,6 +1779,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -2727,6 +2819,37 @@
                     }
                 }
             "SourcePath" = "8:System.Security.Cryptography.Csp.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F5E03BEC575942C7BB70B82FE7789684"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4DB946DC3A79AC3E01B3B82B332AFB28"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SpreadsheetLight, Version=3.5.0.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4DB946DC3A79AC3E01B3B82B332AFB28"
+                    {
+                    "Name" = "8:SpreadsheetLight.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SpreadsheetLight.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F5E03BEC575942C7BB70B82FE7789684"
@@ -4666,6 +4789,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A80D7BA3C82F841494939F72504FEC31"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A80D7BA3C82F841494939F72504FEC31"
+                    {
+                    "Name" = "8:DocumentFormat.OpenXml.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:DocumentFormat.OpenXml.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F5E03BEC575942C7BB70B82FE7789684"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AEC8E04641D1BC9CBDC1CDCDA9F095D8"
             {
             "AssemblyRegister" = "3:1"
@@ -5193,6 +5347,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CDC45A3AE56820D6BEBD7E990AF9E859"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_CDC45A3AE56820D6BEBD7E990AF9E859"
+                    {
+                    "Name" = "8:System.IO.Packaging.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.IO.Packaging.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F5E03BEC575942C7BB70B82FE7789684"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D3AD0FF4BFAC1F75ECF6298FF6642878"
             {
             "AssemblyRegister" = "3:1"
@@ -5455,6 +5640,37 @@
                     }
                 }
             "SourcePath" = "8:MySql.Data.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F5E03BEC575942C7BB70B82FE7789684"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E44BA05938D36765C26F126EEDEDB46B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_E44BA05938D36765C26F126EEDEDB46B"
+                    {
+                    "Name" = "8:System.Drawing.Common.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Drawing.Common.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F5E03BEC575942C7BB70B82FE7789684"
@@ -5755,22 +5971,22 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:SetupJeff"
-        "ProductCode" = "8:{1AA69C00-A7B3-4F9B-9C08-2970D81CD27D}"
-        "PackageCode" = "8:{25F07F9E-7E4D-4B1A-9FCF-B31B874511B9}"
+        "ProductName" = "8:Jeff Sistema de Cruces"
+        "ProductCode" = "8:{07504D8F-909A-4E88-BBD9-228B33737C85}"
+        "PackageCode" = "8:{EDFEAE7E-8B5D-46F2-A232-08CFA4844736}"
         "UpgradeCode" = "8:{7BA90B9F-7B69-4CD0-BCCA-05852A28B4F3}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "ProductVersion" = "8:0.2.1"
+        "Manufacturer" = "8:Transporte de Carga Jeff"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:SetupJeff"
+        "Title" = "8:Jeff Sistema de Cruces"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Eduardo Jared Aguirre Cárdenas"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"

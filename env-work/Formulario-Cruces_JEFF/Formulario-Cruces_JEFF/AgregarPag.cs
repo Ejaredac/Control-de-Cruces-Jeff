@@ -46,11 +46,13 @@ namespace Formulario_Cruces_JEFF
                 Agreg.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
                 Agreg.Asignada = cboAsignada.Text;
                 Agreg.Demora = rtxtDemora.Text;
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
+                this.DialogResult = DialogResult.None;
                 this.Close();
             }
 
@@ -83,8 +85,7 @@ namespace Formulario_Cruces_JEFF
             }
             catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
     }

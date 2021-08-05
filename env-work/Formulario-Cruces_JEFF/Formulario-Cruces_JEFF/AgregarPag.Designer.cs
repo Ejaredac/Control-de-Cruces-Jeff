@@ -517,6 +517,7 @@ namespace Formulario_Cruces_JEFF
             this.Controls.Add(this.lblCodigoCruce);
             this.Controls.Add(this.lblCaja);
             this.Controls.Add(this.txtRemision);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarPag";
             this.Text = "AgregarPag";
             this.Load += new System.EventHandler(this.AgregarPag_Load);

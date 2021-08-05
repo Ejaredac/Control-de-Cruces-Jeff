@@ -46,12 +46,14 @@ namespace Formulario_Cruces_JEFF
                 Edi.FechaVencimientoPedimento = dtpFechaVencimientoPedimento.Value;
                 Edi.Asignada = cboAsignada.Text;
                 Edi.Demora = rtxtDemora.Text;
-                this.Close();
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
+                this.DialogResult = DialogResult.None;
+                this.Close();
             }
         }
 
@@ -97,7 +99,7 @@ namespace Formulario_Cruces_JEFF
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
 
             }
         }
