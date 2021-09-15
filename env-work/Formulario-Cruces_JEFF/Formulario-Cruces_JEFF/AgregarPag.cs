@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Formulario_Cruces_JEFF
@@ -13,14 +14,23 @@ namespace Formulario_Cruces_JEFF
             set { cruAgreg = value; }
         }
 
+        private ConexionBDJeff _bdConex;
+
+        public ConexionBDJeff Conex
+        {
+            get { return _bdConex; }
+            set { _bdConex = value; }
+        }
+
         public AgregarPag()
         {
             InitializeComponent();
         }
-        public AgregarPag(ref Cruce neu)
+        public AgregarPag(ref Cruce neu, ConexionBDJeff cone)
         {
             InitializeComponent();
             neu = Agreg;
+            Conex = cone;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -87,6 +97,45 @@ namespace Formulario_Cruces_JEFF
             {
                 MessageBox.Show(ex.Message);
             }
+            ActualizarCliente();
+            ActualizarConductor();
+            ActualizarIntermediario();
+        }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ActualizarCliente()
+        {
+            AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+            List<string> cadenas = Conex.ConsultaAutocompletar((s) => MessageBox.Show(s), "Cliente", txtCliente.Text);
+            foreach (string str in cadenas)
+            {
+                lista.Add(str);
+            }
+            txtCliente.AutoCompleteCustomSource = lista;
+        }
+        private void ActualizarConductor()
+        {
+            AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+            List<string> cadenas = Conex.ConsultaAutocompletar((s) => MessageBox.Show(s), "Conductor", txtConductor.Text);
+            foreach (string str in cadenas)
+            {
+                lista.Add(str);
+            }
+            txtConductor.AutoCompleteCustomSource = lista;
+        }
+        private void ActualizarIntermediario()
+        {
+            AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+            List<string> cadenas = Conex.ConsultaAutocompletar((s) => MessageBox.Show(s), "Intermediario", txtIntermediario.Text);
+            foreach (string str in cadenas)
+            {
+                lista.Add(str);
+            }
+            txtIntermediario.AutoCompleteCustomSource = lista;
         }
     }
 }

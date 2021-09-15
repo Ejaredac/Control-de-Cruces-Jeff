@@ -639,5 +639,30 @@ where id_CodigoCruces > 0;
             }
             return cruceNuevo;
         }
+        public List<string> ConsultaAutocompletar(delegMensajeExcepcionador dele,string colm, string busc)
+        {
+            List<string> listaAuto = new List<string>();
+            MySqlDataReader msdrLector = null;
+            try
+            {
+                string strConsulta = "Select " + colm + " from crucesjeffbd.tablacruces ";
+                MySqlCommand mcmComando = new MySqlCommand(strConsulta);
+                mcmComando.Connection = ConexionRemota;
+                ConexionRemota.Open();
+                mcmComando.Prepare();
+                msdrLector = mcmComando.ExecuteReader();
+                while (msdrLector.Read())
+                {
+                    listaAuto.Add(msdrLector.GetString(0));
+                }
+                ConexionRemota.Close();
+            }
+            catch (System.Exception ex)
+            {
+
+                dele(ex.Message);
+            }
+            return listaAuto;
+        }
     }
 }

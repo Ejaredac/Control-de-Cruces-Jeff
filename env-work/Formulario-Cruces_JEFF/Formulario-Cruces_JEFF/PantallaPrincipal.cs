@@ -69,7 +69,7 @@ namespace Formulario_Cruces_JEFF
                 try
                 {
                     Cruce nuevoCruce = new Cruce();
-                    AgregarPag agre = new AgregarPag(ref nuevoCruce);
+                    AgregarPag agre = new AgregarPag(ref nuevoCruce, ne);
                     if (agre.ShowDialog() == DialogResult.OK)
                     {
                         ne.AgregarCruce(nuevoCruce, (s) => MessageBox.Show(s));
@@ -229,7 +229,7 @@ where id_CodigoCruces = " + num;
             {
                 if (MessageBox.Show("¿Desea editar el registro?", "EDITAR", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    EditarPag editpa = new EditarPag(ref scru);
+                    EditarPag editpa = new EditarPag(ref scru, ne);
 
                     if (editpa.ShowDialog() == DialogResult.OK)
                     {
@@ -399,7 +399,7 @@ where id_CodigoCruces = " + num;
                 {
 
 
-                    string path = "C:\\Users\\ejare\\Desktop\\Reporte.xlsx";
+                    string path = "C:\\Reporte.xlsx";
                     SaveFileDialog folderBrowser = new SaveFileDialog();
                     folderBrowser.ValidateNames = false;
                     folderBrowser.CheckFileExists = false;

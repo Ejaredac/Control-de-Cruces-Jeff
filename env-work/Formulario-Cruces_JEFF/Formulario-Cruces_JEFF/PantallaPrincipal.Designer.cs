@@ -82,6 +82,8 @@ namespace Formulario_Cruces_JEFF
             this.eliminarBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.direccionYVistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.obtenerDireccionDeEsteEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarReporteAExcelxlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpTablaDeDatos = new System.Windows.Forms.GroupBox();
             this.btnOrdenarFechaCarga = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -107,8 +109,6 @@ namespace Formulario_Cruces_JEFF
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Demora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportarReporteAExcelxlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpCampoDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mstMenu.SuspendLayout();
@@ -165,7 +165,7 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.ForeColor = System.Drawing.Color.Black;
             this.grpCampoDatos.Location = new System.Drawing.Point(12, 27);
             this.grpCampoDatos.Name = "grpCampoDatos";
-            this.grpCampoDatos.Size = new System.Drawing.Size(1658, 337);
+            this.grpCampoDatos.Size = new System.Drawing.Size(1312, 337);
             this.grpCampoDatos.TabIndex = 0;
             this.grpCampoDatos.TabStop = false;
             this.grpCampoDatos.Text = "Campo de Datos";
@@ -173,7 +173,7 @@ namespace Formulario_Cruces_JEFF
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1132, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(1060, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(164, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -182,18 +182,18 @@ namespace Formulario_Cruces_JEFF
             // 
             // rtxtDemora
             // 
-            this.rtxtDemora.Location = new System.Drawing.Point(884, 234);
+            this.rtxtDemora.Location = new System.Drawing.Point(855, 233);
             this.rtxtDemora.MaxLength = 120;
             this.rtxtDemora.Name = "rtxtDemora";
             this.rtxtDemora.ReadOnly = true;
-            this.rtxtDemora.Size = new System.Drawing.Size(347, 88);
+            this.rtxtDemora.Size = new System.Drawing.Size(233, 88);
             this.rtxtDemora.TabIndex = 47;
             this.rtxtDemora.Text = "";
             // 
             // lblDemora
             // 
             this.lblDemora.AutoSize = true;
-            this.lblDemora.Location = new System.Drawing.Point(809, 254);
+            this.lblDemora.Location = new System.Drawing.Point(780, 253);
             this.lblDemora.Name = "lblDemora";
             this.lblDemora.Size = new System.Drawing.Size(53, 16);
             this.lblDemora.TabIndex = 46;
@@ -203,7 +203,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.btnVaciarCampos.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnVaciarCampos.ForeColor = System.Drawing.Color.Black;
-            this.btnVaciarCampos.Location = new System.Drawing.Point(1251, 289);
+            this.btnVaciarCampos.Location = new System.Drawing.Point(1100, 236);
             this.btnVaciarCampos.Name = "btnVaciarCampos";
             this.btnVaciarCampos.Size = new System.Drawing.Size(124, 33);
             this.btnVaciarCampos.TabIndex = 45;
@@ -231,7 +231,7 @@ namespace Formulario_Cruces_JEFF
             this.cboAsignada.Items.AddRange(new object[] {
             "SI",
             "NO"});
-            this.cboAsignada.Location = new System.Drawing.Point(909, 22);
+            this.cboAsignada.Location = new System.Drawing.Point(880, 21);
             this.cboAsignada.Name = "cboAsignada";
             this.cboAsignada.Size = new System.Drawing.Size(121, 24);
             this.cboAsignada.TabIndex = 43;
@@ -255,7 +255,7 @@ namespace Formulario_Cruces_JEFF
             "012",
             "013",
             "014"});
-            this.cboUnidades.Location = new System.Drawing.Point(909, 70);
+            this.cboUnidades.Location = new System.Drawing.Point(880, 69);
             this.cboUnidades.Name = "cboUnidades";
             this.cboUnidades.Size = new System.Drawing.Size(121, 24);
             this.cboUnidades.TabIndex = 42;
@@ -264,7 +264,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(1469, 280);
+            this.btnEditar.Location = new System.Drawing.Point(1188, 275);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(86, 39);
             this.btnEditar.TabIndex = 41;
@@ -276,7 +276,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(1561, 286);
+            this.btnEliminar.Location = new System.Drawing.Point(1230, 237);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(81, 32);
             this.btnEliminar.TabIndex = 40;
@@ -289,7 +289,7 @@ namespace Formulario_Cruces_JEFF
             this.btnAgregar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnAgregar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.Location = new System.Drawing.Point(1381, 283);
+            this.btnAgregar.Location = new System.Drawing.Point(1100, 275);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(82, 39);
             this.btnAgregar.TabIndex = 39;
@@ -300,7 +300,7 @@ namespace Formulario_Cruces_JEFF
             // txtConductor
             // 
             this.txtConductor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConductor.Location = new System.Drawing.Point(909, 114);
+            this.txtConductor.Location = new System.Drawing.Point(880, 113);
             this.txtConductor.MaxLength = 45;
             this.txtConductor.Name = "txtConductor";
             this.txtConductor.ReadOnly = true;
@@ -311,7 +311,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.lblAsignada.AutoSize = true;
             this.lblAsignada.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsignada.Location = new System.Drawing.Point(804, 25);
+            this.lblAsignada.Location = new System.Drawing.Point(775, 24);
             this.lblAsignada.Name = "lblAsignada";
             this.lblAsignada.Size = new System.Drawing.Size(62, 16);
             this.lblAsignada.TabIndex = 34;
@@ -319,19 +319,19 @@ namespace Formulario_Cruces_JEFF
             // 
             // dtpFechaVencimientoPedimento
             // 
-            this.dtpFechaVencimientoPedimento.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaVencimientoPedimento.CustomFormat = "MMMM dd, yyyy  |  hh:mm:ss tt";
             this.dtpFechaVencimientoPedimento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaVencimientoPedimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaVencimientoPedimento.Location = new System.Drawing.Point(1084, 204);
+            this.dtpFechaVencimientoPedimento.Location = new System.Drawing.Point(1013, 201);
             this.dtpFechaVencimientoPedimento.Name = "dtpFechaVencimientoPedimento";
-            this.dtpFechaVencimientoPedimento.Size = new System.Drawing.Size(277, 22);
+            this.dtpFechaVencimientoPedimento.Size = new System.Drawing.Size(261, 22);
             this.dtpFechaVencimientoPedimento.TabIndex = 32;
             // 
             // lblFechaPagoVencimiento
             // 
             this.lblFechaPagoVencimiento.AutoSize = true;
             this.lblFechaPagoVencimiento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaPagoVencimiento.Location = new System.Drawing.Point(806, 169);
+            this.lblFechaPagoVencimiento.Location = new System.Drawing.Point(777, 168);
             this.lblFechaPagoVencimiento.Name = "lblFechaPagoVencimiento";
             this.lblFechaPagoVencimiento.Size = new System.Drawing.Size(180, 16);
             this.lblFechaPagoVencimiento.TabIndex = 31;
@@ -341,7 +341,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.lblFechaVencimientoPedimento.AutoSize = true;
             this.lblFechaVencimientoPedimento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaVencimientoPedimento.Location = new System.Drawing.Point(811, 207);
+            this.lblFechaVencimientoPedimento.Location = new System.Drawing.Point(782, 206);
             this.lblFechaVencimientoPedimento.Name = "lblFechaVencimientoPedimento";
             this.lblFechaVencimientoPedimento.Size = new System.Drawing.Size(221, 16);
             this.lblFechaVencimientoPedimento.TabIndex = 33;
@@ -349,19 +349,19 @@ namespace Formulario_Cruces_JEFF
             // 
             // dtpFechaPagoPedimento
             // 
-            this.dtpFechaPagoPedimento.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaPagoPedimento.CustomFormat = "MMMM dd, yyyy  |  hh:mm:ss tt";
             this.dtpFechaPagoPedimento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaPagoPedimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaPagoPedimento.Location = new System.Drawing.Point(1052, 169);
+            this.dtpFechaPagoPedimento.Location = new System.Drawing.Point(977, 168);
             this.dtpFechaPagoPedimento.Name = "dtpFechaPagoPedimento";
-            this.dtpFechaPagoPedimento.Size = new System.Drawing.Size(281, 22);
+            this.dtpFechaPagoPedimento.Size = new System.Drawing.Size(259, 22);
             this.dtpFechaPagoPedimento.TabIndex = 30;
             // 
             // lblConductor
             // 
             this.lblConductor.AutoSize = true;
             this.lblConductor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConductor.Location = new System.Drawing.Point(810, 116);
+            this.lblConductor.Location = new System.Drawing.Point(781, 115);
             this.lblConductor.Name = "lblConductor";
             this.lblConductor.Size = new System.Drawing.Size(67, 16);
             this.lblConductor.TabIndex = 29;
@@ -371,7 +371,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.lblUnidad.AutoSize = true;
             this.lblUnidad.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidad.Location = new System.Drawing.Point(810, 69);
+            this.lblUnidad.Location = new System.Drawing.Point(781, 68);
             this.lblUnidad.Name = "lblUnidad";
             this.lblUnidad.Size = new System.Drawing.Size(48, 16);
             this.lblUnidad.TabIndex = 28;
@@ -502,7 +502,7 @@ namespace Formulario_Cruces_JEFF
             // dtpFechaEntrega
             // 
             this.dtpFechaEntrega.CalendarFont = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaEntrega.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaEntrega.CustomFormat = "MMMM dd, yyyy  |  hh:mm:ss tt";
             this.dtpFechaEntrega.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaEntrega.Location = new System.Drawing.Point(164, 272);
@@ -532,7 +532,7 @@ namespace Formulario_Cruces_JEFF
             // 
             // dtpFechaCarga
             // 
-            this.dtpFechaCarga.CustomFormat = "MMMMdd, yyyy  |  hh:mm:ss tt";
+            this.dtpFechaCarga.CustomFormat = "MMMM dd, yyyy  |  hh:mm:ss tt";
             this.dtpFechaCarga.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaCarga.Location = new System.Drawing.Point(164, 226);
@@ -639,7 +639,7 @@ namespace Formulario_Cruces_JEFF
             this.reporteToolStripMenuItem});
             this.mstMenu.Location = new System.Drawing.Point(0, 0);
             this.mstMenu.Name = "mstMenu";
-            this.mstMenu.Size = new System.Drawing.Size(1904, 24);
+            this.mstMenu.Size = new System.Drawing.Size(1334, 24);
             this.mstMenu.TabIndex = 1;
             this.mstMenu.Text = "menuStrip1";
             // 
@@ -698,6 +698,21 @@ namespace Formulario_Cruces_JEFF
             this.obtenerDireccionDeEsteEquipoToolStripMenuItem.Text = "Obtener direccion de este equipo";
             this.obtenerDireccionDeEsteEquipoToolStripMenuItem.Click += new System.EventHandler(this.obtenerDireccionDeEsteEquipoToolStripMenuItem_Click);
             // 
+            // reporteToolStripMenuItem
+            // 
+            this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportarReporteAExcelxlsToolStripMenuItem});
+            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reporteToolStripMenuItem.Text = "Reporte";
+            // 
+            // exportarReporteAExcelxlsToolStripMenuItem
+            // 
+            this.exportarReporteAExcelxlsToolStripMenuItem.Name = "exportarReporteAExcelxlsToolStripMenuItem";
+            this.exportarReporteAExcelxlsToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
+            this.exportarReporteAExcelxlsToolStripMenuItem.Text = "Exportar Reporte a Excel (xlsx)";
+            this.exportarReporteAExcelxlsToolStripMenuItem.Click += new System.EventHandler(this.exportarReporteAExcelxlsToolStripMenuItem_Click);
+            // 
             // grpTablaDeDatos
             // 
             this.grpTablaDeDatos.Controls.Add(this.btnOrdenarFechaCarga);
@@ -708,7 +723,7 @@ namespace Formulario_Cruces_JEFF
             this.grpTablaDeDatos.ForeColor = System.Drawing.Color.Black;
             this.grpTablaDeDatos.Location = new System.Drawing.Point(13, 383);
             this.grpTablaDeDatos.Name = "grpTablaDeDatos";
-            this.grpTablaDeDatos.Size = new System.Drawing.Size(1719, 629);
+            this.grpTablaDeDatos.Size = new System.Drawing.Size(1309, 366);
             this.grpTablaDeDatos.TabIndex = 2;
             this.grpTablaDeDatos.TabStop = false;
             this.grpTablaDeDatos.Text = "Tabla de Información de Cruces";
@@ -778,7 +793,7 @@ namespace Formulario_Cruces_JEFF
             this.Demora});
             this.dtgTablaDatos.Location = new System.Drawing.Point(12, 95);
             this.dtgTablaDatos.Name = "dtgTablaDatos";
-            this.dtgTablaDatos.Size = new System.Drawing.Size(1659, 528);
+            this.dtgTablaDatos.Size = new System.Drawing.Size(1291, 265);
             this.dtgTablaDatos.TabIndex = 0;
             this.dtgTablaDatos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgTablaDatos_CellMouseClick);
             // 
@@ -922,27 +937,12 @@ namespace Formulario_Cruces_JEFF
             this.Demora.ReadOnly = true;
             this.Demora.Width = 78;
             // 
-            // reporteToolStripMenuItem
-            // 
-            this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportarReporteAExcelxlsToolStripMenuItem});
-            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reporteToolStripMenuItem.Text = "Reporte";
-            // 
-            // exportarReporteAExcelxlsToolStripMenuItem
-            // 
-            this.exportarReporteAExcelxlsToolStripMenuItem.Name = "exportarReporteAExcelxlsToolStripMenuItem";
-            this.exportarReporteAExcelxlsToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.exportarReporteAExcelxlsToolStripMenuItem.Text = "Exportar Reporte a Excel (xlsx)";
-            this.exportarReporteAExcelxlsToolStripMenuItem.Click += new System.EventHandler(this.exportarReporteAExcelxlsToolStripMenuItem_Click);
-            // 
             // PantallaPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1334, 761);
             this.Controls.Add(this.grpTablaDeDatos);
             this.Controls.Add(this.grpCampoDatos);
             this.Controls.Add(this.mstMenu);
@@ -950,11 +950,11 @@ namespace Formulario_Cruces_JEFF
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(1200, 600);
             this.Name = "PantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal | Control de Cruces - - Transporte de Carga Jeff | Tabla de Cr" +
     "uces";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PantallaPrincipal_Load);
             this.grpCampoDatos.ResumeLayout(false);
             this.grpCampoDatos.PerformLayout();

@@ -138,6 +138,8 @@ namespace Formulario_Cruces_JEFF
             // 
             // txtConductor
             // 
+            this.txtConductor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtConductor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtConductor.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConductor.Location = new System.Drawing.Point(902, 134);
             this.txtConductor.MaxLength = 45;
@@ -219,12 +221,15 @@ namespace Formulario_Cruces_JEFF
             // 
             // txtCliente
             // 
+            this.txtCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.Location = new System.Drawing.Point(597, 286);
             this.txtCliente.MaxLength = 40;
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(149, 22);
             this.txtCliente.TabIndex = 72;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // lblCliente
             // 
@@ -238,6 +243,8 @@ namespace Formulario_Cruces_JEFF
             // 
             // txtIntermediario
             // 
+            this.txtIntermediario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtIntermediario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtIntermediario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIntermediario.Location = new System.Drawing.Point(597, 240);
             this.txtIntermediario.MaxLength = 45;
@@ -477,6 +484,7 @@ namespace Formulario_Cruces_JEFF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1380, 472);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.rtxtDemora);
@@ -519,6 +527,7 @@ namespace Formulario_Cruces_JEFF
             this.Controls.Add(this.txtRemision);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarPag";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarPag";
             this.Load += new System.EventHandler(this.AgregarPag_Load);
             this.ResumeLayout(false);
