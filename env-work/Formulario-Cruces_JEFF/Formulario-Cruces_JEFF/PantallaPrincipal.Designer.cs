@@ -84,7 +84,6 @@ namespace Formulario_Cruces_JEFF
             this.obtenerDireccionDeEsteEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarReporteAExcelxlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grpTablaDeDatos = new System.Windows.Forms.GroupBox();
             this.btnOrdenarFechaCarga = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnRecargar = new System.Windows.Forms.Button();
@@ -109,11 +108,14 @@ namespace Formulario_Cruces_JEFF
             this.colFechaVencimientoPedimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Demora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlPanelInferior = new System.Windows.Forms.Panel();
+            this.pnlSuperiorBotones = new System.Windows.Forms.Panel();
             this.grpCampoDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mstMenu.SuspendLayout();
-            this.grpTablaDeDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).BeginInit();
+            this.pnlPanelInferior.SuspendLayout();
+            this.pnlSuperiorBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpCampoDatos
@@ -161,11 +163,12 @@ namespace Formulario_Cruces_JEFF
             this.grpCampoDatos.Controls.Add(this.lblCodigoCruce);
             this.grpCampoDatos.Controls.Add(this.lblCaja);
             this.grpCampoDatos.Controls.Add(this.txtRemision);
+            this.grpCampoDatos.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpCampoDatos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCampoDatos.ForeColor = System.Drawing.Color.Black;
-            this.grpCampoDatos.Location = new System.Drawing.Point(12, 27);
+            this.grpCampoDatos.Location = new System.Drawing.Point(0, 24);
             this.grpCampoDatos.Name = "grpCampoDatos";
-            this.grpCampoDatos.Size = new System.Drawing.Size(1312, 337);
+            this.grpCampoDatos.Size = new System.Drawing.Size(1408, 337);
             this.grpCampoDatos.TabIndex = 0;
             this.grpCampoDatos.TabStop = false;
             this.grpCampoDatos.Text = "Campo de Datos";
@@ -639,7 +642,7 @@ namespace Formulario_Cruces_JEFF
             this.reporteToolStripMenuItem});
             this.mstMenu.Location = new System.Drawing.Point(0, 0);
             this.mstMenu.Name = "mstMenu";
-            this.mstMenu.Size = new System.Drawing.Size(1334, 24);
+            this.mstMenu.Size = new System.Drawing.Size(1408, 24);
             this.mstMenu.TabIndex = 1;
             this.mstMenu.Text = "menuStrip1";
             // 
@@ -713,29 +716,13 @@ namespace Formulario_Cruces_JEFF
             this.exportarReporteAExcelxlsToolStripMenuItem.Text = "Exportar Reporte a Excel (xlsx)";
             this.exportarReporteAExcelxlsToolStripMenuItem.Click += new System.EventHandler(this.exportarReporteAExcelxlsToolStripMenuItem_Click);
             // 
-            // grpTablaDeDatos
-            // 
-            this.grpTablaDeDatos.Controls.Add(this.btnOrdenarFechaCarga);
-            this.grpTablaDeDatos.Controls.Add(this.btnBuscar);
-            this.grpTablaDeDatos.Controls.Add(this.btnRecargar);
-            this.grpTablaDeDatos.Controls.Add(this.dtgTablaDatos);
-            this.grpTablaDeDatos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpTablaDeDatos.ForeColor = System.Drawing.Color.Black;
-            this.grpTablaDeDatos.Location = new System.Drawing.Point(13, 383);
-            this.grpTablaDeDatos.Name = "grpTablaDeDatos";
-            this.grpTablaDeDatos.Size = new System.Drawing.Size(1309, 366);
-            this.grpTablaDeDatos.TabIndex = 2;
-            this.grpTablaDeDatos.TabStop = false;
-            this.grpTablaDeDatos.Text = "Tabla de Información de Cruces";
-            this.grpTablaDeDatos.Enter += new System.EventHandler(this.grpTablaDeDatos_Enter);
-            // 
             // btnOrdenarFechaCarga
             // 
             this.btnOrdenarFechaCarga.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnOrdenarFechaCarga.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrdenarFechaCarga.Location = new System.Drawing.Point(463, 44);
+            this.btnOrdenarFechaCarga.Location = new System.Drawing.Point(292, 14);
             this.btnOrdenarFechaCarga.Name = "btnOrdenarFechaCarga";
-            this.btnOrdenarFechaCarga.Size = new System.Drawing.Size(299, 33);
+            this.btnOrdenarFechaCarga.Size = new System.Drawing.Size(184, 30);
             this.btnOrdenarFechaCarga.TabIndex = 5;
             this.btnOrdenarFechaCarga.Text = "Ordenar por Fecha de Carga";
             this.btnOrdenarFechaCarga.UseVisualStyleBackColor = false;
@@ -745,9 +732,9 @@ namespace Formulario_Cruces_JEFF
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(17, 45);
+            this.btnBuscar.Location = new System.Drawing.Point(3, 14);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(275, 30);
+            this.btnBuscar.Size = new System.Drawing.Size(175, 30);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -757,9 +744,9 @@ namespace Formulario_Cruces_JEFF
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnRecargar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecargar.Location = new System.Drawing.Point(331, 42);
+            this.btnRecargar.Location = new System.Drawing.Point(184, 14);
             this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(102, 35);
+            this.btnRecargar.Size = new System.Drawing.Size(102, 30);
             this.btnRecargar.TabIndex = 1;
             this.btnRecargar.Text = "Recargar";
             this.btnRecargar.UseVisualStyleBackColor = false;
@@ -791,9 +778,11 @@ namespace Formulario_Cruces_JEFF
             this.colFechaVencimientoPedimento,
             this.colAsignada,
             this.Demora});
-            this.dtgTablaDatos.Location = new System.Drawing.Point(12, 95);
+            this.dtgTablaDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgTablaDatos.Location = new System.Drawing.Point(0, 55);
+            this.dtgTablaDatos.Margin = new System.Windows.Forms.Padding(10);
             this.dtgTablaDatos.Name = "dtgTablaDatos";
-            this.dtgTablaDatos.Size = new System.Drawing.Size(1291, 265);
+            this.dtgTablaDatos.Size = new System.Drawing.Size(1406, 390);
             this.dtgTablaDatos.TabIndex = 0;
             this.dtgTablaDatos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgTablaDatos_CellMouseClick);
             // 
@@ -937,13 +926,37 @@ namespace Formulario_Cruces_JEFF
             this.Demora.ReadOnly = true;
             this.Demora.Width = 78;
             // 
+            // pnlPanelInferior
+            // 
+            this.pnlPanelInferior.AllowDrop = true;
+            this.pnlPanelInferior.AutoScroll = true;
+            this.pnlPanelInferior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPanelInferior.Controls.Add(this.dtgTablaDatos);
+            this.pnlPanelInferior.Controls.Add(this.pnlSuperiorBotones);
+            this.pnlPanelInferior.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPanelInferior.Location = new System.Drawing.Point(0, 361);
+            this.pnlPanelInferior.Name = "pnlPanelInferior";
+            this.pnlPanelInferior.Size = new System.Drawing.Size(1408, 447);
+            this.pnlPanelInferior.TabIndex = 6;
+            // 
+            // pnlSuperiorBotones
+            // 
+            this.pnlSuperiorBotones.Controls.Add(this.btnBuscar);
+            this.pnlSuperiorBotones.Controls.Add(this.btnOrdenarFechaCarga);
+            this.pnlSuperiorBotones.Controls.Add(this.btnRecargar);
+            this.pnlSuperiorBotones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSuperiorBotones.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorBotones.Name = "pnlSuperiorBotones";
+            this.pnlSuperiorBotones.Size = new System.Drawing.Size(1406, 55);
+            this.pnlSuperiorBotones.TabIndex = 1;
+            // 
             // PantallaPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1334, 761);
-            this.Controls.Add(this.grpTablaDeDatos);
+            this.ClientSize = new System.Drawing.Size(1408, 808);
+            this.Controls.Add(this.pnlPanelInferior);
             this.Controls.Add(this.grpCampoDatos);
             this.Controls.Add(this.mstMenu);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -961,8 +974,9 @@ namespace Formulario_Cruces_JEFF
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mstMenu.ResumeLayout(false);
             this.mstMenu.PerformLayout();
-            this.grpTablaDeDatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgTablaDatos)).EndInit();
+            this.pnlPanelInferior.ResumeLayout(false);
+            this.pnlSuperiorBotones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1007,7 +1021,6 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.ToolStripMenuItem conectarABaseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarBaseDeDatosToolStripMenuItem;
         private System.Windows.Forms.TextBox txtConductor;
-        private System.Windows.Forms.GroupBox grpTablaDeDatos;
         private System.Windows.Forms.DataGridView dtgTablaDatos;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label lblCliente;
@@ -1049,6 +1062,8 @@ namespace Formulario_Cruces_JEFF
         private System.Windows.Forms.DataGridViewTextBoxColumn Demora;
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarReporteAExcelxlsToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlPanelInferior;
+        private System.Windows.Forms.Panel pnlSuperiorBotones;
     }
 }
 
