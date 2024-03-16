@@ -151,6 +151,7 @@ namespace ControlGastos
                     gasto.Demora = msdrLector.GetString("demora");
                     gasto.NumeroFactura = msdrLector.GetString("numero_factura");
                     gasto.Unidad = msdrLector.GetString("unidad");
+                    gasto.TipoGasto = msdrLector.GetString("tipo_gasto");
                     if(gasto != null)
                     sgasto = gasto;
                 }
@@ -178,7 +179,8 @@ namespace ControlGastos
                 txtNoFactura.Text = sgasto.NumeroFactura;
                 txtTipoGasto.Text = sgasto.TipoGasto;
                 cboUnidades.Text = sgasto.Unidad;
-                rtxtDemora.Text = sgasto.Unidad;
+                rtxtDemora.Text = sgasto.Demora;
+                txtTipoGasto.Text = sgasto.TipoGasto;
             }
             catch (Exception ex)
             {
